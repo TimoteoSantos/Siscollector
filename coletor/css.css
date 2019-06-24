@@ -1,0 +1,270 @@
+﻿*{
+	margin: 50;
+	padding: 0;
+	}
+
+#margem {
+	margin-left: 40px;
+}
+
+h3[Usuários cadastrados], hr {
+	margin-left: 40px;
+}
+
+/*estilização do bootstrap*/
+.jumbotron {
+	padding-top: 70px;
+	height: 18em;
+	width: 100%;
+	max-height: 50%;
+	max-width: 100%;
+	min-height: 20%;
+	min-width: 30%;
+	background-image: url("bg.jpg")!important;
+	background-size: cover;
+	color:#ffffff;
+}
+
+.jumbotron h1 {
+
+	margin-bottom: 0.3em;
+}
+
+/* margem do h1 do titulo principal*/
+.jumbotron  .container {
+	
+	margin-left:5px;
+}
+
+.panel {
+	margin-left: 20px !important;
+	margin-right: 70px !important;
+}
+
+.alert {
+		
+width:550px;
+margin-bottom:0px;
+	
+}
+
+/* cor dos icones*/
+.remove {
+
+	color: #a94442 !important;
+}
+
+.icones {
+
+	color:#008B8B !important;
+}
+
+form button a{
+	color: #ffffff !important;
+}
+
+/*sair*/
+#red {
+	background-color:#800000;
+	color:#ffffff;
+
+}
+.fieldset2 {
+	border:0 !important;
+}
+
+/*painel de contagem*/
+.painel_contagem {
+
+	width: 25em !important;
+	float: left;
+	border-color: #008B8B;
+	margin:3px !important;
+}
+
+.centro {
+	padding: 2px;
+	text-align: center;
+}
+
+.panel-heading {
+	background-color: #008B8B !important;
+	color:#ffffff !important;
+
+}
+.panel-heading-coletados {
+	background-color: #5F9EA0 !important;
+	color:#ffffff !important;
+
+}
+
+.panel-lang {
+	
+	width: 25em !important;
+	float: left;
+	margin-right: 0 !important;
+}
+.panel-lang-2 {
+	
+	width: 25em !important;
+	float: left;
+	margin-right: 0 !important;
+	height: 13em !important;
+}
+
+
+.panel-primary,  .panel-danger {
+	border-color: #008B8B !important;
+}
+/* tabela de usuarios cadastrados*/
+
+.table_user {
+	width: 50em;
+	margin-left: 40px;
+	margin-top: 2em;
+}
+/*fim da formatação da tabela*/
+
+/*form usuario*/
+fieldset {
+
+	border:2px solid #008B8B !important;
+	padding: 2em !important;
+	border-radius: 0px;
+	width: 45em;
+}
+
+fieldset > h3 {
+	color: #008B8B ;
+	margin-bottom: 25px;
+}
+
+.form  {
+	margin-left: 15px !important;
+	margin-right: 10px !important;
+}
+
+
+/*menu tirar o sublinhado*/
+a:link { 
+	text-decoration:none ; 
+}
+
+.btn {
+
+	width: 150px !important;
+}
+
+table tr td button a {
+
+	color: #FFFFFF;
+}
+
+h4 > a {
+	color: #a94442 !important;
+}
+
+.tabela {
+	margin-bottom:8em;
+}
+
+/*menu*/
+
+.menu{
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	background-color: #222;
+	font-family: 'arial';
+}
+
+#a {
+	padding: 10px;
+	color: #4682B4;
+	font-size: 16px;
+
+}
+.menu ul{
+	list-style: none;
+	position: relative;
+}
+
+.menu ul li {
+
+	width: 150px;
+	float: left;
+}
+
+.menu a {
+	padding: 15px;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	background-color: #222;
+	color:#fff;
+}
+
+.menu ul ul {
+	position: absolute;
+	visibility: hidden;
+}
+
+.menu ul li:hover ul {
+	visibility: visible;
+}
+
+.menu a:hover{
+	background-color: #f4f4f4;
+	color:#555;
+}
+
+.menu ul ul li {
+
+	float: none;
+	border-bottom: solid 1px #ccc;
+}
+
+.menu ul ul li a{
+
+	background-color: #069;
+}
+
+label[for="bt_menu"]{
+	padding: 5px;
+	background-color: #222;
+	color: #fff;
+	font-family: "arial";
+	text-align: center;
+	font-size: 30px;
+	cursor: pointer;
+	width: 50px;
+	height:50px;
+}
+
+.vermelho  {
+	background-color:rgb(19, 104, 51) !important;
+}
+
+.red2  {
+	background-color:rgb(10, 78, 64) !important;
+}
+
+.distancia {
+	margin : 35px;
+}
+
+.btn2 {
+width: 100% !important;
+height: 3em !important;
+}
+
+/* tela grande */
+@media (min-width: 1200px) 
+
+{
+.corpo_just{
+	width: 1200px !important;
+	margin: auto !important;
+}
+
+}

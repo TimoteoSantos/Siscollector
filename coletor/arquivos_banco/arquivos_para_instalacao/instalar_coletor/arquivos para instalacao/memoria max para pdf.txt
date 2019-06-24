@@ -1,0 +1,12 @@
+MySQL e do Apache no computador e siga as etapas:
+Acesse o diretório de instalação do Xampp (Geralmente fica no Disco Local (C:));
+Abra a pasta ‘xampp’ em seguida ‘php’;
+Procure o arquivo chamado ‘php.ini’;
+Pressione as teclas Ctrl+F, pesquise por “memory_limit” e altere o limite para 750M;
+Pesquise a variável “upload_max” altere para 750M.
+Pesquise a variável “post_max_size” e também altere para 750M.
+
+
+
+
+memory_limit = 64M
