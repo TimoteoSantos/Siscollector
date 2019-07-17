@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 07-Mar-2019 às 04:38
--- Versão do servidor: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: 17-Jul-2019 às 23:26
+-- Versão do servidor: 10.1.36-MariaDB
+-- versão do PHP: 5.6.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,10 +19,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `coletor`
+-- Database: `coletor_2.0`
 --
-CREATE DATABASE IF NOT EXISTS `coletor` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `coletor`;
+CREATE DATABASE IF NOT EXISTS `coletor_2.0` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `coletor_2.0`;
 
 -- --------------------------------------------------------
 
@@ -35,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `auditoria` (
   `descricao` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `data` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -177,26 +179,6 @@ CREATE TABLE IF NOT EXISTS `vendas` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `verificar_exportar`
--- (See below for the actual view)
---
-DROP VIEW IF EXISTS `verificar_exportar`;
-CREATE TABLE IF NOT EXISTS `verificar_exportar` (
-`id` bigint(100)
-);
-
--- --------------------------------------------------------
-
---
--- Structure for view `verificar_exportar`
---
-DROP TABLE IF EXISTS `verificar_exportar`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `verificar_exportar`  AS  select `coletor_exportar`.`id` AS `id` from `coletor_exportar` where (`coletor_exportar`.`id` = '1') ;
-
 --
 -- Indexes for dumped tables
 --
@@ -205,6 +187,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- Indexes for table `coletar`
 --
 ALTER TABLE `coletar` ADD FULLTEXT KEY `descricao_indice` (`descricao`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -1,7 +1,7 @@
 <?php
 	
 	//conexao com o banco de dados
-	$conexao = mysqli_connect("localhost", "root", "", "coletor");
+	$conexao = mysqli_connect("localhost", "root", "", "coletor_2.0");
 	
 	//aviso de erro
 	if (mysqli_connect_errno()) {
