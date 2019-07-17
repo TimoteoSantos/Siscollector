@@ -56,6 +56,7 @@ require 'cabecalho.php';
               <input type="submit" class="btn btn-primary enviar" value="Enviar">
            
             </form>
+            
           </div>
         </div>
         
@@ -76,9 +77,41 @@ require 'cabecalho.php';
 
         <h2><?php// echo $destino;?> </h2>
 
+
+
+        <!-- excluir ultimo -->
+
+        <?php 
+
+      $usuario = $_SESSION['usuario'];
+
+      //coloca em listagem um array com apenas os campos vazios de status
+      $listage = mysqli_query($conexao,"SELECT max(id) as id from coletor_importar  where usuario = '$usuario' limit 1;");
+
+      while($linh = mysqli_fetch_array($listage)) {
+      
+        $id2 = $linh['id'];
+
+      }
+
+      $listagem = mysqli_query($conexao,"SELECT id, referencia, quantidade, descricao from coletor_importar  where usuario = '$usuario' and id= '$id2' limit 1;");
+
+
+
+      while($linha = mysqli_fetch_array($listagem)) {
+  
+      ?>
+
+      <button class="btn btn-danger" type="submit" onclick="start()">
+      
+           <a class="branco" href="arquivos_banco/excluir_ultimo.php?referencia=<?= $linha['referencia'] ?>&id=<?= $linha['id'] ?>&descricao=<?= $linha['descricao'] ?>&quantidade=<?= $linha['quantidade'] ?>"  onclick="return confirm('Excluir?')">
+             Excluir último</button>
+      
+      <?php } ?>
+
       </div>
 
-      <!-- FIM DA CONFIGURAÇÃO PELA CAMERA-->
+
       
         </div>
 

@@ -4,7 +4,7 @@ session_start();
 require '../../coletor/arquivos_banco/conexao.php';
 
 //usar uma view para ver se já processou os dados
-$listagem = mysqli_query($conexao,  "SELECT id from coletor_exportar");
+$listagem = mysqli_query($conexao,  "SELECT id from verificar_exportar");
 //conta a quandidade de linhas que carregaram e $listagem
 $contar = $listagem->fetch_row();
 //recebe a quantidade de registros da tabela exportar
@@ -23,9 +23,10 @@ $usuario = filter_var($_SESSION['usuario'], FILTER_SANITIZE_STRING);
 $referencia = filter_var($_GET['referencia'], FILTER_SANITIZE_STRING);
 $descricao = filter_var($_GET['descricao'], FILTER_SANITIZE_STRING);
 $quantidade = filter_var($_GET['quantidade'], FILTER_SANITIZE_STRING);
+$id = filter_var($_GET['id'], FILTER_SANITIZE_STRING);
 
-
-$sql = "DELETE FROM coletor_importar WHERE referencia='$referencia' AND usuario = '$usuario'";
+echo $referencia;
+$sql = "DELETE FROM coletor_importar WHERE id = '$id' AND usuario = '$usuario'";
 
 
 mysqli_query($conexao, $sql) or die ("Erro:" .mysqli_error($conexao));
@@ -40,8 +41,14 @@ $sql = "INSERT INTO auditoria (usuario, data, descricao) VALUES ('$usuario','$da
 mysqli_query($conexao, $sql);
 //fim da autidoria
 
-header("Location: ../listar.php");
+
+$_SESSION['msg'] = "<p style='color:black; size=22px;'> REF[$referencia] DESC[$descricao] QT[$quantidade]";
+
+header("Location: ../index.php");
 exit();
 MYSQLI_CLOSE($conexao);
 
+
+
 }
+

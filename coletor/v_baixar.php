@@ -17,7 +17,6 @@ require 'arquivos_banco/conexao.php';
 	<link rel="stylesheet" href="css.css">
 	<link rel="stylesheet" href="normalize.css">
 
-
 </head>
 
 <body>
