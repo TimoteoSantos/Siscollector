@@ -43,7 +43,7 @@ while($row = mysqli_fetch_assoc($resultado)){
 	
 	$cabecalho = "Relatório de contagem";
 	$empresa = $row['empresa'];
-	$data = date("d/m/Y");
+	$data = date("d/m/Y H:i:s");
 	$fornecedor =$row['fornecedor'];
 	$fabricante = $row['fabricante'];
 
