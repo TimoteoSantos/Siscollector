@@ -82,6 +82,14 @@ form button a{
 	margin:3px !important;
 }
 
+/* deixa o rodape em baixo da pagina */
+.clear_rodape {
+	clear:left;
+	position: fixed !important;
+	bottom: 0em !important;
+	
+  }
+
 .centro {
 	padding: 2px;
 	text-align: center;

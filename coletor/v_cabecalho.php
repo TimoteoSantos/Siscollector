@@ -52,10 +52,10 @@ $usuario = $_SESSION['usuario'];
 	
 		<li><a href="v_usuario.php">Usuários</a></li>
 		
-		<li> <a href="#"> Olá, <?php echo $usuario;?> </a>
+		<li> <a href="#"> Olá, <?php echo $usuario ;?> ! </a>
 			
 			<ul> 
-			<li><a href="#">Versão 2</a></li>
+			<li><a href="#">Versão 2.10</a></li>
 				<li> <a href="arquivos_banco/sair.php" id="red"> Sair </a> </li>
 			</ul>
 			

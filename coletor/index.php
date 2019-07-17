@@ -91,7 +91,7 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 			
 			
 			<!--painel de contagem produtos nao cadastrados-->
-			<div class="panel panel-primary painel_contagem">
+			<div class="panel panel-primary painel_contagem ">
 				<div class="panel-heading panel-heading_index">
 					<h3 class="panel-title"> <a href="v_listar_tempo_nao_cadastrado.php">Produtos não cadastrados </a></h3>
 				</div>
@@ -101,9 +101,14 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 			</div><!--fim do painel contagem produtos importados-->
 
 			
-</section>
+			</section>
+
 		</section>
+
 	</section>
 
+	<?php include 'v_rodape.php' ?>
+	
+	
 </body>
 </html>
