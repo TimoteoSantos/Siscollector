@@ -117,12 +117,12 @@ WHERE ((([cadastro de mercadoriasLojas].Loja)="loja 03"));
 
 					<tr class="table-primary">
 
-					<td> Referencia </td>
-					<td> Preço </td>
-					<td width="400"> Descrição </td>
-					<td> Quantidade </td>
-					<td> Fabicante </td>
-					<td> Grupo </td>
+					<td><strong>  REFERÊNCIA  </strong> </td>
+					<td> <strong> PREÇO </strong> </td>
+					<td width="400"> <strong> DESCRIÇÃO </strong> </td>
+					<td> <strong> QUANTIDADE </strong> </td>
+					<td>  <strong> FABRICANTE </strong> </td>
+					<td> <strong> GRUPO </strong> </td>
 
 					</tr>
 					

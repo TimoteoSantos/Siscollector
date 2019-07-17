@@ -74,10 +74,10 @@ require 'arquivos_banco/login_verificar.php';
       <tr class="table-primary">
 
         <th scope="col">EAN</th>
-        <th scope="col">Quantidade</th>
-        <th scope="col">Descrição</th>
-        <th scope="col">Preço</th>
-        <th scope="col">Fabricante</th>
+        <th scope="col">QUANTIDADE</th>
+        <th scope="col">DESCRIÇÃO</th>
+        <th scope="col">PREÇO</th>
+        <th scope="col">FABRICANTE</th>
         
       </tr>
     </thead>
