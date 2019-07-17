@@ -79,6 +79,7 @@ require 'arquivos_banco/login_verificar.php';
         <th scope="col">PREÇO</th>
         <th scope="col">FABRICANTE</th>
         
+        
       </tr>
     </thead>
     <!--corpo da tabela-->
