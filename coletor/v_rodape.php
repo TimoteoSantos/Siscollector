@@ -1,5 +1,5 @@
 <footer class =" painel_contagem clear_rodape">
 
-    trabalhar no rodape
+    Trabalhar no rodape
 
 </footer>
