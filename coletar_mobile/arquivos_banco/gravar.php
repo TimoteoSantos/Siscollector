@@ -6,7 +6,7 @@ session_start();
 require '../../coletor/arquivos_banco/conexao.php';
 
 //usar uma view para ver se já processou os dados
-$listagem = mysqli_query($conexao,  "SELECT id from verificar_exportar");
+$listagem = mysqli_query($conexao,  "SELECT id from coletor_exportar");
 
 //conta a quandidade de linhas que carregaram e $listagem
 $contar = $listagem->fetch_row();
