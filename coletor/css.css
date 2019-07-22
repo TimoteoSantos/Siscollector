@@ -84,6 +84,7 @@ form button a{
 }
 
 /* deixa o rodape em baixo da pagina */
+
 .clear_rodape {
 	clear:left;
 	position: fixed !important;
@@ -121,7 +122,6 @@ form button a{
 	height: 13em !important;
 }
 
-
 .panel-primary,  .panel-danger {
 	border-color: #008B8B !important;
 }
@@ -135,6 +135,7 @@ form button a{
 /*fim da formatação da tabela*/
 
 /*form usuario*/
+
 fieldset {
 
 	border:2px solid #008B8B !important;
@@ -265,6 +266,13 @@ label[for="bt_menu"]{
 .btn2 {
 width: 100% !important;
 height: 3em !important;
+}
+
+footer {
+
+	height: 1em !important;
+	width: 100% !important;
+	background-image: url(bg.jpg);
 }
 
 /* tela grande */
