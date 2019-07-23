@@ -175,6 +175,6 @@ require 'arquivos_banco/conexao.php';
 									</section>
 									<!-- fim da sessao principal-->
 								</section>
-
+								<?php include 'v_rodape.php' ?>
 							</body>
 							</html>

@@ -90,8 +90,10 @@ require 'arquivos_banco/conexao.php';
       </div> <!-- fim do painel baixar como txt-->
 
     </section> <!-- dim da sessao corpo-->
-
+		
   </section><!-- fim da sessao principal-->
+  
+  <?php include 'v_rodape.php' ?>
 
 </body>
 </html>

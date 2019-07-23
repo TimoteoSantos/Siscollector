@@ -92,5 +92,6 @@ require 'arquivos_banco/login_verificar.php';
 			</section> <!-- dim da sessao corpo-->
 
 		</section><!-- fim da sessao principal-->
+		<?php include 'v_rodape.php' ?>
 	</body>
 	</html>

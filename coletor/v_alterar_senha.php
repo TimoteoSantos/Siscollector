@@ -77,6 +77,9 @@ $ud = filter_var( $_GET['id'], FILTER_SANITIZE_STRING);
 
 
 			</section><!-- fim da div corpo -->
+			
+			<?php include 'v_rodape.php' ?>
+			
 		</section><!--fim da sessao principal-->
 
 	</body>
