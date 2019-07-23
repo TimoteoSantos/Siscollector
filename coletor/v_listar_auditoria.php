@@ -57,6 +57,7 @@
     <!-- fim da header -->
 
 
+    <h3> <a href="v_buscar_usuario.php" > <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Buscar auditoria de um usuário </a></h3>
 
     <?php 
 
