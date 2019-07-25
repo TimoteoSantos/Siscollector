@@ -34,7 +34,7 @@ mysqli_query($conexao, $sql) or die ("Erro:" .mysqli_error($conexao));
 //auditoria
 $usuario = $_SESSION['usuario'];
 $data = date('Y-m-d H:i:s');
-$mensagem = utf8_decode ('EXCLUIU O PRODUTO ' .$referencia .' ' .$descricao .' ' .'QUANTIDADE = ' .$quantidade);
+$mensagem = utf8_decode ('Fonte: coletor_mobile EXCLUIU O PRODUTO ' .$referencia .' ' .$descricao .' ' .'QUANTIDADE = ' .$quantidade);
 
 $sql = "INSERT INTO auditoria (usuario, data, descricao) VALUES ('$usuario','$data', '$mensagem')";
 mysqli_query($conexao, $sql);

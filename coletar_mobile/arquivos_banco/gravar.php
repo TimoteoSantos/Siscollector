@@ -66,8 +66,6 @@ if ($id[0] == 1 ) {
 			header("Location: ../index.php");
 			$_SESSION['msg'] = "<span class='alerta'>BARRAS VÁLIDO!</span>";
 
-
 		}
 
 }
-

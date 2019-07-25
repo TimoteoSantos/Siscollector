@@ -21,8 +21,6 @@ require 'arquivos_banco/conexao.php';
 	background-color: #ffffff;
 	opacity: 0.8;
 
-
-
 	}
 
 	.area_fieldset {
@@ -79,8 +77,6 @@ require 'arquivos_banco/conexao.php';
 			<form action="arquivos_banco/valida.php" method="post">
 
 				<fieldset class="area_fieldset"> 	<?php require 'arquivos_banco/mensagens.php'; ?> <h2>
-
-			
 
 					<span class="glyphicon glyphicon-user icones" aria-hidden="true"></span>
 
