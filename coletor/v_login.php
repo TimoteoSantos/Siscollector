@@ -1,7 +1,9 @@
 
 <?php
+
 session_start();
 require 'arquivos_banco/conexao.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +12,7 @@ require 'arquivos_banco/conexao.php';
 
 	<style>
 		
-		body{
+	body{
 	
 	background-image: url("fundo_login.jpg")!important;
 	background-repeat: repeat-x;
@@ -18,7 +20,7 @@ require 'arquivos_banco/conexao.php';
 	}
 	
 	fieldset{
-	background-color: #ffffff;
+	background-color: ;
 	opacity: 0.8;
 
 	}
@@ -45,7 +47,6 @@ require 'arquivos_banco/conexao.php';
 
 	<title>Siscollect Login</title>
 
-
 	<!-- link para os css-->
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css.css">
@@ -70,11 +71,9 @@ require 'arquivos_banco/conexao.php';
 		<!-- form de usuarios-->
 		
 
-		<section class="form">
+	<section class="form">
 
-	
-
-			<form action="arquivos_banco/valida.php" method="post">
+		<form action="arquivos_banco/valida.php" method="post">
 
 				<fieldset class="area_fieldset"> 	<?php require 'arquivos_banco/mensagens.php'; ?> <h2>
 
