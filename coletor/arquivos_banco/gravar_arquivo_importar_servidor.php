@@ -31,6 +31,12 @@ if ($id[0] < 1) {
 		$descricao = ($dados[2]);
 		$usuario = ($dados[3]);
 
+		if (isset($usuario)) {
+
+			$usuario = "coletor externo";
+		}
+	
+
 		//inseri os dados das variaveis acima no banco
 		$result_usuario = "INSERT INTO coletor_importar (referencia, quantidade, descricao, usuario) VALUES ('$referencia', '$quantidade', '$descricao', '$usuario')";
 		$result_usuario = mysqli_query($conexao, $result_usuario);
