@@ -312,6 +312,108 @@ require 'arquivos_banco/login_verificar.php';
 				</form>
 			</section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- tempo de atualização -->						
+				<section class="form">
+
+				<form method="post" action="arquivos_banco/tempo_atualizacao.php">
+
+					<fieldset class="area_fieldset"> <h3>
+						<span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
+					Alarme Sonoro Fabricante divergênte</h3>
+
+					<div class="form-group">
+
+						<?php
+
+						$listagem = mysqli_query($conexao, "SELECT count(tempo), tempo  FROM config where tempo > 1 limit 1");
+						//conta
+						$con = $listagem->fetch_row();
+						//recebe o valor
+						$contar = $con;
+						//se nao tiver cadastrado
+						if ($contar[0] != 1) {
+
+						?>
+
+							<h5> Alarme sonoro quando o fabricante for divergente </h5>
+
+							<label for="exampleInputEmail1">Dados</label>
+							<p>
+
+							<select class="form-control" name="tempo" >
+
+								<option value="p000"> Sem som </option>
+								<option value="5000"> Com alarme </option>
+								
+							</select>
+							
+						</div>
+
+						<button type="submit" class="btn btn-primary">Gravar</button>
+					</fieldset>
+
+
+					<!-- verificar -->
+
+					<?php } else {//se tiver cadastrado
+
+
+					$listagem = mysqli_query($conexao, "SELECT max(tempo) as tempo  FROM config limit 1");
+					while($linha = mysqli_fetch_array($listagem)) {
+
+						$tempo = $linha["tempo"];
+						
+
+						?>
+
+						<button type="button" class="btn btn-danger" ><a href="arquivos_banco/excluir_tempo.php">Trocar</a></button>
+						<p>
+
+							<?php echo "<h4> Dados:<br> Tempo: $tempo</h4>"; ?>
+
+						</p>
+
+						<?php
+					}
+				}
+				?>
+
+				</form>
+			</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 					
 			</section><!-- fim da div corpo -->
 		</section><!--fim da sessao principal-->
