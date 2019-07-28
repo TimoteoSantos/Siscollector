@@ -284,8 +284,6 @@ require 'arquivos_banco/login_verificar.php';
 						<button type="submit" class="btn btn-primary">Gravar</button>
 					</fieldset>
 
-
-
 					<?php } else {//se tiver cadastrado
 
 
@@ -312,20 +310,9 @@ require 'arquivos_banco/login_verificar.php';
 				</form>
 			</section>
 
+				<p>
 
-
-<p>
-
-
-
-
-
-
-
-
-
-
-<!-- tempo de atualização -->						
+				<!-- tempo de atualização -->						
 				<section class="form">
 
 				<form method="post" action="arquivos_banco/alarme.php">
@@ -358,8 +345,8 @@ require 'arquivos_banco/login_verificar.php';
 
 							<select class="form-control" name="tempo" >
 
-								<option value="p000"> Sem som </option>
-								<option value="5000"> Com alarme </option>
+								<option value=""> Sem alarme </option>
+								<option value=""> Com alarme </option>
 								
 							</select>
 							
@@ -378,7 +365,7 @@ require 'arquivos_banco/login_verificar.php';
 
 						?>
 
-						<button type="button" class="btn btn-danger" ><a href="arquivos_banco/excluir_alarme.php">Trocar</a></button>
+						<button type="button" class="btn btn-danger" ><a href="arquivos_banco/excluir_alarme.php">Desfazer</a></button>
 						<p>
 
 							<?php echo "<h4> Alerta de fabricante divergênte configurado</h4>"; ?>
