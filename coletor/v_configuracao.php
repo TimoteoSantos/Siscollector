@@ -314,7 +314,7 @@ require 'arquivos_banco/login_verificar.php';
 
 
 
-
+<p>
 
 
 
@@ -328,7 +328,7 @@ require 'arquivos_banco/login_verificar.php';
 <!-- tempo de atualização -->						
 				<section class="form">
 
-				<form method="post" action="arquivos_banco/tempo_atualizacao.php">
+				<form method="post" action="arquivos_banco/alarme.php">
 
 					<fieldset class="area_fieldset"> <h3>
 						<span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
@@ -338,13 +338,16 @@ require 'arquivos_banco/login_verificar.php';
 
 						<?php
 
-						$listagem = mysqli_query($conexao, "SELECT count(tempo), tempo  FROM config where tempo > 1 limit 1");
+						$listagem = mysqli_query($conexao, "SELECT conf  FROM config where conf = 4 limit 1");
 						//conta
 						$con = $listagem->fetch_row();
 						//recebe o valor
 						$contar = $con;
+
+						
+
 						//se nao tiver cadastrado
-						if ($contar[0] != 1) {
+						if ($contar[0] <> 4 ) {
 
 						?>
 
@@ -371,24 +374,20 @@ require 'arquivos_banco/login_verificar.php';
 					<?php } else {//se tiver cadastrado
 
 
-					$listagem = mysqli_query($conexao, "SELECT max(tempo) as tempo  FROM config limit 1");
-					while($linha = mysqli_fetch_array($listagem)) {
-
-						$tempo = $linha["tempo"];
 						
 
 						?>
 
-						<button type="button" class="btn btn-danger" ><a href="arquivos_banco/excluir_tempo.php">Trocar</a></button>
+						<button type="button" class="btn btn-danger" ><a href="arquivos_banco/excluir_alarme.php">Trocar</a></button>
 						<p>
 
-							<?php echo "<h4> Dados:<br> Tempo: $tempo</h4>"; ?>
+							<?php echo "<h4> Alerta de fabricante divergênte configurado</h4>"; ?>
 
 						</p>
 
 						<?php
 					}
-				}
+				
 				?>
 
 				</form>

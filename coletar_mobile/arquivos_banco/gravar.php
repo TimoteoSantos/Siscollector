@@ -27,7 +27,9 @@ if ($id[0] == 1 ) {
 	$hora = date('Y-m-d H:i:s');
 
 
-	$listagem = mysqli_query($conexao, "SELECT referencia, descricao from coletar where referencia = $ref  group by referencia; ");
+
+
+	$listagem = mysqli_query($conexao, "SELECT referencia, descricao, fabricante from coletar where referencia = $ref  group by referencia; ");
 
 	//o while repete a criaçao de linhas na tabela igual a quantidade de itens.
 	while($linha = mysqli_fetch_array($listagem)) {
@@ -44,8 +46,37 @@ if ($id[0] == 1 ) {
 			mysqli_query($conexao, $query);
 			header("Location: ../index.php");
 
+
+
+			$lista_conf = mysqli_query($conexao, "SELECT conf from config where conf = 4 ");	
+
+			while($conf = mysqli_fetch_array($lista_conf)) {
+
+			$conf = $conf['conf'];
+
+
+
+			$lista = mysqli_query($conexao, "SELECT fabricante from pdf ");	
+
+			while($fab = mysqli_fetch_array($lista)) {
+
+			$fab = $fab['fabricante'];
+
+
+			$fabricante = $linha['fabricante'];
+
+			if ($fabricante <> $fab and $conf = 4){
+			
+			$_SESSION['msg'] = "<span class='alerta'>FABRICANTE DIVERGÊNTE ! </span> <span> <audio src='erro.mp3' autoplay></audio> </span>";
+
+
+			}
+		}
+
 		}
 	}
+
+}
 
 		//se o $ref não foi encontrado acima
 		if ($ref != isset($referencia) and $ref > 0){

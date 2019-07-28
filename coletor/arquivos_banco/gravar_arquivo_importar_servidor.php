@@ -33,7 +33,7 @@ if ($id[0] < 1) {
 
 		if (isset($usuario)) {
 
-			$usuario = "coletor externo";
+			$usuario = "sem usuario";
 		}
 	
 

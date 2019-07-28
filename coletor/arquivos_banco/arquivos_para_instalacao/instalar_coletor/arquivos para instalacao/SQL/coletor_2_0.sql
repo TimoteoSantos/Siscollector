@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 17-Jul-2019 às 23:26
--- Versão do servidor: 10.1.36-MariaDB
--- versão do PHP: 5.6.38
+-- Generation Time: 28-Jul-2019 às 16:07
+-- Versão do servidor: 10.1.37-MariaDB
+-- versão do PHP: 7.0.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -37,7 +37,14 @@ CREATE TABLE IF NOT EXISTS `auditoria` (
   `descricao` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `data` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `auditoria`
+--
+
+INSERT INTO `auditoria` (`id`, `usuario`, `descricao`, `data`) VALUES
+(1, '', 'zerou o sistema', '2019-07-28 16:06:49');
 
 -- --------------------------------------------------------
 
