@@ -105,7 +105,7 @@ require 'arquivos_banco/login_verificar.php';
 							<form method="post" action="arquivos_banco/cadastrar_camera.php">
 
 								<fieldset class="area_fieldset"> <h3>
-									<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+									<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
 								Configurar Leitor da câmera</h3>
 
 								<div class="form-group">
@@ -166,7 +166,7 @@ require 'arquivos_banco/login_verificar.php';
 				<form method="post" action="arquivos_banco/cadastrar_pdf.php">
 
 					<fieldset class="area_fieldset"> <h3>
-						<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+						<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
 						Configurar informações da coleta</h3>
 
 					<div class="form-group">
@@ -245,7 +245,7 @@ require 'arquivos_banco/login_verificar.php';
 				<form method="post" action="arquivos_banco/tempo_atualizacao.php">
 
 					<fieldset class="area_fieldset"> <h3>
-						<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+						<span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>
 					Configurar tempo de atualização das páginas</h3>
 
 					<div class="form-group">
