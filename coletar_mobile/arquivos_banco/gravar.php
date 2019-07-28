@@ -67,7 +67,7 @@ if ($id[0] == 1 ) {
 
 			if ($fabricante <> $fab and $conf = 4){
 			
-			$_SESSION['msg'] = "<span class='alerta'>FABRICANTE DIVERGÊNTE ! </span> <span> <audio src='erro.mp3' autoplay></audio> </span>";
+			$_SESSION['msg'] = "<span class='alerta'>FABRICANTE NÃO É $fab ! </span> <span> <audio src='erro.mp3' autoplay></audio> </span>";
 
 
 			}
