@@ -90,9 +90,9 @@ unset($_SESSION['msg']);
 					</div>
 					<div class="panel-body centro">
 
-						<p>SELECT [Cadastro de Mercadorias].[Cód Fabricante], [Cadastro de Mercadorias].Mercadoria, [cadastro de mercadoriasLojas].PrecoGrade, [cadastro de mercadoriasLojas].Estoque, [Cadastro de Mercadorias].Fabricante, [Cadastro de Mercadorias].Grupo, [cadastro de mercadoriasLojas].Loja
+						<p>SELECT [Cadastro de Mercadorias].[Cód Fabricante], [Cadastro de Mercadorias].Mercadoria, [Cadastro de Mercadorias].[Preço de Venda], [cadastro de mercadoriasLojas].Estoque, [Cadastro de Mercadorias].Fabricante, [Cadastro de Mercadorias].Grupo
 FROM [Cadastro de Mercadorias] INNER JOIN [cadastro de mercadoriasLojas] ON [Cadastro de Mercadorias].[Código da Mercadoria] = [cadastro de mercadoriasLojas].[Código da Mercadoria]
-WHERE ((([cadastro de mercadoriasLojas].Loja)="loja 03"));
+WHERE ((([cadastro de mercadoriasLojas].Loja)="LOJA 03"));
 
 </p>
 					</div>
