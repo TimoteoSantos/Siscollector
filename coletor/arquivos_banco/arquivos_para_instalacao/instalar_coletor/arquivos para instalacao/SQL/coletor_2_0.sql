@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Jul-2019 às 16:07
--- Versão do servidor: 10.1.37-MariaDB
--- versão do PHP: 7.0.33
+-- Generation Time: 29-Jul-2019 às 12:23
+-- Versão do servidor: 10.1.36-MariaDB
+-- versão do PHP: 5.6.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `auditoria` (
 --
 
 INSERT INTO `auditoria` (`id`, `usuario`, `descricao`, `data`) VALUES
-(1, '', 'zerou o sistema', '2019-07-28 16:06:49');
+(1, 'admin', 'zerou o sistema', '2019-07-29 12:21:47');
 
 -- --------------------------------------------------------
 
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `coletar` (
   `quantidade` int(11) DEFAULT NULL,
   `fabricante` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `grupo` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `coleta` int(2) DEFAULT NULL,
+  `coleta` int(2) DEFAULT '0',
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -162,7 +162,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `senha` varchar(220) NOT NULL,
   `tipo` varchar(30) NOT NULL DEFAULT 'N',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `usuarios`
