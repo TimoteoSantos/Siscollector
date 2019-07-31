@@ -47,7 +47,7 @@ if ($id[0] == 1 ) {
 			header("Location: ../index.php");
 
 
-
+			//fabricante errado
 			$lista_conf = mysqli_query($conexao, "SELECT conf from config where conf = 4 ");	
 
 			while($conf = mysqli_fetch_array($lista_conf)) {

@@ -28,6 +28,15 @@ require 'arquivos_banco/conexao.php';
 	.area_fieldset {
 		margin: auto !important;
 		border-style:none !important;
+		width: 30em !important;
+
+	}
+
+	.botao_entrar {
+			width: 26em !important;
+			height: 3em;
+
+
 	}
 
 	h1 {
@@ -79,19 +88,19 @@ require 'arquivos_banco/conexao.php';
 
 					<span class="glyphicon glyphicon-user icones" aria-hidden="true"></span>
 
-				Entrar</h2>
+				Login</h2>
 
 				<div class="form-group">
-					<label for="exampleInputEmail1">Nome</label>
+					<label for="exampleInputEmail1"></label>
 					<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome" name="user" required="" autofocus="">
 
 				</div>
 				<div class="form-group">
-					<label for="exampleInputPassword1">Senha</label>
+					<label for="exampleInputPassword1"></label>
 					<input type="password"  name="senh" class="form-control" id="exampleInputPassword1" placeholder="Senha" required="">
 				</div>
 
-				<input type="submit" class="btn btn-primary" name="botao" value="Entrar" >
+				<input type="submit" class="btn btn-primary botao_entrar " name="botao" value="ENTRAR" >
 			</fieldset>
 		</form>
 
