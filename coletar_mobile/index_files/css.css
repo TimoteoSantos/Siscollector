@@ -67,9 +67,13 @@ form input {
 	
 
 		
-		bottom: 0.5em;
-		right: 10%;
+		bottom: 0em;
 		width: 100%;
+		height: 3.5em;
+		background-color: black !important;
+
+
+
 
 		
 }
@@ -136,6 +140,7 @@ margin-bottom: 1em;
 	
 	width: 80%;
 }
+
 
 /*tela grande--------------------------------------------------*/
 @media (min-width: 600px) 

@@ -42,7 +42,7 @@ require 'arquivos_banco/login_verificar.php';
         
         $pesquisar = filter_var($_POST['pesquisar'], FILTER_SANITIZE_STRING);
         
-        $result = "SELECT * FROM auditoria WHERE usuario = '$pesquisar' ";
+        $result = "SELECT * FROM auditoria WHERE usuario = '$pesquisar' ORDER BY data desc ";
 
         $resultado = mysqli_query($conexao, $result);
 
