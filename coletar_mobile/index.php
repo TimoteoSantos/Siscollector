@@ -73,7 +73,7 @@ require 'cabecalho.php';
 
         <a href="http://zxing.appspot.com/scan?ret=http://<?php echo $destino ?>/coletar_mobile/index.php?codigo={CODE}"> <?php  } ?>
   
-        <button class="btn btn-warning camera" type="submit">Câmera</button>
+        <img src="camera.jpg" height="60">
 
         <h2><?php// echo $destino;?> </h2>
 
@@ -102,10 +102,15 @@ require 'cabecalho.php';
   
       ?>
 
-      <button class="btn btn-danger" type="submit" onclick="start()">
+      <span type="hidden" onclick="start()">
       
            <a class="branco" href="arquivos_banco/excluir_ultimo.php?referencia=<?= $linha['referencia'] ?>&id=<?= $linha['id'] ?>&descricao=<?= $linha['descricao'] ?>&quantidade=<?= $linha['quantidade'] ?>"  onclick="return confirm('Excluir?')">
-             Excluir último</button>
+             </span>
+
+               <img src="excluir.jpg" height="55">
+
+            </a>
+
       
       <?php } ?>
 
