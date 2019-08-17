@@ -61,24 +61,29 @@ require 'cabecalho.php';
         </div>
         
         <div>
-          <?php
 
-      $listagem = mysqli_query($conexao,  "SELECT  max(camera) as camera FROM config limit 1"); 
-      while($linha = mysqli_fetch_array($listagem)) {
+        <span class="camera">
+        
+      		<?php
 
-        $destino = $linha["camera"];                  
-        //$destino = "192.168.1.1"; //destino manualmente
+      		$listagem = mysqli_query($conexao,  "SELECT  max(camera) as camera FROM config limit 1"); 
+      		while($linha = mysqli_fetch_array($listagem)) {
 
-        ?>
+      		$destino = $linha["camera"];                  
+      		//$destino = "192.168.1.1"; //destino manualmente
 
-        <a href="http://zxing.appspot.com/scan?ret=http://<?php echo $destino ?>/coletar_mobile/index.php?codigo={CODE}"> <?php  } ?>
+    	    ?>
+
+	        <a href="http://zxing.appspot.com/scan?ret=http://<?php echo $destino ?>/coletar_mobile/index.php?codigo={CODE}"> <?php  } ?>
   
-        <img src="camera.jpg" height="60">
+        		<img src="camera.jpg" height="60">
 
-        <h2><?php// echo $destino;?> </h2>
+        		<h2><?php// echo $destino;?> </h2>
+        		
+    		</a>
 
-
-
+    	</span>
+        
         <!-- excluir ultimo -->
 
         <?php 
