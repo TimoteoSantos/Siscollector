@@ -100,7 +100,6 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 				</div>
 			</div><!--fim do painel contagem produtos importados-->
 
-			
 			</section>
 
 		</section>

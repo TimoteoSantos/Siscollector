@@ -68,13 +68,11 @@ require 'arquivos_banco/login_verificar.php';
         </div>
       </div> <!-- fim do painel-->
 
-
-
     <!--importar pela pasta -->
     <p>   
       <div class="panel panel-primary panel-lang-2">
         <div class="panel-heading">
-        Para importar deixe na pasta configurada o arquivo com o nome "importar" que deve ser do tipo ".txt"</div>
+        Para importar deixe na pasta configurada o arquivo com o nome "produtos" que deve ser do tipo ".txt"</div>
         <div class="panel-body">
          <div class="form-group">
 
@@ -82,7 +80,7 @@ require 'arquivos_banco/login_verificar.php';
 
             <label for="exampleTextarea">
               <span class="glyphicon glyphicon-floppy-remove icones" aria-hidden="true"></span>
-            importar.txt "Arquivo de exemplo <a href="arquivos_banco/arquivos_para_instalacao/exemplo_importar.txt " target="blank"> aqui </a> " </label> 
+            produtos.txt "Arquivo de exemplo <a href="arquivos_banco/arquivos_para_instalacao/exemplo_importar.txt " target="blank"> aqui </a> " </label> 
             <br>
 
             <input type="submit" value="importar"
