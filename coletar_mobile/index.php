@@ -128,15 +128,13 @@ require 'cabecalho.php';
 $usuario = $_SESSION['usuario'];
 
     //coloca em listagem um array com apenas os campos vazios de status
-    $listagem = mysqli_query($conexao,"SELECT max(id) as id, referencia, sum(quantidade), descricao from coletor_importar  where usuario = '$usuario' group by referencia order by id desc limit 3;");
-
+    $listagem = mysqli_query($conexao,"SELECT max(id) as id, referencia, sum(quantidade), descricao from coletor_importar  where usuario = '$usuario' group by referencia order by id desc limit 2;");
 
    while($linha = mysqli_fetch_array($listagem)) {
 
+?>
 
-    ?>
-
-      <div class="clear"> <?php echo  utf8_encode($linha['descricao']) ; ?> | <?php echo $linha['sum(quantidade)']; ?></div>
+      <div class="clear" style='color:black !important';> <?php echo  utf8_encode($linha['descricao']) ; ?> | <span> <?php echo $linha['sum(quantidade)']; ?></span>| <?php echo $linha['referencia'] ?> <p></div>
 
 
 
