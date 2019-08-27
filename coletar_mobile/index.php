@@ -76,7 +76,7 @@ require 'cabecalho.php';
 
 	        <a href="http://zxing.appspot.com/scan?ret=http://<?php echo $destino ?>/coletar_mobile/index.php?codigo={CODE}"> <?php  } ?>
   
-        		<img src="camera.jpg" height="60">
+        		<img src="camera.jpg" height="60" class="lado">
 
         		<h2><?php// echo $destino;?> </h2>
         		
@@ -112,7 +112,7 @@ require 'cabecalho.php';
            <a class="branco" href="arquivos_banco/excluir_ultimo.php?referencia=<?= $linha['referencia'] ?>&id=<?= $linha['id'] ?>&descricao=<?= $linha['descricao'] ?>&quantidade=<?= $linha['quantidade'] ?>"  onclick="return confirm('Excluir?')">
              </span>
 
-               <img src="excluir.jpg" height="55">
+               <img src="excluir.jpg" height="55" class="lado">
 
             </a>
 
@@ -122,6 +122,25 @@ require 'cabecalho.php';
       </div>
 
 
+
+<?php 
+
+$usuario = $_SESSION['usuario'];
+
+    //coloca em listagem um array com apenas os campos vazios de status
+    $listagem = mysqli_query($conexao,"SELECT max(id) as id, referencia, sum(quantidade), descricao from coletor_importar  where usuario = '$usuario' group by referencia order by id desc limit 3;");
+
+
+   while($linha = mysqli_fetch_array($listagem)) {
+
+
+    ?>
+
+      <div class="clear"> <?php echo  utf8_encode($linha['descricao']) ; ?> | <?php echo $linha['sum(quantidade)']; ?></div>
+
+
+
+<?php } ?>
       
         </div>
 

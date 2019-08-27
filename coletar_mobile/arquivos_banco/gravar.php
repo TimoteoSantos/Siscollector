@@ -26,9 +26,6 @@ if ($id[0] == 1 ) {
 	$qt = filter_var($_POST['qt'], FILTER_SANITIZE_STRING);
 	$hora = date('Y-m-d H:i:s');
 
-
-
-
 	$listagem = mysqli_query($conexao, "SELECT referencia, descricao, fabricante from coletar where referencia = $ref  group by referencia; ");
 
 	//o while repete a criaçao de linhas na tabela igual a quantidade de itens.
@@ -55,7 +52,6 @@ if ($id[0] == 1 ) {
 			$conf = $conf['conf'];
 
 
-
 			$lista = mysqli_query($conexao, "SELECT fabricante from pdf ");	
 
 			while($fab = mysqli_fetch_array($lista)) {
@@ -77,7 +73,6 @@ if ($id[0] == 1 ) {
 	}
 
 }
-
 		//se o $ref não foi encontrado acima
 		if ($ref != isset($referencia) and $ref > 0){
 

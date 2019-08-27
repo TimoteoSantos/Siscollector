@@ -18,6 +18,14 @@ nav .container, li a {
 	width: 100% !important;
 	margin-top: 50px;
 }
+.lado{
+
+	float: left !important;
+}
+.clear {
+
+	clear: both;
+}
 
 form input {
 	margin-top: 10px;

@@ -67,19 +67,7 @@ unset($_SESSION['msg']);
 
 </div>
 
-
-
-
-
-
 </div> <!-- /container -->
-
-
-
-
- 
-
-
 
 
     <!-- Bootstrap core JavaScript
