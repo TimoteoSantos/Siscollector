@@ -85,6 +85,7 @@ require 'cabecalho.php';
     	</span>
         
         <!-- excluir ultimo -->
+        <span class="camera">
 
         <?php 
 
@@ -121,7 +122,9 @@ require 'cabecalho.php';
 
       </div>
 
+</span>
 
+<span class="camera">
 
 <?php 
 
@@ -141,6 +144,7 @@ $usuario = $_SESSION['usuario'];
 <?php } ?>
       
         </div>
+    </span>
 
       
       </div> <!-- /container -->
