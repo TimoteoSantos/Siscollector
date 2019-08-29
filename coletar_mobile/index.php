@@ -108,6 +108,8 @@ require 'cabecalho.php';
   
       ?>
 
+
+
       <span type="hidden" onclick="start()">
       
            <a class="branco" href="arquivos_banco/excluir_ultimo.php?referencia=<?= $linha['referencia'] ?>&id=<?= $linha['id'] ?>&descricao=<?= $linha['descricao'] ?>&quantidade=<?= $linha['quantidade'] ?>"  onclick="return confirm('Excluir?')">
@@ -120,11 +122,17 @@ require 'cabecalho.php';
       
       <?php } ?>
 
+
       </div>
 
 </span>
 
+
+<!-- inicio da lista de produtos coletados -->
+
 <span class="camera">
+
+
 
 <?php 
 
@@ -143,8 +151,10 @@ $usuario = $_SESSION['usuario'];
 
 <?php } ?>
       
+
         </div>
     </span>
+
 
       
       </div> <!-- /container -->

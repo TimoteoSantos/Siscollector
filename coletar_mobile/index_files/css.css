@@ -144,6 +144,10 @@ margin-bottom: 1em;
 	width: 80%;
 }
 
+.afastar_10{
+
+	margin-top: 5em !important;
+}
 
 /*tela grande--------------------------------------------------*/
 @media (min-width: 600px) 
