@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Ago-2019 às 16:02
+-- Generation Time: 04-Set-2019 às 16:40
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 5.6.38
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `auditoria` (
 --
 
 INSERT INTO `auditoria` (`id`, `usuario`, `descricao`, `data`) VALUES
-(1, '', 'zerou o sistema', '2019-08-28 16:02:16');
+(1, 'admin', 'zerou o sistema', '2019-09-04 16:39:34');
 
 -- --------------------------------------------------------
 
