@@ -1,13 +1,25 @@
   <?php
   session_start();
   require '../coletor/arquivos_banco/conexao.php';
+  
   ?>
 
   <!DOCTYPE html>
 
   <html lang="pt-br">
   <head>
-  	 
+	<!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="./index_files/jquery.min.js.download"></script>
+        <script src="./index_files/bootstrap.min.js.download"></script>
+       <?php  require_once 'index_files/funcaoEnter.js' ?>
+
+  		<script type="text/javascript">
+  		
+  		</script>
+
+  
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,10 +58,10 @@ require 'cabecalho.php';
             
             <div class="form-group">
 
-              <input type="number" name="ref" value="<?= $_GET['codigo'] ?>" class="form-control" id="exampleInputEmail1" placeholder="Barras" required="" autofocus="" autocomplete="off">
+              <input type="number" name="ref" value="<?= $_GET['codigo'] ?>" class="form-control inputUnico" id="exampleInputEmail1" placeholder="Barras" required="" autofocus="" autocomplete="off">
 
 
-              <input type="number" name="qt" class="form-control" id="exampleInputEmail1" value="1" required="" autofocus="" autocomplete="off">
+              <input type="number" name="qt" class="form-control inputUnico" id="exampleInputEmail1" required="" onfocus="this.selectionStart = this.selectionEnd = this.value.length;" autofocus="true" min="1"  >
 
               </div>
 
@@ -108,8 +120,6 @@ require 'cabecalho.php';
   
       ?>
 
-
-
       <span type="hidden" onclick="start()">
       
            <a class="branco" href="arquivos_banco/excluir_ultimo.php?referencia=<?= $linha['referencia'] ?>&id=<?= $linha['id'] ?>&descricao=<?= $linha['descricao'] ?>&quantidade=<?= $linha['quantidade'] ?>"  onclick="return confirm('Excluir?')">
@@ -132,8 +142,6 @@ require 'cabecalho.php';
 
 <span class="camera">
 
-
-
 <?php 
 
 $usuario = $_SESSION['usuario'];
@@ -145,7 +153,7 @@ $usuario = $_SESSION['usuario'];
 
 ?>
 
-      <div class="clear" style='color:black !important';> <?php echo  utf8_encode($linha['descricao']) ; ?> | <span> <?php echo $linha['sum(quantidade)']; ?></span>| <?php echo $linha['referencia'] ?> <p></div>
+      <div  class="clear"> D:<?php echo  utf8_encode($linha['descricao']) ; ?> | <span style='color:red !important';>QT:<?php echo $linha['sum(quantidade)']; ?></span> |REF: <?php echo $linha['referencia'] ?> <p></div>
 
 
 
@@ -156,15 +164,8 @@ $usuario = $_SESSION['usuario'];
     </span>
 
 
-      
-      </div> <!-- /container -->
+    </div> <!-- /container -->
 
-      <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="./index_files/jquery.min.js.download"></script>
-        <script src="./index_files/bootstrap.min.js.download"></script>
-
-      </body>
+           </body>
 
       </html>
