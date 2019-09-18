@@ -85,10 +85,10 @@ form button a{
 /* deixa o rodape em baixo da pagina */
 
 .clear_rodape {
-	clear:left;
+	/*clear:left;
 	position: fixed !important;
 	bottom: 0em !important;
-	
+	*/
   }
 
 .centro {

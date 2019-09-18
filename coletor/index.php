@@ -106,7 +106,7 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 
 	</section>
 
-	<?php include 'v_rodape.php' ?>
+	<?php // include 'v_rodape.php' ?>
 	
 	
 </body>
