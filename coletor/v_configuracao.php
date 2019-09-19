@@ -363,7 +363,6 @@ require 'arquivos_banco/login_verificar.php';
 
 
 						
-
 						?>
 
 						<button type="button" class="btn btn-danger" ><a href="arquivos_banco/excluir_alarme.php">Desfazer</a></button>
@@ -396,7 +395,7 @@ require 'arquivos_banco/login_verificar.php';
 
 						<?php
 
-						$listagem = mysqli_query($conexao, "SELECT count(estoque_loja)  FROM config where estoque_loja < 3 limit 1");
+						$listagem = mysqli_query($conexao, "SELECT count(estoque_loja)  FROM config where conf = 15 and estoque_loja < 3 limit 1");
 						//conta
 
 						$co = $listagem->fetch_row();
