@@ -19,16 +19,18 @@ $id2 = $conta;
 if ($id[0] < 1 and $id2[0] > 0) { 
 
 //soma a quantidade e agrupa os referencias
-	$listagem = mysqli_query($conexao, "SELECT referencia, sum(quantidade), descricao from coletor_importar group by referencia; ");
+	$listagem = mysqli_query($conexao, "SELECT referencia, sum(quantidade), descricao, sum(local_estoque), sum(local_loja) from coletor_importar group by referencia; ");
 	while($linha = mysqli_fetch_array($listagem)) {
 
 //pega os dados da consulta while
 		$referencia = $linha['referencia'];
 		$quantidade = $linha['sum(quantidade)'];
 		$descricao = $linha['descricao'];
+		$local_estoque = $linha['sum(local_estoque)'];
+		$local_loja = $linha['sum(local_loja)'];
 
 //inseri os valores recebidos nas variaveis acima
-		$query = "INSERT INTO coletor_exportar (referencia, quantidade, descricao) VALUES ('$referencia', '$quantidade', '$descricao')" ; 
+		$query = "INSERT INTO coletor_exportar (referencia, quantidade, descricao, local_estoque, local_loja) VALUES ('$referencia', '$quantidade', '$descricao', '$local_estoque', '$local_loja')" ; 
 
 // Executa a query
 		mysqli_query($conexao, $query);

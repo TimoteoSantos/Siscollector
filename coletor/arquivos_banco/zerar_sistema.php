@@ -11,8 +11,6 @@ $sql = "TRUNCATE coletor_exportar";
 mysqli_query($conexao, $sql);
 $sql = "TRUNCATE coletor_importar";
 mysqli_query($conexao, $sql);
-$sql = "TRUNCATE config";
-mysqli_query($conexao, $sql);
 $sql = "TRUNCATE diferenca";
 mysqli_query($conexao, $sql);
 $sql = "TRUNCATE pdf";

@@ -21,6 +21,39 @@ if ($id[0] == 1 ) {
 
 } else {
 
+
+//estoque / loja
+$estoque = mysqli_query($conexao, "SELECT estoque_loja from config where estoque_loja > 0 limit 1 ");
+
+//o while repete a criaçao de linhas na tabela igual a quantidade de itens.
+while($varrer = mysqli_fetch_array($estoque)) {
+$estoque_ver = $varrer['0'];
+
+					
+					switch ($estoque_ver) {
+						
+						case '1':
+
+							$gravar_estoque = 1;
+							$gravar_loja = 0;
+							break;
+
+						case '2':
+
+							$gravar_estoque = 0;
+							$gravar_loja = 1;
+							break;
+						
+						case '3':
+							$gravar_estoque = 0;
+							$gravar_loja = 0;
+							break;
+						
+					
+
+						}
+		}//fim do estoque / loja
+
 	$usuario = filter_var($_SESSION['usuario'], FILTER_SANITIZE_STRING);
 	$ref = filter_var($_POST['ref'], FILTER_SANITIZE_STRING);
 	$qt = filter_var($_POST['qt'], FILTER_SANITIZE_STRING);
@@ -38,7 +71,7 @@ if ($id[0] == 1 ) {
 		if ($ref == $referencia and $referencia > 0){
 
 			//inseri os valores recebidos nas variaveis acima
-			$query = "INSERT INTO coletor_importar (referencia, quantidade, descricao, usuario, hora) VALUES ('$referencia', '$qt', '$descricao', '$usuario', '$hora')" ; 
+			$query = "INSERT INTO coletor_importar (referencia, quantidade, descricao, usuario, hora, local_estoque, local_loja) VALUES ('$referencia', '$qt', '$descricao', '$usuario', '$hora', '$gravar_estoque', '$gravar_loja')" ; 
 			// Executa a query
 			mysqli_query($conexao, $query);
 			header("Location: ../index.php");
@@ -78,7 +111,7 @@ if ($id[0] == 1 ) {
 
 			$desc = utf8_decode('PRODUTO NÃO CADASTRADO');
 
-			$query = "INSERT INTO coletor_importar (referencia, quantidade, descricao, usuario, hora) VALUES ('$ref', '$qt', '$desc', '$usuario', '$hora')" ; 
+			$query = "INSERT INTO coletor_importar (referencia, quantidade, descricao, usuario, hora, local_estoque, local_loja) VALUES ('$ref', '$qt', '$desc', '$usuario', '$hora', '$gravar_estoque', '$gravar_loja')" ; 
 			
 			// Executa a query
 			mysqli_query($conexao, $query);
@@ -90,7 +123,7 @@ if ($id[0] == 1 ) {
 		//se o $ref for igual ou menor que zero
 		if ($ref <= 0){
 			header("Location: ../index.php");
-			$_SESSION['msg'] = "<span class='alerta'>BARRAS VÁLIDO!</span>";
+			$_SESSION['msg'] = "<span class='alerta'>BARRAS INVÁLIDO!</span>";
 
 		}
 

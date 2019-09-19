@@ -144,6 +144,9 @@ require 'arquivos_banco/conexao.php';
 												<span class="glyphicon glyphicon-indent-left icones" aria-hidden="true"></span>
 												<a href="v_diferenca_fabricante.php">Visualizar diferenca de um fabricante</a>
 												<p>
+												<span class="glyphicon glyphicon-indent-left icones" aria-hidden="true"></span>
+												<a href="v_listar_estoque_loja.php">Tem no estoque mas não tem na loja</a>
+												<p>
 												<!--<span class="glyphicon glyphicon-indent-left icones" aria-hidden="true"></span>
 												<a href="v_diferenca_fabricante_grupo.php">Visualizar diferenca de fabricante e grupo</a> -->
 

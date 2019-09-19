@@ -232,6 +232,7 @@ require 'arquivos_banco/login_verificar.php';
 						<?php
 					}
 				}
+
 				?>
 
 					</section>
@@ -312,7 +313,7 @@ require 'arquivos_banco/login_verificar.php';
 
 				<p>
 
-				<!-- tempo de atualização -->						
+										
 				<section class="form">
 
 				<form method="post" action="arquivos_banco/alarme.php">
@@ -380,27 +381,89 @@ require 'arquivos_banco/login_verificar.php';
 				</form>
 			</section>
 
+			<p>
+
+			<!-- estoque e loja -->						
+				<section class="form">
+
+				<form method="post" action="arquivos_banco/estoque_loja.php">
+
+					<fieldset class="area_fieldset"> <h3>
+						<span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>
+					Loja / Balanço</h3>
+
+					<div class="form-group">
+
+						<?php
+
+						$listagem = mysqli_query($conexao, "SELECT count(estoque_loja)  FROM config where estoque_loja < 3 limit 1");
+						//conta
+
+						$co = $listagem->fetch_row();
+						//recebe o valor
+						$contar_estoque = $co;
+						//se nao tiver cadastrado
+						if ($contar_estoque[0] != 1) {
+
+						?>
+
+							<h5> Configure Estoque / Loja </h5>
+
+							<label for="exampleInputEmail1">Dados</label>
+							<p>
+
+							<select class="form-control" name="tempo" >
+
+								<option value="1"> Estoque </option>
+								<option value="2"> Loja </option>
+								
+							</select>
+							
+						</div>
+
+						<button type="submit" class="btn btn-primary">Gravar</button>
+					</fieldset>
+
+					<?php } else {//se tiver cadastrado
+						
+
+						?>
+
+						<button type="button" class="btn btn-danger" ><a href="arquivos_banco/excluir_estoque_loja.php">Trocar</a></button>
+						<p>
+    					</p>
+
+    					<?php 
 
 
+    					$li = mysqli_query($conexao, "SELECT estoque_loja  FROM config where estoque_loja > 0 limit 1");
+						while($linha = mysqli_fetch_array($li)) {
+
+						$estoque = $linha["estoque_loja"];
+
+						if ($estoque == 1) {
+
+							$estoque1 = "Estoque";
+						}else{
+
+							$estoque1 = "Loja";
+						}
 
 
+    					?>
 
+    					<?php echo "<h4> Estoque / Loja: $estoque1</h4>"; ?>
 
+						<?php
 
+					}
 
+				}
+				?>
 
-
-
-
-
-
-
-
-
-
-
-
-					
+				</form>
+			</section>
+				
 			</section><!-- fim da div corpo -->
 		</section><!--fim da sessao principal-->
 	</body>
