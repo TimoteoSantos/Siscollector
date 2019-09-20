@@ -1,6 +1,9 @@
   <?php
   session_start();
   require '../coletor/arquivos_banco/conexao.php';
+
+  $referencia = $_GET['referencia'];
+ 
   ?>
 
   <!DOCTYPE html>
@@ -37,11 +40,9 @@
     
     <?php 
 
-$usuario = $_SESSION['usuario'];
-
+    $usuario = $_SESSION['usuario'];
     //coloca em listagem um array com apenas os campos vazios de status
-    $listagem = mysqli_query($conexao,"SELECT max(id) as id, referencia, sum(quantidade), descricao from coletor_importar  where usuario = '$usuario' group by referencia order by id desc;");
-
+    $listagem = mysqli_query($conexao,"SELECT id, referencia,quantidade, descricao, usuario, hora from coletor_importar   where referencia = '$referencia' and usuario = '$usuario' order by id desc;");
 
     ?>
 
@@ -49,40 +50,25 @@ $usuario = $_SESSION['usuario'];
 
       <table class="table table-hover"> 
 
-
         <?php
         while($linha = mysqli_fetch_array($listagem)) {
           ?>
-
-                         <!-- primeiro produto -->
+          <!-- primeiro produto -->
           <tr>
-
-          
-          
-            <td><a style='color:black; !important;' href="listar_detalhe.php?referencia=<?= $linha['referencia'] ?>"><?= $linha['referencia'] ?></a></td>
-        
-            <td><a style='color:black; !important;' href="listar_detalhe.php?referencia=<?= $linha['referencia'] ?>"><?= $linha['sum(quantidade)'] ?></a></td>
-
+            <td><?= $linha['referencia'] ?> </td>
+            <td><?= $linha['quantidade'] ?></td>
           </tr>
 
           <tr>
 
-            <td class="descricao"><a style='color:black; !important;' href="listar_detalhe.php?referencia=<?= $linha['referencia'] ?>"><?= utf8_encode($linha['descricao']); ?> </a></td>
-                   
-          
-             <td><button class="btn btn-warning" type="submit" onclick="start()">
-              <a class="branco" href="arquivos_banco/excluir_produto.php?referencia=<?= $linha['referencia'] ?>&descricao=<?= $linha['descricao'] ?>&quantidade=<?= $linha['sum(quantidade)'] ?>"  onclick="return confirm('Excluir?')">
-             Excluir</button>
-           
+            <td class="descricao" colspan="2"><?= utf8_encode($linha['descricao']); ?> <br /> <?= $linha['hora'] ?></td>
 
-         </td>
+            
 
        </tr>
-</a>
        <!-- fim produto -->
 
        <?php 
-
      }
 
      ?>

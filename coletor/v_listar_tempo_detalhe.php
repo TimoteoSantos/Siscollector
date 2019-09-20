@@ -26,7 +26,6 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 
 ?>
 
-
 </head>
 
 <body>
@@ -37,7 +36,6 @@ include 'arquivos_banco/atualizar_automaticamente.php'
    <?php require 'v_cabecalho.php';?>
    
    <section class="corpo">
-
 
     <!-- header -->
     <div class="jumbotron jumbotron-fluid">

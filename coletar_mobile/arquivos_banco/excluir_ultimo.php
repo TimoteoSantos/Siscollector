@@ -42,7 +42,7 @@ mysqli_query($conexao, $sql);
 //fim da autidoria
 
 
-$_SESSION['msg'] = "<p> <span  style='color: !important; size=22px;'>  R:[$referencia] D:[$descricao] Q:[$quantidade] </p>";
+$_SESSION['msg'] = "<p> <span  style='black !important: !important; size=22px;'>  R:[$referencia] D:[$descricao] Q:[$quantidade] </p>";
 
 header("Location: ../index.php");
 exit();

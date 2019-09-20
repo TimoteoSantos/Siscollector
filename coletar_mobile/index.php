@@ -68,7 +68,7 @@ require 'cabecalho.php';
               <input type="submit" class="btn btn-primary enviar" value="Enviar">
            
             </form>
-            
+
           </div>
         </div>
         
@@ -114,8 +114,6 @@ require 'cabecalho.php';
 
       $listagem = mysqli_query($conexao,"SELECT id, referencia, quantidade, descricao from coletor_importar  where usuario = '$usuario' and id= '$id2' limit 1;");
 
-
-
       while($linha = mysqli_fetch_array($listagem)) {
   
       ?>
@@ -137,7 +135,6 @@ require 'cabecalho.php';
 
 </span>
 
-
 <!-- inicio da lista de produtos coletados -->
 
 <span class="camera">
@@ -152,20 +149,31 @@ $usuario = $_SESSION['usuario'];
    while($linha = mysqli_fetch_array($listagem)) {
 
 ?>
+    <div  class="clear">
 
-      <div  class="clear"> D:<?php echo  utf8_encode($linha['descricao']) ; ?> | <span style='color:red !important';>QT:<?php echo $linha['sum(quantidade)']; ?></span>  |REF: <span style='color:#008080 !important';> <?php echo $linha['referencia'] ?></span> <p></div>
+      <a style='color:black; !important;' href="listar_detalhe.php?referencia=<?= $linha['referencia'] ?>">
 
+          D:<?php echo  utf8_encode($linha['descricao']) ; ?> 
 
+          <span style='color:red !important';>
 
-<?php } ?>
-      
+          | QT:<?php echo $linha['sum(quantidade)']; ?></span> 
 
-        </div>
+          | REF: <span style='color:#008080 !important';>
+
+          <?php echo $linha['referencia'] ?></span>
+        
+        <p></p>
+
+      </a>
+    </div>
+
+    <?php } ?>
+
+    </div>
     </span>
-
 
     </div> <!-- /container -->
 
-           </body>
-
-      </html>
+ </body>
+ </html>
