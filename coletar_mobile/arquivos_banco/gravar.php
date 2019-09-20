@@ -6,7 +6,7 @@ session_start();
 require '../../coletor/arquivos_banco/conexao.php';
 
 //usar uma view para ver se já processou os dados
-$listagem = mysqli_query($conexao,  "SELECT count(id) from coletor_exportar limit 1");
+$listagem = mysqli_query($conexao,  "SELECT id from coletor_exportar limit 1");
 
 //conta a quandidade de linhas que carregaram e $listagem
 $contar = $listagem->fetch_row();
@@ -44,15 +44,16 @@ $estoque_ver = $varrer['0'];
 							$gravar_loja = 1;
 							break;
 						
-						case '3':
+						default:
 							$gravar_estoque = 0;
 							$gravar_loja = 0;
 							break;
 						
-					
+		
 
-						}
+											}
 		}//fim do estoque / loja
+
 
 	$usuario = filter_var($_SESSION['usuario'], FILTER_SANITIZE_STRING);
 	$ref = filter_var($_POST['ref'], FILTER_SANITIZE_STRING);
