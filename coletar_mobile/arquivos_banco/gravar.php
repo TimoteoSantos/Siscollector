@@ -6,7 +6,7 @@ session_start();
 require '../../coletor/arquivos_banco/conexao.php';
 
 //usar uma view para ver se já processou os dados
-$listagem = mysqli_query($conexao,  "SELECT id from coletor_exportar");
+$listagem = mysqli_query($conexao,  "SELECT count(id) from coletor_exportar limit 1");
 
 //conta a quandidade de linhas que carregaram e $listagem
 $contar = $listagem->fetch_row();
@@ -14,7 +14,7 @@ $contar = $listagem->fetch_row();
 $id = $contar;
 
 //se tiver registro na tabela exportar senao nao deixa baixar
-if ($id[0] == 1 ) {
+if ($id[0] > 0 ) {
 
 	header("Location: ../index.php");
 	$_SESSION['msg'] = "<span> ERRO! COLETA ENCERRADA <span>";

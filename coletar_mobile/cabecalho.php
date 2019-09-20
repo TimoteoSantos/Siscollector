@@ -63,6 +63,9 @@
                                   echo "Loja";
                                   break;
                                 
+                                default;
+                                echo "Avulso";
+                                break;
                                 
 
                                 }
