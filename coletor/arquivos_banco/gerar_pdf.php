@@ -143,8 +143,6 @@
 
 }
 
-
-
 	//Renderizar o html
 	$dompdf->render();
 
