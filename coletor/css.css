@@ -137,10 +137,10 @@ form button a{
 
 fieldset {
 
-	border:2px solid #008B8B !important;
+	border:1px solid #008B8B !important;
 	padding: 2em !important;
 	border-radius: 0px;
-	width: 45em;
+	width: auto !important;
 }
 
 fieldset > h3 {

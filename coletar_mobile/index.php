@@ -19,8 +19,7 @@
   		
   		</script>
 
-  
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Siscollect Mobi</title>
@@ -61,7 +60,7 @@ require 'cabecalho.php';
               <input type="number" name="ref" value="<?= $_GET['codigo'] ?>" class="form-control inputUnico" id="exampleInputEmail1" placeholder="Barras" required="" autofocus="" autocomplete="off">
 
 
-              <input type="number" name="qt" class="form-control inputUnico" id="exampleInputEmail1" required="" onfocus="this.selectionStart = this.selectionEnd = this.value.length;" autofocus="true" min="1"  >
+              <input type="number" name="qt" class="form-control inputUnico" id="exampleInputEmail1" required="" onfocus="this.selectionStart = this.selectionEnd = this.value.length;" autofocus="true" min="1" max="7000"  >
 
               </div>
 
