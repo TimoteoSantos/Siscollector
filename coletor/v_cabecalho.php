@@ -10,7 +10,7 @@ $usuario = $_SESSION['usuario'];
 <nav class="menu">
 	
 	<ul>
-		<li> <a href="index.php" id="a"> <img src="logo.png" height="22px" alt=""> SisCollect	</a></li>
+		<li> <a href="index.php" id="a"> <img src="logo.png" height="22px" alt=""> SisCollector	</a></li>
 		
 	
 		<li><a href="#">Processamento</a>

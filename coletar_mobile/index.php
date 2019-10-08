@@ -22,7 +22,7 @@
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Siscollect Mobi</title>
+    <title>Siscollector Mobi</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./index_files/bootstrap.min.css" rel="stylesheet">

@@ -39,7 +39,7 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 			<!-- header painel com a imagem -->
 			<div class="jumbotron jumbotron-fluid">
 				<div class="container">
-					<h1 class="display-4">Siscollect</h1>
+					<h1 class="display-4">Siscollector</h1>
 					<p class="lead">Sistema de gerênciamento de coletores</p>
 				</div>
 			</div>
