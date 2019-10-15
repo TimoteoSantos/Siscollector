@@ -42,9 +42,10 @@
 
     $usuario = $_SESSION['usuario'];
     //coloca em listagem um array com apenas os campos vazios de status
-    $listagem = mysqli_query($conexao,"SELECT id, referencia,quantidade, descricao, usuario, hora from coletor_importar   where referencia = '$referencia' and usuario = '$usuario' order by id desc;");
+    $listagem = mysqli_query($conexao,"SELECT id, referencia,quantidade, descricao, usuario, hora, local_estoque, local_loja from coletor_importar   where referencia = '$referencia' and usuario = '$usuario' order by id desc;");
 
-    ?>
+    
+        ?>
 
     <div class="container" id="topo">
 
@@ -52,6 +53,23 @@
 
         <?php
         while($linha = mysqli_fetch_array($listagem)) {
+
+
+        	$imprimir_valor = '';
+
+        	if ($linha['local_estoque'] == 1) {
+    	
+    	$imprimir_valor = "Estoque";
+    }
+
+    if ($linha['local_loja'] == 1) {
+    	
+    	$imprimir_valor = "Loja";
+    }
+
+
+
+
           ?>
           <!-- primeiro produto -->
           <tr>
@@ -61,7 +79,7 @@
 
           <tr>
 
-            <td class="descricao" colspan="2"><?= utf8_encode($linha['descricao']); ?> <br /> <?= $linha['hora'] ?></td>
+            <td class="descricao" colspan="2"><?= utf8_encode($linha['descricao']); ?> <br /> <?= $linha['hora'] ?> <?php echo" | " .$imprimir_valor; ?></td>
 
             
 
