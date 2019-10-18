@@ -26,7 +26,7 @@ $usuario = $_SESSION['usuario'];
 			</ul>
 		</li>
 
-		<li><a href="#">Coletas</a>
+		<li><a href="#">Coletas </a>
 
 			<ul>
 				

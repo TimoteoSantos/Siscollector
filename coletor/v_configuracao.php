@@ -293,9 +293,7 @@ require 'arquivos_banco/login_verificar.php';
 
 						$tempo = $linha["tempo"];
 						
-
 						?>
-
 						<button type="button" class="btn btn-danger" ><a href="arquivos_banco/excluir_tempo.php">Trocar</a></button>
 						<p>
 
@@ -388,7 +386,7 @@ require 'arquivos_banco/login_verificar.php';
 				<form method="post" action="arquivos_banco/estoque_loja.php">
 
 					<fieldset class="area_fieldset"> <h3>
-						<span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>
+						<span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>
 					Loja / Balanço</h3>
 
 					<div class="form-group">
@@ -462,6 +460,28 @@ require 'arquivos_banco/login_verificar.php';
 
 				</form>
 			</section>
+
+
+			<p>
+			<!-- estoque e loja -->						
+				<section class="form">
+
+					<form method="post" action="arquivos_banco/estoque_loja.php">
+
+					<fieldset class="area_fieldset"> <h3>
+						<span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
+					configuração de rede do servidor</h3>
+
+					<div class="form-group">
+
+						<?php include 'arquivos_banco/ip.php'; ?>
+
+					</div>
+				</fieldset>
+			</form>
+
+
+				</section>
 				
 			</section><!-- fim da div corpo -->
 		</section><!--fim da sessao principal-->
