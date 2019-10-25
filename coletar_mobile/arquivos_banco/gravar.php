@@ -66,7 +66,7 @@ if ($id[0] > 0 ) {
 					
 		if ($ref == $referencia and $referencia > 0) {
 
-			$query = "INSERT INTO coletor_importar (referencia, quantidade, descricao, usuario, hora, local_estoque, local_loja) VALUES ('$referencia', '$qt', '$descricao', '$usuario', '$hora', '$gravar_estoque', '$gravar_loja')" ; 
+			$query = "INSERT INTO coletor_importar (referencia, quantidade, descricao, usuario, hora, local_estoque, local_loja) VALUES ('$ref', '$qt', '$descricao', '$usuario', '$hora', '$gravar_estoque', '$gravar_loja')" ; 
 			mysqli_query($conexao, $query);
 			header("Location: ../index.php");
 							
