@@ -30,11 +30,7 @@ if ($id[0] < 1) {
 		$quantidade = ($dados[1]);
 		$descricao = ($dados[2]);
 		$usuario = ($dados[3]);
-
-		if (isset($usuario)) {
-
-			$usuario = "sem usuario";
-		}
+				
 	
 
 		//inseri os dados das variaveis acima no banco

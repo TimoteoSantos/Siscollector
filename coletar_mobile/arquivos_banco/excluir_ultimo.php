@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 require '../../coletor/arquivos_banco/conexao.php';
@@ -28,9 +29,7 @@ $id = filter_var($_GET['id'], FILTER_SANITIZE_STRING);
 echo $referencia;
 $sql = "DELETE FROM coletor_importar WHERE id = '$id' AND usuario = '$usuario'";
 
-
 mysqli_query($conexao, $sql) or die ("Erro:" .mysqli_error($conexao));
-
 
 //auditoria
 $usuario = $_SESSION['usuario'];
@@ -41,14 +40,10 @@ $sql = "INSERT INTO auditoria (usuario, data, descricao) VALUES ('$usuario','$da
 mysqli_query($conexao, $sql);
 //fim da autidoria
 
-
-$_SESSION['msg'] = "<p> <span  style='black !important: !important; size=22px;'>  R:[$referencia] D:[$descricao] Q:[$quantidade] </p>";
+$_SESSION['msg'] = "<p> <span  style='black !important: !important; size=22px;'>  R:$referencia D:$descricao QT:$quantidade </p>";
 
 header("Location: ../index.php");
 exit();
 MYSQLI_CLOSE($conexao);
 
-
-
 }
-
