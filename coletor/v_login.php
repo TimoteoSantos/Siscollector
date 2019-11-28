@@ -31,8 +31,6 @@ require 'arquivos_banco/conexao.php';
 		border-style:none !important;
 		width: 30em !important;
 		border-radius: 20px;
-
-
 	}
 
 	.botao_entrar {
