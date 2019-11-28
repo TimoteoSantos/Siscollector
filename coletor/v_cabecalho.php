@@ -55,7 +55,7 @@ $usuario = $_SESSION['usuario'];
 		<li> <a href="#"> Olá, <?php echo $usuario ;?> ! </a>
 			
 			<ul> 
-			<li><a href="#">Versão 2.2</a></li>
+			
 				<li> <a href="arquivos_banco/sair.php" id="red"> Sair </a> </li>
 			</ul>
 			
