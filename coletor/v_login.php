@@ -20,15 +20,18 @@ require 'arquivos_banco/conexao.php';
 	}
 	
 	fieldset{
-	background-color: ;
+	background-color: black !important ;
 	opacity: 0.8;
 
 	}
 
 	.area_fieldset {
-		margin: auto !important;
+		margin-top: 10% !important;
+		margin-left: 25% !important;
 		border-style:none !important;
 		width: 30em !important;
+		border-radius: 20px;
+
 
 	}
 
@@ -41,7 +44,7 @@ require 'arquivos_banco/conexao.php';
 
 	h1 {
 		margin-left: 20px;
-		color: black;
+		color: #FFFFFF !important;
 		margin-left: 20px !important;
 	}
 
@@ -71,24 +74,25 @@ require 'arquivos_banco/conexao.php';
 
 		<section class="corpo">
 
-		<h1><span><img src="logo.png" alt=""></span> SisCollect</h1>
+		<!--<h1><span><img src="logo.png" alt=""></span> SisCollect</h1>-->
 
 		<p>
 
 		<!--<h4  style="margin-left: 20px; color: #008B8B"> Entre com suas credênciais </h4>-->
 
 		<!-- form de usuarios-->
-		
+		<?php require 'arquivos_banco/mensagens.php'; ?> 
 
 	<section class="form">
 
 		<form action="arquivos_banco/valida.php" method="post">
 
-				<fieldset class="area_fieldset"> 	<?php require 'arquivos_banco/mensagens.php'; ?> <h2>
+				<fieldset class="area_fieldset"> 
 
-					<span class="glyphicon glyphicon-user icones" aria-hidden="true"></span>
+					<!--<span class="glyphicon glyphicon-user icones" aria-hidden="true"></span>
 
-				Login</h2>
+				Login</h2>-->
+				<h1><span><img src="logo.png" alt=""></span> SisCollect</h1>
 
 				<div class="form-group">
 					<label for="exampleInputEmail1"></label>
