@@ -20,17 +20,18 @@ require 'arquivos_banco/conexao.php';
 	}
 	
 	fieldset{
-	background-color: black !important ;
+	background-image: url(bg.jpg);
 	opacity: 0.8;
 
 	}
 
 	.area_fieldset {
-		margin-top: 10% !important;
-		margin-left: 25% !important;
+		margin: auto;
 		border-style:none !important;
 		width: 30em !important;
-		border-radius: 20px;
+		border-radius: 4px;
+		box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+		
 	}
 
 	.botao_entrar {

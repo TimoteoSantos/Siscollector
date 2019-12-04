@@ -11,7 +11,6 @@ require 'arquivos_banco/login_verificar.php';
   <head>
 
 <?php
-
  
   $listagem = mysqli_query($conexao,  "SELECT COUNT(id)  FROM coletar");
   //conta
@@ -57,8 +56,10 @@ require 'arquivos_banco/login_verificar.php';
   <?php 
         
         $pesquisar = filter_var($_POST['pesquisar'], FILTER_SANITIZE_STRING);
+
+       
         
-        $result = "SELECT * FROM coletar WHERE MATCH(descricao) AGAINST('$pesquisar') and referencia <> '0'";
+        $result = "SELECT * FROM coletar WHERE descricao like '%$pesquisar%' and referencia <> '0'";
 
         $resultado = mysqli_query($conexao, $result);
 
