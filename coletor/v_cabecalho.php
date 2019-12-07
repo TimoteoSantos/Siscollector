@@ -28,13 +28,13 @@ $usuario = $_SESSION['usuario'];
 
 		<li><a href="#">Coletas </a>
 
-			<ul>
-				
+			<ul>				
 				<li><a href="v_importar_arquivo_erp.php">Importar Arquivo</a></li>
 				<li><a href="v_coleta.php">Gerenciar</a></li>
 				<li><a href="../coletar_mobile/index.php" target="blank">Coletar dados</a></li>
 				
 			</ul>
+
 		</li>
 
 		<li><a href="#">Integrar Server</a>
@@ -46,11 +46,18 @@ $usuario = $_SESSION['usuario'];
 			
 		</li>
 
-		
 		<li><a href="v_pesquisa_preco.php">Pesquisa de preço</a> </li>
-		
-	
-		<li><a href="v_usuario.php">Usuários</a></li>
+
+		<li><a href="#">Cadastro</a>
+			
+			<ul>
+				<li><a href="v_usuario.php">Usuário</a></li>
+
+				<li><a href="#">Empresas</a></li>
+				
+			</ul>
+			
+		</li>
 		
 		<li> <a href="#"> Olá, <?php echo $usuario ;?> ! </a>
 			
@@ -61,7 +68,7 @@ $usuario = $_SESSION['usuario'];
 			
 		</li>
 
-</a> </li>
+ </li>
 
 	</ul>
 
