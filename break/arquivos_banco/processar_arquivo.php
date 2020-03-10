@@ -5,7 +5,7 @@ session_start();
 //conexao com banco
 require '../../coletor/arquivos_banco/conexao.php';
 
-$listagem = mysqli_query($conexao,  'SELECT COUNT(id)  FROM vendas');
+$listagem = mysqli_query($conexao,  "SELECT COUNT(id)  FROM vendas;");
 //conta
 $conta = $listagem->fetch_row();
 //recebe o valor
@@ -15,7 +15,7 @@ $id2 = $conta;
 if ($id2[0] > 0) {	
 
 
-$listagem = mysqli_query($conexao,  "SELECT COUNT(id)  FROM coletor_exportar");
+$listagem = mysqli_query($conexao,  "SELECT COUNT(id)  FROM coletor_exportar;");
 //conta
 $contar = $listagem->fetch_row();
 //recebe o valor
@@ -24,7 +24,7 @@ $id = $contar;
 if ($id[0] < 1 ) { 
 
 $_SESSION['msg'] = "<div class='alert alert-danger'> <span class='glyphicon glyphicon-remove remove' aria-hidden='true'></span> Você ainda não processou!</div>";
-header("Location: ../v_baixar.php");
+header("Location: ../index.php");
 
 }else {
 
@@ -54,7 +54,7 @@ header("Location: ../v_baixar.php");
 		if ($ref == $referencia){
 
 						
-			$result_usuario = "UPDATE coletor_exportar SET quantidade = '$quantidade' WHERE referencia = '$referencia'";
+			$result_usuario = "UPDATE coletor_exportar SET quantidade = '$quantidade' WHERE referencia = '$referencia';";
 			$resultado_usuario = mysqli_query($conexao, $result_usuario);
 
 								
@@ -77,11 +77,3 @@ header("Location: ../v_baixar.php");
 	header("Location: ../index.php");
 		
 	}
-
-header("Location: ../index.php");
-					
-			//apos gravar envia a mensagen
-			$_SESSION['msg'] = "<div class='alert alert-success'><span class='glyphicon glyphicon-ok icones' aria-hidden='true'></span> Terminado!</div>";
-			
-			//redireciona
-			header("Location: ../index.php");

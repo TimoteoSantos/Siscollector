@@ -20,8 +20,8 @@ require '../../coletor/arquivos_banco/conexao.php';
 	 {
 		//pega os dados do while acima e coloca nas variaveis
 		$referencia = ($dados[0]);
-		$descricao = ($dados[2]);
-		$quantidade = ($dados[1]);
+		$descricao = ($dados[1]);
+		$quantidade = ($dados[2]);
 		
 	//inseri os dados das variaveis acima no banco
 	$result_usuario = "INSERT INTO vendas (referencia,descricao, quantidade) VALUES ('$referencia', '$descricao', '$quantidade')";
