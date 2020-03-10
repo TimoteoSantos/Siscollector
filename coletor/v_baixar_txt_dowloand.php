@@ -27,7 +27,6 @@ require 'arquivos_banco/login_verificar.php';
 
 	}
 
-
 	$querymai = mysqli_query($conexao, "select referencia, quantidade, descricao from coletor_exportar");
 
 	//abre para leitura e apaga os dados armazenados anteriormente se nao colocar ele duplica
@@ -48,15 +47,15 @@ require 'arquivos_banco/login_verificar.php';
 
 	?>
 
-
 	<title>baixar como texto</title>
 	<!-- link para os css-->
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css.css">
 	<link rel="stylesheet" href="normalize.css">
-</head>
+	
+	</head>
 
-<body>
+	<body>
 	
 	<!-- sessao principal -->
 	<section id="principal">

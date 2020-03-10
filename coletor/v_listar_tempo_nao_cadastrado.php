@@ -10,7 +10,7 @@ require 'arquivos_banco/login_verificar.php';
 <head>
 
   <?php
-   $desc = utf8_decode('Produto não cadastrado');
+   $desc = utf8_decode('Produto nao cadastrado');
 
   $listagem = mysqli_query($conexao,  "SELECT COUNT(id)  FROM coletor_importar where descricao = '$desc'");
   //conta

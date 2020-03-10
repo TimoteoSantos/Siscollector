@@ -49,7 +49,7 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 
 			<!--painel de contagem produtos coletados-->
 			<div class="panel panel-primary painel_contagem">
-				<div class="panel-heading panel-heading-coletados">
+				<div class="panel-heading panel-heading-coletados vermelho">
 					<h3 class="panel-title">  Quantidade de registros coletados</h3>
 				</div>
 				<div class="panel-body centro">
@@ -58,20 +58,33 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 			</div><!--fim do painel contagem produtos coletados-->
 
 			
+			<!--quantidade total-->
+			<div class="panel panel-primary painel_contagem ">
+				<div class="panel-heading panel-heading_index vermelho">
+					<h3 class="panel-title"> Quantidade total de produtos </h3>
+				</div>
+				<div class="panel-body centro">
+					<h4><?php echo $total[0]; ?> </h4>
+				</div>
+			</div><!--fim do painel contagem produtos importados-->
+
+			
 			<!--painel de contagem produtos importados-->
 			<div class="panel panel-primary painel_contagem">
 				<div class="panel-heading panel-heading_index">
 					<h3 class="panel-title"> Quantidade de registros Importados</h3>
 				</div>
 				<div class="panel-body centro">
-					<h4><?php echo $importados[0]; ?> </h4>
+
+
+					<h4><?php echo $total2; ?> </h4>
 				</div>
 			</div><!--fim do painel contagem produtos importados-->
 			
 
 			<!--painel de contagem produtos processados-->
 			<div class="panel panel-primary painel_contagem">
-				<div class="panel-heading">
+				<div class="panel-heading vermelho">
 					<h3 class="panel-title"> <a href="v_listar_processados.php"> Quantidade de registros processados </a></h3>
 				</div>
 				<div class="panel-body centro">
@@ -100,6 +113,8 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 				</div>
 			</div><!--fim do painel contagem produtos importados-->
 
+
+			
 			</section>
 
 		</section>

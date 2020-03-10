@@ -32,6 +32,21 @@
 	$listage = mysqli_query($conexao,  " SELECT COUNT(DISTINCT referencia) FROM coletor_importar");
 		//conta a quandidade de linhas que carregaram e $listagem
 	$coletado = $listage->fetch_row();
+
+	// conta a quantidade ja agrupando as referencias
+	$listage = mysqli_query($conexao,  " SELECT sum(quantidade) FROM coletor_importar");
+		//conta a quandidade de linhas que carregaram e $listagem
+	$total = $listage->fetch_row();
+
+
+	if (isset($total))
+
+	{
+		$total2 = $importados[0];
+	}
+
+
+
 		
 	/*
 	FUNÇAO PARA AGRUPAR A CONTAGEM: COUNT(DISTINCT referencia)

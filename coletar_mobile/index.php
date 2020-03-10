@@ -43,17 +43,15 @@ require 'cabecalho.php';
 
           <div class="alert" role="alert">
 
-            <?php
 
-            if(isset($_SESSION['msg'])){
-              echo $_SESSION['msg'];
-              unset($_SESSION['msg']);
-              }
+            <?php include 'mensagens.php'; ?>
             
-            ?>
-          </div>
+            <p>
+             
 
-      <form action="arquivos_banco/gravar.php" method="post">
+         </div>
+
+        <form action="arquivos_banco/gravar.php" method="post">
             
             <div class="form-group">
 

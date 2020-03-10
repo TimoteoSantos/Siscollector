@@ -251,7 +251,8 @@ label[for="bt_menu"]{
 }
 
 .vermelho  {
-	background-color:rgb(19, 104, 51) !important;
+	background-color:#ff9400 !important;
+	color: BLACK !important;
 }
 
 .red2  {

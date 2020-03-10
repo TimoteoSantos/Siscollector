@@ -2,6 +2,7 @@
 
 // inicia a sessao
 session_start();
+
 //conexao com banco
 require '../../coletor/arquivos_banco/conexao.php';
 
@@ -14,42 +15,13 @@ $id = $contar;
 if ($id[0] > 0 ) {
 
 	header("Location: ../index.php");
-	$_SESSION['msg'] = "<span> ERRO! COLETA ENCERRADA <span>";
+	$_SESSION['msg'] = "<span> DESCULPA! COLETA ENCERRADA :( <span>";
 
 	} else {
+	//se nao processou
 
-			//valor da varia caso nao exista no while abaixo valor padrao
-			$gravar_estoque = 0;
-			$gravar_loja = 0;
-
-		//estoque / loja selecao
-		$estoque = mysqli_query($conexao, "SELECT estoque_loja from config where estoque_loja > 0 limit 1 ");
-
-		while($varrer = mysqli_fetch_array($estoque)) {
-
-		$estoque_ver = $varrer['0'];
-
-		switch ($estoque_ver) {
-			
-			case '1':
-
-				$gravar_estoque = 1;
-				$gravar_loja = 0;
-				break;
-
-			case '2':
-
-				$gravar_estoque = 0;
-				$gravar_loja = 1;
-				break;
-			
-			default:
-				$gravar_estoque = 0;
-				$gravar_loja = 0;
-				break;
-								
-				}
-			} //fim do estoque / loja
+		//verificar se esta coletando no estoque ou na loja
+		require_once 'verificar_estoque_loja.php';
 
 			$usuario = filter_var($_SESSION['usuario'], FILTER_SANITIZE_STRING);
 			$ref = filter_var($_POST['ref'], FILTER_SANITIZE_STRING);
@@ -67,52 +39,51 @@ if ($id[0] > 0 ) {
 		if ($ref == $referencia and $referencia > 0) {
 
 			$query = "INSERT INTO coletor_importar (referencia, quantidade, descricao, usuario, hora, local_estoque, local_loja) VALUES ('$ref', '$qt', '$descricao', '$usuario', '$hora', '$gravar_estoque', '$gravar_loja')" ; 
-			mysqli_query($conexao, $query);
+			
+			
+
+			if ($conexao->query($query) === TRUE) {
+
+				$_SESSION['msg'] = "<span class='alerta'><span><audio src='gravou.mp3' autoplay></audio> </span>";
+			    
+			} else {
+
+			    $_SESSION['msg'] = "<span class='alerta'><span>Algo deu errado!<audio src='erro.mp3' autoplay></audio> </span>";
+			}
+
+
 			header("Location: ../index.php");
 							
+
 				//fabricante verificar se o fabricante é o configurado
+				require_once 'verificar_fabricante.php';
+			
 
-				$lista_conf = mysqli_query($conexao, "SELECT conf from config where conf = 4 ");	
-
-				while($conf = mysqli_fetch_array($lista_conf)) {
-
-				$conf = $conf['conf'];
-
-				$lista = mysqli_query($conexao, "SELECT fabricante from pdf ");	
-
-				while($fab = mysqli_fetch_array($lista)) {
-
-				$fab = $fab['fabricante'];
-
-				$fabricante = $linha['fabricante'];
-
-					if ($fabricante <> $fab and $conf = 4) {
-							
-						$_SESSION['msg'] = "<span class='alerta'>FABRICANTE NÃO É $fab ! </span> <span> <audio src='erro.mp3' autoplay></audio> </span>";
-
-
-						
-						}
-					}
-				}
 			}
 		}
 
 				//se nao cadastrado 
 				if ($ref != isset($referencia) and $ref > 0){
 
-					$desc = utf8_decode('PRODUTO NÃO CADASTRADO');
+					$desc = utf8_decode('PRODUTO NAO CADASTRADO');
 
 					$query = "INSERT INTO coletor_importar (referencia, quantidade, descricao, usuario, hora, local_estoque, local_loja) VALUES ('$ref', '$qt', '$desc', '$usuario', '$hora', '$gravar_estoque', '$gravar_loja')" ; 
 							
-					mysqli_query($conexao, $query);
-					header("Location: ../index.php");
-					$_SESSION['msg'] = "<span class='alerta'>NÃO CADASTRADO </span> <span> <audio src='erro.mp3' autoplay></audio> </span>";
+					
+					if ($conexao->query($query) === TRUE) {
 
-				}
-						//se o $ref for igual ou menor que zero
-						if ($ref <= 0){
-						header("Location: ../index.php");
-						$_SESSION['msg'] = "<span class='alerta'>BARRAS INVÁLIDO!</span>";
+				$_SESSION['msg'] = "<span class='alerta'>NÃO CADASTRADO </span> <span> <audio src='erro.mp3' autoplay></audio> </span>";
+			    
+			} else {
+
+			    $_SESSION['msg'] = "<span class='alerta'><span> Algo deu errado!<audio src='erro.mp3' autoplay></audio> </span>";
+
 			}
+
+			
+			header("Location: ../index.php");
+					
+				
+			}
+
 	}

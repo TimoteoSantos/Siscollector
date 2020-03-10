@@ -60,9 +60,10 @@ require 'arquivos_banco/conexao.php';
 								<!--link para baixar arquivo como .csv--> 
 								<a href="v_baixar_csv_dowloand.php">
 
-									<!-- imagem icone -->
+									<!-- 
 									<span class="glyphicon glyphicon-floppy-save icones" aria-hidden="true"></span>
 									Baixar .csv</a>
+									imagem icone -->
 
 						</div>
 							</div>
@@ -83,46 +84,43 @@ require 'arquivos_banco/conexao.php';
 
 										<br>
 
-										<!-- imagem icone -->
+										<!-- 
 										<span class="glyphicon glyphicon-floppy-save icones" aria-hidden="true"></span>
 										<a href="arquivos_banco/baixar_novo_csv.php">Baixar .csv</a>
+										imagem icone -->
 
 									</div>
 								</div>
 							</div>
 							<!-- fim do painel baixar como txt no servidor-->
 
+							<!-- inicio do painel abrir baixaar direto -->
+									<p>
 
-							<!-- inicio do painel abrir PDF -->
-							<p>
+										<div class="panel panel-danger contorno panel-lang ">
+											<div class="panel-heading vermelho"> Baixar direto sem processar</div>
+											<div class="panel-body">
+												<div class="form-group">
+													<!--link para baixar arquivo como .csv--> 
 
-								<div class="panel panel-danger panel-lang">
-									<div class="panel-heading"> Abrir PDF</div>
-									<div class="panel-body">
-										<div class="form-group">
-											<!--link para baixar arquivo como .csv--> 
+													<!-- imagem icone -->
+													<span class="glyphicon glyphicon-floppy-save icones" aria-hidden="true"></span>
+													<a href="v_baixar_txt_dowloand_direto.php" target="_blank">Baixar .txt</a>
+													<p>
 
-											<!-- imagem icone -->
-											<span class="glyphicon glyphicon-floppy-save icones" aria-hidden="true"></span>
-											<a href="arquivos_banco/gerar_pdf.php" target="_blank">PDF</a>
-
-											<br>
-
-											<!-- imagem icone -->
-											<span class="glyphicon glyphicon-floppy-save icones" aria-hidden="true"></span>
-											<a href="arquivos_banco/gerar_pdf_baixar.php" target="_blank">Baixar PDF</a>
-
+													<span class="glyphicon glyphicon-floppy-save icones" aria-hidden="true"></span>
+													<a href="arquivos_banco/baixar_novo_txt_pasta.php" target="">Baixar na pasta .txt</a>
+												</div>
+											</div>
 										</div>
-									</div>
-								</div>
-								<!-- fim do painel baixar como txt no servidor-->
+										<!-- fim do painel baixar como txt no servidor-->
 
 
-								<!-- inicio do painel abrir PDF DIFERENÇA -->
+							<!-- inicio do painel abrir PDF DIFERENÇA -->
 								<p>
 
 									<div class="panel panel-danger panel-lang">
-										<div class="panel-heading red2"> Divergencia</div>
+										<div class="panel-heading"> Divergencia</div>
 										<div class="panel-body">
 											<div class="form-group">
 												<!--link para baixar arquivo como .csv--> 
@@ -156,25 +154,7 @@ require 'arquivos_banco/conexao.php';
 									<!-- fim-->
 									
 
-									<!-- inicio do painel abrir baixaar direto -->
-									<p>
-
-										<div class="panel panel-danger contorno panel-lang ">
-											<div class="panel-heading vermelho"> Baixar direto sem processar</div>
-											<div class="panel-body">
-												<div class="form-group">
-													<!--link para baixar arquivo como .csv--> 
-
-													<!-- imagem icone -->
-													<span class="glyphicon glyphicon-floppy-save icones" aria-hidden="true"></span>
-													<a href="v_baixar_txt_dowloand_direto.php" target="_blank">Baixar .txt</a>
-												</div>
-											</div>
-										</div>
-										<!-- fim do painel baixar como txt no servidor-->
-
-
-										<!-- dim da sessao corpo-->
+									<!-- dim da sessao corpo-->
 									</section>
 									<!-- fim da sessao principal-->
 								</section>

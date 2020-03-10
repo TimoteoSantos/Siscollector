@@ -93,6 +93,46 @@
 
    </table>
 
+
+
+
+<?php 
+
+    $usuario = $_SESSION['usuario'];
+    //coloca em listagem um array com apenas os campos vazios de status
+    $lista = mysqli_query($conexao,"SELECT usuario from coletor_importar   where referencia = '$referencia' and usuario != '$usuario' group by usuario;");
+    
+        ?>
+
+<h4 align="center">Também Coletaram</h4>
+<hr />
+
+
+<table>
+  
+
+<?php
+        while($varrer = mysqli_fetch_array($lista)) { ?>
+
+
+  <tr align="center">
+    
+   <td><?= $varrer['usuario'] ?> </td> 
+    
+  </tr>
+
+</table>
+
+     <?php 
+     }
+
+     ?>
+
+
+
+
+
+
   <a href="#topo">
   <button type="button" class="btn btn-success botao">Topo</button>
   </a>

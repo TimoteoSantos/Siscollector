@@ -13,14 +13,13 @@ if ($id[0] > 0 ) {
     $listagem = mysqli_query($conexao,  "SELECT arquivo FROM config"); 
     while($linha = mysqli_fetch_array($listagem)) {
 
-	$destino = $linha["arquivo"]. '/arquivo_processado.csv'; // pega o caminho do banco e concatena com o nome do arquivo
-	@unlink("$destino"); //apaga o arquivo
 
 	//baixa
-	$sql = "SELECT referencia, quantidade, descricao INTO OUTFILE '$destino'
+	$sql = "SELECT referencia, quantidade, descricao FROM coletor_exportar
+	INTO OUTFILE '/util/teste.csv'
 	FIELDS TERMINATED BY ';'
-	LINES TERMINATED BY '\r\n'
-	FROM coletor_exportar";
+	ENCLOSED BY ''
+	LINES TERMINATED BY '\n'";
 	
 	$result = mysqli_query($conexao, $sql);
 }

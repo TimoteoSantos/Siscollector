@@ -21,16 +21,18 @@ if($btnLogin){
 				$_SESSION['usuario'] = $row_usuario['usuario'];
 				
 				header("Location: ../index.php");
+			    $_SESSION['msg'] = "<span class='alerta'><span> Olá $usuario! <audio src='bem_vindo.mp3' autoplay></audio> </span>";
+
 			}else{
-				$_SESSION['msg'] = "Login incorreto!";
+			    $_SESSION['msg'] = "<span class='alerta'><span> Login errado :( <audio src='erro.mp3' autoplay></audio> </span>";
 				header("Location: ../login.php");
 			}
 		}
 	}else{
-		$_SESSION['msg'] = "Login incorreto!";
+			    $_SESSION['msg'] = "<span class='alerta'><span> Login errado :( <audio src='erro.mp3' autoplay></audio> </span>";
 		header("Location: ../login.php");
 	}
 }else{
-	$_SESSION['msg'] = "Página não encontrada";
+    $_SESSION['msg'] = "<span class='alerta'><span> Login errado :( <audio src='erro.mp3' autoplay></audio> </span>";
 	header("Location: ../login.php");
 }

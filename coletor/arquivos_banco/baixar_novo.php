@@ -22,12 +22,17 @@ if ($id[0] > 0 ) {
 
 	//$destino = "/util/temp/Arquivo_integracao.txt";
 	
+
+
+
 	//baixa
-	$sql = "SELECT referencia, quantidade, descricao INTO OUTFILE  '$destino'
-	FIELDS TERMINATED BY ';'
-	LINES TERMINATED BY '\r\n'
-	FROM coletor_exportar";
+	$sql = "SELECT referencia, quantidade, descricao INTO OUTFILE '/util/result.txt'
+		FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY ''
+		LINES TERMINATED BY '\n'
+		FROM coletor_exportar";
 	
+
+
 	$result = mysqli_query($conexao, $sql);
 	
 	}

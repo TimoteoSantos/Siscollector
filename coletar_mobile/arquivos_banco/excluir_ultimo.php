@@ -40,7 +40,7 @@ $sql = "INSERT INTO auditoria (usuario, data, descricao) VALUES ('$usuario','$da
 mysqli_query($conexao, $sql);
 //fim da autidoria
 
-$_SESSION['msg'] = "<p> <span  style='black !important: !important; size=22px;'>  R:$referencia D:$descricao QT:$quantidade </p>";
+$_SESSION['msg'] = "<p> <span  style='black !important: !important; size=22px;'> $descricao = $quantidade </p>";
 
 header("Location: ../index.php");
 exit();
