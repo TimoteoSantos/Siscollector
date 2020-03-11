@@ -4,7 +4,7 @@ session_start();
 require "conexao.php";
 		
 	//select
-	$pasta = mysqli_query($conexao,  "SELECT COUNT(id), conf FROM config where conf = '1' ");
+	$pasta = mysqli_query($conexao,  "SELECT COUNT(id), conf FROM config where conf = '1' ;");
 	//conta
 	$conta = $pasta->fetch_row();
 	//recebe o valor
@@ -22,12 +22,13 @@ require "conexao.php";
 	//$destino = "/util/temp/Arquivo_integracao.txt";
 
 
-	$listagem = mysqli_query($conexao,  "SELECT arquivo FROM config"); 
+	$listagem = mysqli_query($conexao,  "SELECT arquivo,conf FROM config where conf = '1';"); 
     while($linha = mysqli_fetch_array($listagem)) {
 
     //pega o destino
 	$destino = $linha["arquivo"]. '/produtos.txt'; // pega o caminho do banco e concatena com o nome do arquivo
 
+	//mysqli_options($conexao, MYSQLI_OPT_LOCAL_INFILE, true);
 
 	$sql = "LOAD DATA
 

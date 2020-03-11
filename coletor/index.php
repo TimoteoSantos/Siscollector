@@ -68,19 +68,6 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 				</div>
 			</div><!--fim do painel contagem produtos importados-->
 
-			
-			<!--painel de contagem produtos importados-->
-			<div class="panel panel-primary painel_contagem">
-				<div class="panel-heading panel-heading_index">
-					<h3 class="panel-title"> Quantidade de registros Importados</h3>
-				</div>
-				<div class="panel-body centro">
-
-
-					<h4><?php echo $total2; ?> </h4>
-				</div>
-			</div><!--fim do painel contagem produtos importados-->
-			
 
 			<!--painel de contagem produtos processados-->
 			<div class="panel panel-primary painel_contagem">
@@ -91,16 +78,43 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 					<h4> <?php echo $exportados[0]; ?> </h4>
 				</div>
 			</div><!--fim do painel contagem produtos processaos-->
+
 			
 			<!--painel de contagem produtos importados-->
 			<div class="panel panel-primary painel_contagem">
 				<div class="panel-heading panel-heading_index">
-					<h3 class="panel-title"> <a href="v_pesquisa_preco.php"> Quantidade de produtos para pesquisa </a></h3>
+					<h3 class="panel-title"> Quantidade de registros Importados</h3>
+				</div>
+				<div class="panel-body centro">
+
+
+					<h4><?php echo $importados[0]; ?> </h4>
+				</div>
+			</div><!--fim do painel contagem produtos importados-->
+			
+
+						
+			<!--painel de contagem produtos importados-->
+			<div class="panel panel-primary painel_contagem">
+				<div class="panel-heading panel-heading_index">
+					<h3 class="panel-title"> <a href="v_pesquisa_preco.php"> Produtos cadastrados no ERP </a></h3>
 				</div>
 				<div class="panel-body centro">
 					<h4><?php echo $coletar[0]; ?> </h4>
 				</div>
 			</div><!--fim do painel contagem produtos importados-->
+
+
+			<!--painel de contagem produtos importados-->
+			<div class="panel panel-primary painel_contagem">
+				<div class="panel-heading panel-heading_index">
+					<h3 class="panel-title"> <a href="v_pesquisa_preco.php"> Quantidade Produtos Cadastrados no ERP </a></h3>
+				</div>
+				<div class="panel-body centro">
+					<h4><?php echo $itens[0]; ?> </h4>
+				</div>
+			</div><!--fim do painel contagem produtos importados-->
+
 			
 			
 			<!--painel de contagem produtos nao cadastrados-->

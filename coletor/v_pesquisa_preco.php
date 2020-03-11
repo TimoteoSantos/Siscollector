@@ -92,7 +92,8 @@ unset($_SESSION['msg']);
 
 						<p>SELECT [Cadastro de Mercadorias].[Cód Fabricante], [Cadastro de Mercadorias].Mercadoria, [Cadastro de Mercadorias].[Preço de Venda], [cadastro de mercadoriasLojas].Estoque, [Cadastro de Mercadorias].Fabricante, [Cadastro de Mercadorias].Grupo
 FROM [Cadastro de Mercadorias] INNER JOIN [cadastro de mercadoriasLojas] ON [Cadastro de Mercadorias].[Código da Mercadoria] = [cadastro de mercadoriasLojas].[Código da Mercadoria]
-WHERE ((([cadastro de mercadoriasLojas].Loja)="LOJA 03"));
+WHERE ((([Cadastro de Mercadorias].[Desativado])=0) AND (([cadastro de mercadoriasLojas].Loja)="LOJA 03") AND (([Cadastro de Mercadorias].[Desativado])=0));
+
 
 </p>
 					</div>

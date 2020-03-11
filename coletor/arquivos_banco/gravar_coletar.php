@@ -22,7 +22,7 @@ require 'conexao.php';
 		$referencia = ($dados[0]);
 		$descricao = ($dados[1]);
 
-		$codigo = str_replace(",",".", $dados[2]);
+		$preco = str_replace(",",".", $dados[2]);
 
 		$quantidade = ($dados[3]);
 		$fabricante = ($dados[4]);
@@ -30,7 +30,7 @@ require 'conexao.php';
 
 		
 	//inseri os dados das variaveis acima no banco
-	$result_usuario = "INSERT INTO coletar (referencia,preco,descricao, quantidade, fabricante, grupo) VALUES ('$referencia', '$codigo', '$descricao', '$quantidade', '$fabricante', '$grupo')";
+	$result_usuario = "INSERT INTO coletar (referencia,descricao, preco, quantidade, fabricante, grupo) VALUES ('$referencia', '$descricao', '$preco',  '$quantidade', '$fabricante', '$grupo')";
 	$result_usuario = mysqli_query($conexao, $result_usuario);
 
 //envia a mensagem de sucesso para a index

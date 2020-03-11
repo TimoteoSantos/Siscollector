@@ -3,47 +3,33 @@
 
 	require 'arquivos_banco/conexao.php';
 
-	//coloca em listagem um array com apenas os campos vazios de status
-	$listagem = mysqli_query($conexao,  "SELECT COUNT(referencia)  FROM coletor_exportar");
-	
-	//conta a quandidade de linhas que carregaram e $listagem
-	$exportados = $listagem->fetch_row();
+	//processados
+	$exportados = mysqli_query($conexao,  "SELECT COUNT(referencia)  FROM coletor_exportar");
+	$exportados = $exportados->fetch_row();
 
-	//coloca em listagem um array com apenas os campos vazios de status
-	$listage = mysqli_query($conexao,  "SELECT count(referencia)  FROM coletor_importar ");
+	//coletados
+	$importados = mysqli_query($conexao,  "SELECT count(id)  FROM coletor_importar ");
+	$importados = $importados->fetch_row();
 	
-	//conta a quandidade de linhas que carregaram e $listagem
-	$importados = $listage->fetch_row();
+	//produtos de pesquisa
+	$pesquisa   = mysqli_query($conexao,  "SELECT count(referencia)  FROM coletar ");
+	$coletar    = $pesquisa->fetch_row();
 	
-	//coloca em listagem um array com apenas os campos vazios de status
-	$listage = mysqli_query($conexao,  "SELECT count(referencia)  FROM coletar ");
+	//nao cadastrados
+	$nao_cadastrado = mysqli_query($conexao,  " SELECT COUNT(DISTINCT referencia) FROM coletor_importar where descricao = 'Produto nao cadastrado' ");
+	$nao = $nao_cadastrado->fetch_row();
 	
-	//conta a quandidade de linhas que carregaram e $listagem
-	$coletar = $listage->fetch_row();
-	
-	//produtos nao cadastrados contagem nao cadastrado
-	
-	// conta a quantidade ja agrupando as referencias
-	$listage = mysqli_query($conexao,  " SELECT COUNT(DISTINCT referencia) FROM coletor_importar where descricao = 'Produto nao cadastrado' ");
-		//conta a quandidade de linhas que carregaram e $listagem
-	$nao = $listage->fetch_row();
-	
-	// conta a quantidade ja agrupando as referencias
-	$listage = mysqli_query($conexao,  " SELECT COUNT(DISTINCT referencia) FROM coletor_importar");
-		//conta a quandidade de linhas que carregaram e $listagem
-	$coletado = $listage->fetch_row();
+	//coletados produtos
+	$quantidade_importado_produto = mysqli_query($conexao,  " SELECT COUNT(DISTINCT referencia) FROM coletor_importar");
+	$coletado = $quantidade_importado_produto->fetch_row();
 
-	// conta a quantidade ja agrupando as referencias
-	$listage = mysqli_query($conexao,  " SELECT sum(quantidade) FROM coletor_importar");
-		//conta a quandidade de linhas que carregaram e $listagem
-	$total = $listage->fetch_row();
-
-
-	if (isset($total))
-
-	{
-		$total2 = $importados[0];
-	}
+	
+	$pesquisa_quantidade = mysqli_query($conexao,  " SELECT sum(quantidade) FROM coletar");
+	$itens = $pesquisa_quantidade->fetch_row();
+	
+	
+	$importados_quantidade = mysqli_query($conexao,  " SELECT sum(quantidade) FROM coletor_importar");
+	$total = $importados_quantidade->fetch_row();
 
 
 
