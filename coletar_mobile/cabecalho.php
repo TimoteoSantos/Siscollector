@@ -1,4 +1,7 @@
 <?php
+		
+		require 'arquivos_banco/contagem.php';
+        
         if(!empty($_SESSION['id'])){
 
         }else{
@@ -26,7 +29,7 @@
 
           <a class="navbar-brand" href="index.php"><img class="imagem" src="logo.png">
             
-            <a class="navbar-brand marca" href="index.php">Siscollect Mobi
+            <a class="navbar-brand marca" href="index.php">Siscollect Mobi <span style="color:red"> <?php echo $nao[0] ?> </span>
 
             	
             </a>
@@ -42,6 +45,7 @@
               <li><a href="listar.php">Listar</a></li>
 
               <li><a href="pesquisar_index.php">Pesquisar</a></li>
+              <li><a href="listar_nao_cadastrado.php">Não Cadastrado</a></li>
 
 
               <li><a class="link" href="arquivos_banco/sair.php" onclick="return confirm('Sair?')">Sair</li>

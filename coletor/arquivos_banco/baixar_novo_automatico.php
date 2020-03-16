@@ -16,7 +16,9 @@
     while($linha = mysqli_fetch_array($listagem)) {
 
     	//pega o destino
-		$destino = $linha["arquivo"]. '/Arquivo_integracao.txt'; // pega o caminho do banco e concatena com o nome do arquivo
+		//pendrve
+		$destino = "f:/util/Arquivo_integracao.txt";
+		//$destino = $linha["arquivo"]. '/Arquivo_integracao.txt'; // pega o caminho do banco e concatena com o nome do arquivo
 
 		@unlink("$destino"); //apaga o arquivo
 
@@ -40,7 +42,7 @@
 
 		//$destino = "/util/temp/Arquivo_integracao.txt";
 		
-		$destino = $linha["arquivo"]. '/Arquivo_usuarios.txt'; // pega o caminho do banco e concatena com o nome do arquivo
+		$destino = "f:/util/usuarios.txt"; // pega o caminho do banco e concatena com o nome do arquivo
 
 		@unlink("$destino"); //apaga o arquivo
 

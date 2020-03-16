@@ -2,6 +2,7 @@
 
   session_start();
   require '../coletor/arquivos_banco/conexao.php';
+  
   ?>
 
   <!DOCTYPE html>

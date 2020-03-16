@@ -14,7 +14,7 @@ $referencia = $_GET['referencia'];
 <head>
 
   <?php
-   $desc = utf8_decode('Produto não cadastrado');
+   $desc = utf8_decode('PRODUTO NAO CADASTRADO');
 
   $listagem = mysqli_query($conexao,  "SELECT COUNT(id)  FROM coletor_importar where descricao = '$desc'");
   //conta

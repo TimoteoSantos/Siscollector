@@ -8,7 +8,9 @@
 
 						  $usuario = $_SESSION['usuario'];
 
-						    $l = mysqli_query($conexao,"SELECT id, quantidade FROM coletor_importar ORDER BY id DESC LIMIT 1;");
+						  	
+
+						    $l = mysqli_query($conexao,"SELECT id, quantidade FROM coletor_importar where usuario = '$usuario' ORDER BY id DESC LIMIT 1 ;");
 
 						   while($linha2 = mysqli_fetch_array($l)) {
 
