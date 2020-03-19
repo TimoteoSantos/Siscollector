@@ -105,7 +105,9 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 			</div><!--fim do painel contagem produtos importados-->
 
 
-			<!--painel de contagem produtos importados-->
+
+
+			<!--painel de contagem produtos importados
 			<div class="panel panel-primary painel_contagem">
 				<div class="panel-heading panel-heading_index">
 					<h3 class="panel-title"> <a href="v_pesquisa_preco.php"> Quantidade Produtos Cadastrados no ERP </a></h3>
@@ -113,7 +115,7 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 				<div class="panel-body centro">
 					<h4><?php echo $itens[0]; ?> </h4>
 				</div>
-			</div><!--fim do painel contagem produtos importados-->
+			</div> fim do painel contagem produtos importados-->
 
 			
 			
