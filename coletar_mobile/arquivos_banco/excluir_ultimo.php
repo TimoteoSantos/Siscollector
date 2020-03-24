@@ -27,7 +27,7 @@ $quantidade = filter_var($_GET['quantidade'], FILTER_SANITIZE_STRING);
 $id = filter_var($_GET['id'], FILTER_SANITIZE_STRING);
 
 echo $referencia;
-$sql = "DELETE FROM coletor_importar WHERE id = '$id' AND usuario = '$usuario'";
+$sql = "DELETE FROM coletor_importar WHERE id = '$id' AND usuario = '$usuario' limit 1";
 
 mysqli_query($conexao, $sql) or die ("Erro:" .mysqli_error($conexao));
 
