@@ -20,7 +20,7 @@ if ($id[0] > 0 ) {
 	} else {
 	//se nao processou
 
-		//verificar se esta coletando no estoque ou na loja
+		
 		require_once 'verificar_estoque_loja.php';
 
 			$usuario = filter_var($_SESSION['usuario'], FILTER_SANITIZE_STRING);
