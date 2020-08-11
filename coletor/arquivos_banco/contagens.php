@@ -33,7 +33,22 @@
 
 
 
-		
-	/*
-	FUNÇAO PARA AGRUPAR A CONTAGEM: COUNT(DISTINCT referencia)
-	*/
+
+
+	//porcentagem decorrida
+
+	$quantidade_importado_produto5 =mysqli_query($conexao,  "SELECT count(id)  FROM coletar where quantidade > 0 ");
+	$subtrair = $quantidade_importado_produto5->fetch_row();
+	
+	$quantidade_importado_produto6 = mysqli_query($conexao,  " SELECT COUNT(DISTINCT id) FROM coletor_importar");
+	$aubtrair2 = $quantidade_importado_produto6->fetch_row();
+
+
+			if ($subtrair[0] > 0) {
+
+				$porcentagem = ($aubtrair2[0] / $subtrair[0])*100;
+			
+			}else{
+
+				$porcentagem = 0;
+			}
