@@ -9,3 +9,9 @@ configurar sistema
 
 
 ads
+
+
+busca por nome
+mostrar a quantidade e nome na busca
+mostrar mais informaçao de outras pessoas que coletaram
+porcentagem por loja

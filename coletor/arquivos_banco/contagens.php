@@ -1,7 +1,7 @@
 <?php
 
 
-	require 'arquivos_banco/conexao.php';
+	require 'conexao.php';
 
 	//processados
 	$exportados = mysqli_query($conexao,  "SELECT COUNT(referencia)  FROM coletor_exportar");
@@ -35,20 +35,61 @@
 
 
 
+
+
+
+
 	//porcentagem decorrida
+	$result = "SELECT * FROM pdf ";
+    $resultado = mysqli_query($conexao, $result);
 
-	$quantidade_importado_produto5 =mysqli_query($conexao,  "SELECT count(id)  FROM coletar where quantidade > 0 ");
-	$subtrair = $quantidade_importado_produto5->fetch_row();
+	while($linha = mysqli_fetch_array($resultado)){
+
+    $fabricante = $linha['fabricante'];
+}
+
+
+
+
+	if (isset($fabricante)) {
+
 	
-	$quantidade_importado_produto6 = mysqli_query($conexao,  " SELECT COUNT(DISTINCT id) FROM coletor_importar");
-	$aubtrair2 = $quantidade_importado_produto6->fetch_row();
-
-
-			if ($subtrair[0] > 0) {
-
-				$porcentagem = ($aubtrair2[0] / $subtrair[0])*100;
+			$quantidade_importado_produto5 =mysqli_query($conexao,  "SELECT count(id), fabricante FROM coletar where quantidade > 0 AND fabricante = '$fabricante' ");
+			$subtrair = $quantidade_importado_produto5->fetch_row();
 			
-			}else{
+			$quantidade_importado_produto6 = mysqli_query($conexao,  " SELECT COUNT(DISTINCT id) FROM coletor_importar ");
+			$aubtrair2 = $quantidade_importado_produto6->fetch_row();
 
-				$porcentagem = 0;
-			}
+
+					if ($subtrair[0] > 0) {
+
+						$porcentagem = ($aubtrair2[0] / $subtrair[0])*100;
+					
+						}else{
+
+							$porcentagem = 0;
+						}
+
+	
+	}else {
+
+
+
+			$quantidade_importado_produto5 =mysqli_query($conexao,  "SELECT count(id), fabricante FROM coletar where quantidade > 0");
+			$subtrair = $quantidade_importado_produto5->fetch_row();
+			
+			$quantidade_importado_produto6 = mysqli_query($conexao,  " SELECT COUNT(DISTINCT id) FROM coletor_importar ");
+			$aubtrair2 = $quantidade_importado_produto6->fetch_row();
+
+
+					if ($subtrair[0] > 0) {
+
+						$porcentagem = ($aubtrair2[0] / $subtrair[0])*100;
+					
+						}else{
+
+							$porcentagem = 0;
+						}
+
+
+	}
