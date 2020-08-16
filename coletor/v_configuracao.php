@@ -196,9 +196,9 @@ require 'arquivos_banco/login_verificar.php';
 							</select>
 							
 							<p>
-							<input type="text" class="form-control" id="exampleInputEmail1" name="fornecedor" aria-describedby="emailHelp" placeholder="Fornecedor" required="">
+							<input type="text" class="form-control" id="exampleInputEmail1" name="fornecedor" aria-describedby="emailHelp" placeholder="Fornecedor">
 							<p>
-							<input type="text" class="form-control" id="exampleInputEmail1" name="fabricante" aria-describedby="emailHelp" placeholder="Fabricante" required="">
+							<input type="text" class="form-control" id="exampleInputEmail1" name="fabricante" aria-describedby="emailHelp" placeholder="Fabricante" >
 							<p>
 							<input type="text" class="form-control" id="exampleInputEmail1" name="grupo" aria-describedby="emailHelp" placeholder="Grupo">
 							<p>
