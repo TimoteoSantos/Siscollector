@@ -40,7 +40,8 @@
 
 
 	//porcentagem decorrida
-	$result = "SELECT * FROM pdf ";
+
+	$result = "SELECT * FROM pdf";
     $resultado = mysqli_query($conexao, $result);
 
 	while($linha = mysqli_fetch_array($resultado)){
@@ -48,16 +49,18 @@
     $fabricante = $linha['fabricante'];
 }
 
+		$fab = mysqli_query($conexao,  "SELECT * FROM pdf");
+		$fabricante_ext = $fab->fetch_row();
 
 
 
-	if (isset($fabricante)) {
+	if ($fabricante_ext > 0) {
 
 	
 			$quantidade_importado_produto5 =mysqli_query($conexao,  "SELECT count(id), fabricante FROM coletar where quantidade > 0 AND fabricante = '$fabricante' ");
 			$subtrair = $quantidade_importado_produto5->fetch_row();
 			
-			$quantidade_importado_produto6 = mysqli_query($conexao,  " SELECT COUNT(DISTINCT id) FROM coletor_importar ");
+			$quantidade_importado_produto6 = mysqli_query($conexao,  " SELECT COUNT(DISTINCT id) FROM coletor_importar where fabricante = '$fabricante'");
 			$aubtrair2 = $quantidade_importado_produto6->fetch_row();
 
 
@@ -68,7 +71,7 @@
 						}else{
 
 							$porcentagem = 0;
-						}
+					}
 
 	
 	}else {
@@ -90,6 +93,5 @@
 
 							$porcentagem = 0;
 						}
-
 
 	}

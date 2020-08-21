@@ -34,11 +34,12 @@ if ($id[0] > 0 ) {
 
 				$referencia = $linha['referencia'];
 				$descricao = utf8_encode($linha['descricao']);
+				$fabricante = $linha['fabricante'];
 
 					
 		if ($ref == $referencia and $referencia > 0) {
 
-			$query = "INSERT INTO coletor_importar (referencia, quantidade, descricao, usuario, hora, local_estoque, local_loja) VALUES ('$ref', '$qt', '$descricao', '$usuario', '$hora', '$gravar_estoque', '$gravar_loja')" ; 
+			$query = "INSERT INTO coletor_importar (referencia, quantidade, descricao, usuario, hora, local_estoque,fabricante, local_loja) VALUES ('$ref', '$qt', '$descricao', '$usuario', '$hora', '$gravar_estoque','$fabricante', '$gravar_loja')" ; 
 			
 			
 
