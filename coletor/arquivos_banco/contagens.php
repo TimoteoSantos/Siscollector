@@ -29,7 +29,7 @@
 	
 	
 	$importados_quantidade = mysqli_query($conexao,  " SELECT sum(quantidade) FROM coletor_importar");
-	$total = $importados_quantidade->fetch_row();
+	$total = $importados_quantidade->fetch_row();	
 
 
 
@@ -60,7 +60,7 @@
 			$quantidade_importado_produto5 =mysqli_query($conexao,  "SELECT count(id), fabricante FROM coletar where quantidade > 0 AND fabricante = '$fabricante' ");
 			$subtrair = $quantidade_importado_produto5->fetch_row();
 			
-			$quantidade_importado_produto6 = mysqli_query($conexao,  " SELECT COUNT(DISTINCT id) FROM coletor_importar where fabricante = '$fabricante'");
+			$quantidade_importado_produto6 = mysqli_query($conexao,  " SELECT COUNT(DISTINCT id), fabricante FROM coletor_importar where fabricante = '$fabricante' ");
 			$aubtrair2 = $quantidade_importado_produto6->fetch_row();
 
 
