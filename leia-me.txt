@@ -1,17 +1,11 @@
-﻿ANTES DE USAR O SISTEMA FAÇA AS CONFIGURAÇOES NESCESSARIAS DE 
+﻿
 
-1 HORARIO
-2 TEMPO DE EXECUÇÃO DO PHP 
-3 MEMORIA DO PHO
-4 E SE PREFERIR PORTAS PRINCIPALMENTE PARA USO EXTERNO
+	### ANTES DE USAR O SISTEMA FAÇA AS CONFIGURAÇOES NESCESSARIAS DE  ###
 
-configurar sistema
-
-
-ads
+		1. HORARIO
+		2. TEMPO DE EXECUÇÃO DO PHP 
+		3. MEMORIA DO PHP
 
 
-busca por nome
-mostrar a quantidade e nome na busca
-mostrar mais informaçao de outras pessoas que coletaram
-porcentagem por loja
+
+
