@@ -34,11 +34,6 @@
 
 
 
-
-
-
-
-
 	//porcentagem decorrida
 
 	$result = "SELECT * FROM pdf";
@@ -51,8 +46,6 @@
 
 		$fab = mysqli_query($conexao,  "SELECT * FROM pdf");
 		$fabricante_ext = $fab->fetch_row();
-
-
 
 	if ($fabricante_ext > 0) {
 
@@ -73,9 +66,7 @@
 							$porcentagem = 0;
 					}
 
-	
-	}else {
-
+		}else {
 
 
 			$quantidade_importado_produto5 =mysqli_query($conexao,  "SELECT count(id), fabricante FROM coletar where quantidade > 0");
