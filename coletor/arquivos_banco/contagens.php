@@ -29,7 +29,14 @@
 	
 	
 	$importados_quantidade = mysqli_query($conexao,  " SELECT sum(quantidade) FROM coletor_importar");
-	$total = $importados_quantidade->fetch_row();	
+	$total = $importados_quantidade->fetch_row();
+
+	$diferencas = mysqli_query($conexao,  "SELECT * FROM coletar where coleta is null and referencia > 0 and quantidade > 0 ");
+	$total_diferencas = $diferencas->fetch_row();	
+
+
+
+	
 
 
 

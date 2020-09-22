@@ -141,6 +141,16 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 			</div><!--fim do painel contagem produtos importados-->
 
 
+			<div class="panel panel-primary painel_contagem">
+				<div class="panel-heading panel-heading_index">
+					<h3 class="panel-title"> <a href="v_pesquisa_preco.php"> Produtos cadastrados no ERP </a></h3>
+				</div>
+				<div class="panel-body centro">
+					<h4><?php echo $total_diferencas[0]; ?> </h4>
+				</div>
+			</div>
+
+
 			
 			</section>
 
