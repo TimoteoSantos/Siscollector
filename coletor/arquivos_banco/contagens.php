@@ -27,23 +27,31 @@
 	$pesquisa_quantidade = mysqli_query($conexao,  " SELECT sum(quantidade) FROM coletar");
 	$itens = $pesquisa_quantidade->fetch_row();
 	
+
+//diferenca nao coletado
+	$processado = mysqli_query($conexao,  " SELECT count(id) FROM coletor_exportar");
+	$mostar = $processado->fetch_row();
+
+
+	if ($mostar[0] > 0) {
+
+			$diferencas = mysqli_query($conexao,  "SELECT count(id), coleta, quantidade FROM coletar WHERE coleta = 0 AND quantidade > 0 ");
+			$total_diferencas = $diferencas->fetch_row();
+
+			
+	
+	}else{
+
+		$total_diferencas[0] = "Aguardando processar!";
+
+	}
 	
 	$importados_quantidade = mysqli_query($conexao,  " SELECT sum(quantidade) FROM coletor_importar");
 	$total = $importados_quantidade->fetch_row();
 
-	$diferencas = mysqli_query($conexao,  "SELECT sum(id) FROM coletar where coleta is null and referencia > 0 and quantidade > 0 ");
-	$total_diferencas = $diferencas->fetch_row();	
-
-
-
-	
-
-
-
-
 	//porcentagem decorrida
 
-	$result = "SELECT * FROM pdf";
+	$result = "SELECT * FROM pdf WHERE fabricante IS NOT NULL";
     $resultado = mysqli_query($conexao, $result);
 
 	while($linha = mysqli_fetch_array($resultado)){
@@ -57,7 +65,7 @@
 	if ($fabricante_ext > 0) {
 
 	
-			$quantidade_importado_produto5 =mysqli_query($conexao,  "SELECT count(id), fabricante FROM coletar where quantidade > 0 AND fabricante = '$fabricante' ");
+			$quantidade_importado_produto5 =mysqli_query($conexao,  "SELECT count(DISTINCT id), fabricante FROM coletar where quantidade > 0 AND fabricante = '$fabricante' ");
 			$subtrair = $quantidade_importado_produto5->fetch_row();
 			
 			$quantidade_importado_produto6 = mysqli_query($conexao,  " SELECT COUNT(DISTINCT id), fabricante FROM coletor_importar where fabricante = '$fabricante' ");
@@ -76,7 +84,7 @@
 		}else {
 
 
-			$quantidade_importado_produto5 =mysqli_query($conexao,  "SELECT count(id), fabricante FROM coletar where quantidade > 0");
+			$quantidade_importado_produto5 =mysqli_query($conexao,  "SELECT count(DISTINCT id) FROM coletar where quantidade > 0");
 			$subtrair = $quantidade_importado_produto5->fetch_row();
 			
 			$quantidade_importado_produto6 = mysqli_query($conexao,  " SELECT COUNT(DISTINCT id) FROM coletor_importar ");

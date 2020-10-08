@@ -130,6 +130,7 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 			</div><!--fim do painel contagem produtos importados-->
 
 
+
 			<!--quantidade total-->
 			<div class="panel panel-primary painel_contagem ">
 				<div class="panel-heading panel-heading_index vermelho">
@@ -143,7 +144,7 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 
 			<div class="panel panel-primary painel_contagem">
 				<div class="panel-heading panel-heading_index">
-					<h3 class="panel-title"> <a href="v_pesquisa_preco.php">Tem na loja e não foi contada </a></h3>
+					<h3 class="panel-title"> <a href="v_diferenca_nao_encontrado.php">Tem na loja e não foi contada </a></h3>
 				</div>
 				<div class="panel-body centro">
 					<h4><?php echo $total_diferencas[0]; ?> </h4>
