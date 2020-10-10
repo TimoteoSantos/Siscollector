@@ -46,8 +46,17 @@
 
 	}
 	
+	//quantidade total de itens
+
 	$importados_quantidade = mysqli_query($conexao,  " SELECT sum(quantidade) FROM coletor_importar");
 	$total = $importados_quantidade->fetch_row();
+
+	if (isset($total[0])) {} else {
+
+		$total[0] = 0;
+
+	}
+
 
 	//porcentagem decorrida
 
