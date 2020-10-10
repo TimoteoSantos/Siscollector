@@ -190,9 +190,11 @@ require 'arquivos_banco/login_verificar.php';
 
 							<select class="form-control" name="empresa" autofocus="">
 
-								<option value="M. A. DA SILVA COSMETICOS ME"> Matriz </option>
+								<option value="M. A. DA SILVA COSMETICOS - ME"> Matriz </option>
 								<option value ="MERCIA A. DA SILVA COSMETICOS - ME"> Loja 02 </option>
 								<option value="SIDNEI DA SILVA MARQUES COSMETICOS - ME"> Loja 03 </option>
+								<option value="M. A. DA SILVA COSMETICOS - ME FILIAL"> Loja 04 </option>
+
 							</select>
 							
 							<p>

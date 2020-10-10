@@ -133,10 +133,10 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 
 			<!--quantidade total-->
 			<div class="panel panel-primary painel_contagem ">
-				<div class="panel-heading panel-heading_index vermelho">
+				<div class="panel-heading panel-heading_index vermelho destac">
 					<h3 class="panel-title"> Porcentagem </h3>
 				</div>
-				<div class="panel-body centro">
+				<div class="panel-body centro cor_porcentagem">
 					<h4><?php echo round($porcentagem,3); ?> % </h4>
 				</div>
 			</div><!--fim do painel contagem produtos importados-->

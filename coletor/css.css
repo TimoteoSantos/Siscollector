@@ -250,9 +250,23 @@ label[for="bt_menu"]{
 	height:50px;
 }
 
+.panel-heading_index {
+
+	text-align: center;
+}
+/*
 .vermelho  {
 	background-color:#ff9400 !important;
 	color: BLACK !important;
+}
+*/
+
+.destac {
+
+	background-color:  #D2691E !important;
+}
+.cor_porcentagem {
+	color: red;
 }
 
 .red2  {

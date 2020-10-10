@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 10-Out-2020 às 20:18
+-- Generation Time: 10-Out-2020 às 21:56
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 5.6.39
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `auditoria` (
   `descricao` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `data` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=223 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=226 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `auditoria`
@@ -265,7 +265,10 @@ INSERT INTO `auditoria` (`id`, `usuario`, `descricao`, `data`) VALUES
 (219, 'admin', 'Ecluiu as diferencas da coleta', '2020-10-10 19:53:31'),
 (220, 'admin', 'Excluiu dados processados e importados', '2020-10-10 19:56:03'),
 (221, 'admin', 'Excluiu produtos de pesquisa', '2020-10-10 19:56:21'),
-(222, 'admin', 'Excluiu produtos de pesquisa', '2020-10-10 20:00:09');
+(222, 'admin', 'Excluiu produtos de pesquisa', '2020-10-10 20:00:09'),
+(223, 'admin', 'Excluiu dados processados e importados', '2020-10-10 21:14:10'),
+(224, 'admin', 'Excluiu produtos de pesquisa', '2020-10-10 21:14:15'),
+(225, 'admin', 'Excluiu dados processados e importados', '2020-10-10 21:29:15');
 
 -- --------------------------------------------------------
 
@@ -284,17 +287,7 @@ CREATE TABLE IF NOT EXISTS `coletar` (
   `coleta` int(2) DEFAULT '0',
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `coletar`
---
-
-INSERT INTO `coletar` (`referencia`, `descricao`, `preco`, `quantidade`, `fabricante`, `grupo`, `coleta`, `id`) VALUES
-('7899026462564', 'TINT NUTRISSE COR INTENSA 3.16 122ML', 10.99, 1, 'GARNIER', 'TINTURA', 1, 1),
-('7899026462571', 'TINT NUTRISSE COR INTENSA 4.0 122GR', 11.49, 1, 'GARNIER', 'TINTURA', 0, 2),
-('7899026462632', 'TINT NUTRISSE COR INTENSA 6.35 122GR', 10.99, 1, 'GARNIER', 'TINTURA', 0, 3),
-('7899026462656', 'TINT NUTRISSE COR INTENSA 6.6 122GR', 10.99, 1, 'GARNIER', 'TINTURA', 0, 4);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -312,15 +305,7 @@ CREATE TABLE IF NOT EXISTS `coletor_exportar` (
   `diferenca_vendas` int(2) DEFAULT '0',
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `coletor_exportar`
---
-
-INSERT INTO `coletor_exportar` (`referencia`, `quantidade`, `descricao`, `local_estoque`, `local_loja`, `diferenca_vendas`, `id`) VALUES
-('2012', 2, 'PRODUTO NAO CADASTRADO', 0, 1, 0, 1),
-('7899026462564', 3, 'TINT NUTRISSE COR INTENSA 3.16 122ML', 0, 1, 0, 2);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -340,15 +325,7 @@ CREATE TABLE IF NOT EXISTS `coletor_importar` (
   `fabricante` varchar(255) DEFAULT NULL,
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `coletor_importar`
---
-
-INSERT INTO `coletor_importar` (`referencia`, `quantidade`, `descricao`, `usuario`, `hora`, `local_estoque`, `local_loja`, `fabricante`, `id`) VALUES
-('2012', 2, 'PRODUTO NAO CADASTRADO', 'admin', '2020-10-10 20:02:09', 0, 1, NULL, 1),
-('7899026462564', 3, 'TINT NUTRISSE COR INTENSA 3.16 122ML', 'admin', '2020-10-10 20:05:32', 0, 1, 'GARNIER', 2);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
