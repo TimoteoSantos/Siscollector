@@ -53,7 +53,7 @@ $usuario = $_SESSION['usuario'];
 			<ul>
 				<li><a href="v_usuario.php">Usuário</a></li>
 
-				<li><a href="#">Empresas</a></li>
+				<!-- <li><a href="#">Empresas</a></li> -->
 				
 			</ul>
 			

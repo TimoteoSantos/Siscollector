@@ -42,7 +42,7 @@
 	
 	}else{
 
-		$total_diferencas[0] = "Aguardando processar!";
+		$total_diferencas[0] = "Aguardando gerar informação!";
 
 	}
 	

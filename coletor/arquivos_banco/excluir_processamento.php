@@ -33,8 +33,6 @@ $sql = "DELETE FROM config WHERE conf = '5'";
 mysqli_query($conexao, $sql) or die ("Erro:" .mysqli_error($conexao));
 
 
-
-
 //enviando para a sessao a mensagem
 $_SESSION['msg'] = "<div class='alert alert-success'><span class='glyphicon glyphicon-remove remove' aria-hidden='true'></span> Processamento desfeito!</div>";
 
