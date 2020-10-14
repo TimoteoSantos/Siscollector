@@ -10,9 +10,20 @@ mysqli_query($conexao, $sql);
 $sql = "TRUNCATE coletor_exportar";
 mysqli_query($conexao, $sql);
 
+//desfaz configuracao 
+$sql = "DELETE FROM config WHERE conf = '5'";
+
+mysqli_query($conexao, $sql) or die ("Erro:" .mysqli_error($conexao));
+
+//apagar as diferencas
+$sql = "TRUNCATE diferenca";
+mysqli_query($conexao, $sql);
+
+
 //auditoria
 $usuario = $_SESSION['usuario'];
 $data = date('Y-m-d H:i:s');
+
 
 $sql = "INSERT INTO auditoria (usuario, data, descricao) VALUES ('$usuario','$data', 'Excluiu dados processados e importados')";
 mysqli_query($conexao, $sql);

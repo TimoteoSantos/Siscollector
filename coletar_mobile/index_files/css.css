@@ -21,6 +21,13 @@ nav .container, li a {
 .lado{
 
 	float: left !important;
+
+
+}
+
+.lado_esquerdo {
+
+	margin-left: 6px;
 }
 .clear {
 
@@ -147,6 +154,18 @@ margin-bottom: 1em;
 .afastar_10{
 
 	margin-top: 5em !important;
+}
+
+ .minusculo {
+
+text-transform:  lowercase !important;
+
+}
+
+.afastar {
+
+	margin-left: 0.6em;
+	
 }
 
 /*tela grande--------------------------------------------------*/

@@ -52,6 +52,25 @@ require 'cabecalho.php';
 
          </div>
 
+
+<?php 
+
+$usuario = $_SESSION['usuario'];
+
+    //coloca em listagem um array com apenas os campos vazios de status
+    $listagem = mysqli_query($conexao,"SELECT max(id) as id, referencia, sum(quantidade) as quantidade, descricao from coletor_importar  where usuario = '$usuario' group by referencia order by id desc limit 1;");
+
+   while($linha = mysqli_fetch_array($listagem)) {
+
+?>
+
+
+    <span class="minusculo"> <i> <?php echo $linha['descricao'];?> | <?php echo $linha['quantidade'];?> </i> </span>
+
+
+<?php } ?>
+    
+
         <form action="arquivos_banco/gravar.php" method="post">
             
             <div class="form-group">
@@ -118,15 +137,31 @@ require 'cabecalho.php';
 
       <span type="hidden" onclick="start()">
       
-           <a class="branco" href="arquivos_banco/excluir_ultimo.php?referencia=<?= $linha['referencia'] ?>&id=<?= $linha['id'] ?>&descricao=<?= $linha['descricao'] ?>&quantidade=<?= $linha['quantidade'] ?>"  onclick="return confirm('Excluir?')">
+           <a class="branco" href="arquivos_banco/excluir_ultimo.php?referencia=<?= $linha['referencia'] ?>&id=<?= $linha['id'] ?>&descricao=<?= $linha['descricao'] ?>&quantidade=<?= $linha['quantidade'] ?>"  onclick="return confirm('Excluir o último item?')">
              </span>
 
                <img src="excluir.jpg" height="55" class="lado">
 
+
             </a>
 
-      
-      <?php } ?>
+      <?php }
+
+      $usuario = $_SESSION['usuario'];
+
+      $pesquisa   = mysqli_query($conexao,  "SELECT usuario, COUNT(DISTINCT referencia) from coletor_importar where usuario = '$usuario' group by usuario order by usuario ;");
+      $total_usuario  = $pesquisa->fetch_row();
+
+      $pesquisa   = mysqli_query($conexao,  "SELECT usuario, COUNT(id) from coletor_importar where usuario = '$usuario' group by usuario order by usuario ;");
+      $total_usuario_2  = $pesquisa->fetch_row();
+
+       ?>
+
+      <a href="listar.php"> <img src="lista.png" height="55" class="lado lado_esquerdo"> </a>
+      <!-- total de coleta-->
+      <h4 class="lado"><?php  echo $total_usuario[1];?></h4>
+
+      <h3 class="lado afastar"><?php echo $total_usuario_2[1]; ?></h3>
 
 
       </div>
@@ -147,7 +182,7 @@ $usuario = $_SESSION['usuario'];
    while($linha = mysqli_fetch_array($listagem)) {
 
 ?>
-    <div  class="clear">
+    <div  class="clear" >
 
       <a style='color:black; !important;' href="listar_detalhe.php?referencia=<?= $linha['referencia'] ?>">
 

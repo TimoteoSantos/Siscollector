@@ -100,7 +100,7 @@
 
     $usuario = $_SESSION['usuario'];
     //coloca em listagem um array com apenas os campos vazios de status
-    $lista = mysqli_query($conexao,"SELECT usuario from coletor_importar   where referencia = '$referencia' and usuario != '$usuario' group by usuario;");
+    $lista = mysqli_query($conexao,"SELECT usuario, quantidade from coletor_importar   where referencia = '$referencia' and usuario != '$usuario' group by usuario;");
     
         ?>
 
@@ -117,7 +117,8 @@
 
   <tr align="center">
     
-   <td><?= $varrer['usuario'] ?> </td> 
+   <td><?php echo $varrer['usuario']; echo " | "; ?> </td>
+    <td> <?= $varrer['quantidade'] ?> </td> 
     
   </tr>
 

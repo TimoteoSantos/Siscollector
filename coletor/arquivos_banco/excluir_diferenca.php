@@ -23,6 +23,6 @@ $sql = "DELETE FROM config WHERE conf = '5'";
 
 mysqli_query($conexao, $sql) or die ("Erro:" .mysqli_error($conexao));
 
-$_SESSION['msg'] = "<div class='alert alert-danger'><span class='glyphicon glyphicon-remove remove' aria-hidden='true'></span> excluido</div>";
+$_SESSION['msg'] = "<div class='alert alert-danger'><span class='glyphicon glyphicon-remove remove' aria-hidden='true'></span> Desfeito ! </div>";
 
 header("Location: ../v_baixar.php");

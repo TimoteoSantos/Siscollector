@@ -27,12 +27,22 @@
           
           <!-- brand-->
 
-          <a class="navbar-brand" href="index.php"><img class="imagem" src="logo.png">
+          <a class="navbar-brand" href="index.php"><img class="imagem" src="logo.png"> </a>
             
-            <a class="navbar-brand marca" href="index.php">Siscollect Mobi <span style="color:red"> <?php echo $nao[0] ?> </span>
+            <a class="navbar-brand marca" href="index.php">Siscollect Mobi <span style="color:red">
 
-            	
-            </a>
+
+              <?php 
+                    //so vai mostrar se tiver nao cadastrado
+                    if ($nao[0] > 0) {
+              ?>
+
+               ( <?php echo  $nao[0] ?> )
+
+             
+              <?php } ?>
+           </a>
+
 
           </div>
 

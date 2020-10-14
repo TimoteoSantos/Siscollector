@@ -29,21 +29,6 @@ require 'arquivos_banco/login_verificar.php';
 
   }
 
-
-  $listagem = mysqli_query($conexao,  "SELECT COUNT(id)  FROM config where conf = '5' ");
-  //conta
-  $contar = $listagem->fetch_row();
-  //recebe o valor
-  $id3 = $contar;
-  //se nao tiver exportado
-  if ($id3[0] <> 1 ) { 
-
-  $_SESSION['msg'] = "<div class='alert alert-danger'> <span class='glyphicon glyphicon-remove remove' aria-hidden='true'></span> Primeiro deve gravar a diferenca! </div>";
-  header("Location: v_baixar.php");
-
-  }
-
-
   ?>
 
 	<title>nao encontrado</title>
