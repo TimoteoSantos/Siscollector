@@ -157,12 +157,15 @@ $usuario = $_SESSION['usuario'];
 
        ?>
 
+      <?php  if ($total_usuario > 0) { ?>
+
       <a href="listar.php"> <img src="lista.png" height="55" class="lado lado_esquerdo"> </a>
       <!-- total de coleta-->
       <h4 class="lado"><?php  echo $total_usuario[1];?></h4>
 
       <h3 class="lado afastar"><?php echo $total_usuario_2[1]; ?></h3>
 
+       <?php } ?>
 
       </div>
 
