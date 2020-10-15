@@ -23,11 +23,14 @@
 include 'arquivos_banco/atualizar_automaticamente.php'
 
 ?>
-
 	
 </head>
 
 <body>
+
+	<!-- gif de atualização -->
+	<?php include 'load.php' ?>
+
 	
 	<!-- sessao principal -->
 	<section id="principal ">
@@ -159,7 +162,9 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 
 	</section>
 
-	<?php // include 'v_rodape.php' ?>
+	<!--rodape com os arquivos do bootstrap -- >
+		
+	<?php  include 'rodape.php' ?>
 	
 	
 </body>
