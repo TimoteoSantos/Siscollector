@@ -140,9 +140,22 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 					<h3 class="panel-title"> Porcentagem </h3>
 				</div>
 				<div class="panel-body centro cor_porcentagem">
-					<h4><?php echo round($porcentagem,3); ?> % </h4>
+
+					<h4><?php echo round($porcentagem,0); ?> % </h4>
+
+					<div class="progress">
+
+  						<div class="progress-bar progress-bar-striped  progress-bar-danger" role="progressbar" style="width:<?php echo round($porcentagem,0);?>%; heigth: 15px" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"><?php echo round($porcentagem,0);?>%</div>
+					</div>
+				
 				</div>
 			</div><!--fim do painel contagem produtos importados-->
+
+
+
+
+
+
 
 
 			<div class="panel panel-primary painel_contagem">
