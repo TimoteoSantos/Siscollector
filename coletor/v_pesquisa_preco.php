@@ -26,6 +26,9 @@
 </head>
 
 <body>
+
+		<!-- gif de atualização -->
+	<?php include 'load.php' ?>
 	
 	<!-- sessao principal -->
 	<section id="principal">
@@ -165,5 +168,11 @@ $preco =  $linha['preco'] ;
 		</section>
 	</section>
 
+
+
+	<!--rodape com os arquivos do bootstrap -- >
+		
+	<?php  include 'rodape.php' ?>
+	
 </body>
 </html>
