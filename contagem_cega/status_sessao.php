@@ -2,12 +2,9 @@
 session_start();
 require "../coletor/arquivos_banco/conexao.php";
 
+$id = $_GET['sessao'];
 
- $id = $_GET['sessao'];
-
-   
-     
-   ?>
+?>
 <!DOCTYPE html>
 
 <html>
@@ -49,64 +46,64 @@ require "../coletor/arquivos_banco/conexao.php";
 
      <?php
 
-  
+$listagem = mysqli_query($conexao, "SELECT sessao.nome as nome, sessao.quantidade as quantidade, sessao.status as status, sessao.id_sessao, sum(coletor_importar.quantidade) as quantidade_coletada FROM sessao LEFT JOIN coletor_importar ON (sessao.id_sessao = coletor_importar.chave_sessao) WHERE coletor_importar.chave_sessao = '$id' group by sessao.id_sessao LIMIT 1 ");
 
-      $listagem = mysqli_query($conexao,  "SELECT sessao.nome as nome, sessao.quantidade as quantidade, sessao.status as status, sessao.id_sessao, sum(coletor_importar.quantidade) as quantidade_coletada FROM sessao LEFT JOIN coletor_importar ON (sessao.id_sessao = coletor_importar.chave_sessao) WHERE coletor_importar.chave_sessao = '$id' group by sessao.id_sessao LIMIT 1 ");
+while ($linha = mysqli_fetch_array($listagem))
+{
 
-      while($linha = mysqli_fetch_array($listagem)) {
+    $Divergência = $linha['quantidade'] - $linha['quantidade_coletada'];
 
-					$Divergência = $linha['quantidade'] - $linha['quantidade_coletada'];
+    /*porcentagem*/
+    $quantidade = $linha['quantidade'];
 
-                     /*porcentagem*/
-                        $quantidade = $linha['quantidade'];
+    if ($quantidade > 0)
+    {
 
-                        if ($quantidade > 0 ) {
-                          
-                        $porcentagem = ($linha['quantidade_coletada'] / $quantidade) * 100;
+        $porcentagem = ($linha['quantidade_coletada'] / $quantidade) * 100;
 
-                        }
+    }
 
+    $parcial = $linha['quantidade_coletada'];
+    $total1 = $quantidade;
 
-  $parcial = $linha['quantidade_coletada'] ;
-  $total1 = $quantidade ;
+    $total = $total1 - $parcial;
 
-  $total = $total1 - $parcial;
+    /*fim da porcentagem*/
 
+    /*status*/
 
-                        /*fim da porcentagem*/
+    $status = $linha['status'];
+    $status_echo = '';
 
-                        /*status*/
-                                          
-                        $status = $linha['status'];
-                        $status_echo = '';
+    if ($linha['quantidade_coletada'] > 0 and $linha['status'] <> 2)
+    {
 
-                        if($linha['quantidade_coletada'] > 0 and $linha['status'] <> 2)
-                        {
-                     
-                            $status_echo = 'coletando';
-                     
-                        }elseif ($status == 2) {
-                        
-                           $status_echo = 'finalizado';
-                        
-                        }elseif($status == 1){
-                     
-                           $status_echo = 'criada';
-                        
-                        }
-                     /*fim status*/
+        $status_echo = 'coletando';
 
+    }
+    elseif ($status == 2)
+    {
+
+        $status_echo = 'finalizado';
+
+    }
+    elseif ($status == 1)
+    {
+
+        $status_echo = 'criada';
+
+    }
+    /*fim status*/
 
 ?> 
-<h3>Sessão [<?php echo $linha['nome'];?>]</h3>
+<h3>Sessão [<?php echo $linha['nome']; ?>]</h3>
 
-<H4>Quantidade contada [<?php echo $linha['quantidade'];?>]</H4>
-<h4>Quantidade coletada [<?php echo $linha['quantidade_coletada'];?>]</h4>
-<h4>Digergência [<?php echo $Divergência;?>]</h4>
-<h4>Status [<?php echo $status_echo;?>]</h4>
+<H4>Quantidade contada [<?php echo $linha['quantidade']; ?>]</H4>
+<h4>Quantidade coletada [<?php echo $linha['quantidade_coletada']; ?>]</h4>
+<h4>Digergência [<?php echo $Divergência; ?>]</h4>
+<h4>Status [<?php echo $status_echo; ?>]</h4>
 
 <?php
-
 ?>
 
 <section class="grafico">
@@ -142,35 +139,38 @@ require "../coletor/arquivos_banco/conexao.php";
 
 <!--
 <div class="progress" style="height: 40px;">
-  <div class="progress-bar progress-bar-warning barra" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:<?php //echo $porcentagem;?>%" >
-   <span class=""><?php //echo $porcentagem;?>%</span>
+  <div class="progress-bar progress-bar-warning barra" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:<?php //echo $porcentagem;
+     ?>%" >
+   <span class=""><?php //echo $porcentagem;
+     ?>%</span>
   </div>
 </div>
 -->
 
-<?php } ?>
+<?php
+} ?>
 
 <section>
    <h4>Pessoas Envolvidas</h4>
    
 <?php
+$listagem = mysqli_query($conexao, "SELECT chave_sessao, sum(quantidade) as quantidade, usuario FROM coletor_importar WHERE chave_sessao = $id GROUP BY usuario ");
 
-      $listagem = mysqli_query($conexao,  "SELECT chave_sessao, sum(quantidade) as quantidade, usuario FROM coletor_importar WHERE chave_sessao = $id GROUP BY usuario ");
-
-
-      while($linha = mysqli_fetch_array($listagem)) {
+while ($linha = mysqli_fetch_array($listagem))
+{
 
 ?>
   
 <ul class="list-group">
   <li class="list-group-item">
-    <span class="badge"><?php echo $linha['quantidade'];?></span>
-    <?php echo $linha['usuario'];?>
+    <span class="badge"><?php echo $linha['quantidade']; ?></span>
+    <?php echo $linha['usuario']; ?>
   </li>
 </ul>
 
    
-<?php } ?>
+<?php
+} ?>
 
 </table>
 

@@ -40,7 +40,7 @@
                      <select name="sessao" id="" class="enviar">
                         <?php 
                            //coloca em listagem um array com apenas os campos vazios de status
-                           $listagem = mysqli_query($conexao,"SELECT * FROM sessao;");
+                           $listagem = mysqli_query($conexao,"SELECT * FROM sessao where quantidade > 0 ;");
                            
                            while($linha = mysqli_fetch_array($listagem)) {
                            
