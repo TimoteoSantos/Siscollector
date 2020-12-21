@@ -465,7 +465,8 @@ require 'arquivos_banco/login_verificar.php';
 
 
 			<p>
-			<!-- estoque e loja -->						
+
+							<!-- estoque e loja -->						
 				<section class="form">
 
 					<form method="post" action="arquivos_banco/estoque_loja.php">
@@ -484,7 +485,85 @@ require 'arquivos_banco/login_verificar.php';
 
 
 				</section>
-				
+
+
+
+
+<p></p>
+
+									
+		<section class="form">
+
+
+
+
+
+			<?php 
+                       
+                        $sessao_contar = mysqli_query($conexao,  "SELECT COUNT(sessao) as sessao  FROM config WHERE sessao > 0");
+                        $sessao = $sessao_contar->fetch_row();
+                             
+                        if ($sessao[0] < 1 ) {
+                        
+                        ?>
+
+					
+
+					<fieldset class="area_fieldset"> <h3>
+
+						<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+					Ativar a coleta por sessão</h3>
+					<p>
+					<a href="arquivos_banco/ativar_sessao.php">
+					<button type="button" class="btn btn-success">Ativar</button>
+					</a>
+					</p>
+
+					<div class="form-group">
+
+			        <?php   }else {    ?>
+
+					<fieldset class="area_fieldset"> <h3>
+
+						<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+					Ativar a coleta por sessão</h3>
+					<p>
+					<a href="arquivos_banco/desativar_sessao.php">
+					<button type="button" class="btn btn-danger">Desativar</button>
+					</a>
+					</p>
+
+					<div class="form-group">
+
+
+
+			       <?php   }    ?>
+
+
+
+					</div>
+				</fieldset>
+			</form>
+
+		</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			</section><!-- fim da div corpo -->
 		</section><!--fim da sessao principal-->
 	</body>

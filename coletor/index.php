@@ -34,6 +34,10 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 	
 	<!-- sessao principal -->
 	<section id="principal ">
+
+
+
+
 		
 		<?php require 'v_cabecalho.php'; ?>
 
@@ -49,6 +53,20 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 			<!-- fim da header -->
 
 			<section class="corpo_just">
+
+				<?php
+
+
+                     if(isset($_SESSION['msg'])){
+                     echo $_SESSION['msg'];
+                     unset($_SESSION['msg']);
+                     
+                     }
+                    
+
+?>
+
+
 
 			<!--painel de contagem produtos coletados-->
 			<div class="panel panel-primary painel_contagem">

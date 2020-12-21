@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 19-Dez-2020 às 10:27
+-- Generation Time: 21-Dez-2020 às 10:45
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 5.6.39
 
@@ -37,21 +37,7 @@ CREATE TABLE IF NOT EXISTS `auditoria` (
   `descricao` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `data` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `auditoria`
---
-
-INSERT INTO `auditoria` (`id`, `usuario`, `descricao`, `data`) VALUES
-(1, 'admin', 'Fonte: coletor_mobile EXCLUIU O PRODUTO 3 PRODUTO NAO CADASTRADO QUANTIDADE = 18', '2020-12-19 09:54:31'),
-(2, 'admin', 'Fonte: coletor_mobile EXCLUIU O PRODUTO 6 PRODUTO NAO CADASTRADO QUANTIDADE = 30', '2020-12-19 09:54:32'),
-(3, 'admin', 'Fonte: coletor_mobile EXCLUIU O PRODUTO 20 PRODUTO NAO CADASTRADO QUANTIDADE = 2', '2020-12-19 09:54:33'),
-(4, 'admin', 'Fonte: coletor_mobile EXCLUIU O PRODUTO 3 PRODUTO NAO CADASTRADO QUANTIDADE = 6', '2020-12-19 09:59:07'),
-(5, 'admin', 'Fonte: coletor_mobile EXCLUIU O PRODUTO 2012 PRODUTO NAO CADASTRADO QUANTIDADE = 1', '2020-12-19 09:59:09'),
-(6, 'admin', 'Fonte: coletor_mobile EXCLUIU O PRODUTO 1 PRODUTO NAO CADASTRADO QUANTIDADE = 1', '2020-12-19 09:59:10'),
-(7, 'admin', 'Fonte: coletor_mobile EXCLUIU O PRODUTO 3 PRODUTO NAO CADASTRADO QUANTIDADE = 3', '2020-12-19 09:59:35'),
-(8, 'admin', 'Excluiu a coleta de admin', '2020-12-19 10:14:06');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -70,17 +56,7 @@ CREATE TABLE IF NOT EXISTS `coletar` (
   `coleta` int(2) DEFAULT '0',
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `coletar`
---
-
-INSERT INTO `coletar` (`referencia`, `descricao`, `preco`, `quantidade`, `fabricante`, `grupo`, `coleta`, `id`) VALUES
-('7899026462564', 'TINT NUTRISSE COR INTENSA 3.16 122ML', 10.99, 1, 'GARNIER', 'TINTURA', 0, 1),
-('7899026462571', 'TINT NUTRISSE COR INTENSA 4.0 122GR', 11.49, 1, 'GARNIER', 'TINTURA', 0, 2),
-('7899026462632', 'TINT NUTRISSE COR INTENSA 6.35 122GR', 10.99, 1, 'GARNIER', 'TINTURA', 0, 3),
-('7899026462656', 'TINT NUTRISSE COR INTENSA 6.6 122GR', 10.99, 1, 'GARNIER', 'TINTURA', 0, 4);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -120,18 +96,7 @@ CREATE TABLE IF NOT EXISTS `coletor_importar` (
   `chave_sessao` int(2) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_sessao` (`chave_sessao`)
-) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `coletor_importar`
---
-
-INSERT INTO `coletor_importar` (`referencia`, `quantidade`, `descricao`, `usuario`, `hora`, `local_estoque`, `local_loja`, `fabricante`, `id`, `chave_sessao`) VALUES
-('3', 3, 'PRODUTO NAO CADASTRADO', 'admin', '2020-12-19 10:15:05', 0, 0, NULL, 74, 37),
-('5', 5, 'PRODUTO NAO CADASTRADO', 'admin', '2020-12-19 10:15:47', 0, 0, NULL, 75, NULL),
-('10', 3, 'PRODUTO NAO CADASTRADO', 'admin', '2020-12-19 10:15:58', 0, 0, NULL, 76, NULL),
-('9', 6, 'PRODUTO NAO CADASTRADO', 'admin', '2020-12-19 10:16:06', 0, 0, NULL, 77, NULL),
-('5', 5, 'PRODUTO NAO CADASTRADO', 'admin', '2020-12-19 10:26:44', 0, 0, NULL, 78, 38);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -150,14 +115,7 @@ CREATE TABLE IF NOT EXISTS `config` (
   `estoque_loja` int(2) DEFAULT '0',
   `sessao` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `config`
---
-
-INSERT INTO `config` (`id`, `arquivo`, `conf`, `camera`, `tempo`, `diferenca`, `estoque_loja`, `sessao`) VALUES
-(12, NULL, NULL, NULL, NULL, 0, 0, 1);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -208,15 +166,6 @@ CREATE TABLE IF NOT EXISTS `sessao` (
   `quantidade` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_sessao`)
 ) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `sessao`
---
-
-INSERT INTO `sessao` (`id_sessao`, `nome`, `status`, `quantidade`) VALUES
-(37, 'SHAMPOO', 1, 20),
-(38, 'COND', 1, 50),
-(39, 'CR PENTEAR', 1, 60);
 
 -- --------------------------------------------------------
 

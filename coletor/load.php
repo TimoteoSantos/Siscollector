@@ -12,6 +12,6 @@
 
     </style>
 	 
-	 <div class="load"> <img src="gif.gif"></div>
+	<!-- <div class="load"> <img src="gif.gif"></div>--> 
 
 	</span>
