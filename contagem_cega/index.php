@@ -9,15 +9,12 @@
     if ($sessao[0] < 1)
     {
 
-
    //envia mensagem
    $_SESSION['msg'] = "<div class='alert alert-danger'>Sessão não foi ativada verificar em configuração</div>";
    //redireciona
    header("Location: ../coletor/v_configuracao.php");
 
     }
-
-
 
    ?>
 <!DOCTYPE html>
