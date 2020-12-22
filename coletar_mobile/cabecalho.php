@@ -43,6 +43,9 @@
                <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"> </span>
                Sair </a>
             </li>
+    
+    <li><a href="#">
+
             <?php
                //estoque / loja
                $estoque = mysqli_query($conexao, "SELECT estoque_loja from config where estoque_loja > 0 limit 1 ");
@@ -55,12 +58,12 @@
                            
                            case '1':
                
-                             echo "Estoque";
+                             echo   "<span class='glyphicon glyphicon-export' aria-hidden='true'>  </span>  Estoque";
                              break;
                
                            case '2':
                
-                             echo "Loja";
+                             echo   "<span class='glyphicon glyphicon-import' aria-hidden='true'>  </span> Loja";
                              break;
                            
                                                      
@@ -81,7 +84,7 @@
                     
                       $sessao_echo = $var['nome'];
                   
-                     echo $sessao_echo;
+                     echo   "<span class='glyphicon glyphicon-random' aria-hidden='true'></span> &nbsp;" . $sessao_echo;
                   
                     
                         }//fim do estoque / loja
