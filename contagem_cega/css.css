@@ -1,9 +1,4 @@
 ﻿
-body {
-	background-color: black;
-}
-
-
 .principal {
 
 
@@ -12,6 +7,7 @@ body {
 	background-color: #FFFFFF !important;
 	margin: auto;
 	padding-bottom: 55px;
+
 }
 
 .cabecalho {
@@ -45,8 +41,8 @@ input type['submit']{
 }
 fieldset {
 	margin-top: 25px;
-	border: dashed;
-	border-color: green;
+	/*border: dashed;
+	border-color: green;*/
 
 
 
@@ -122,4 +118,9 @@ li	{
 th	{
 
 	text-transform: uppercase !important;
+}
+
+a > h3 {
+
+	margin: 0;
 }

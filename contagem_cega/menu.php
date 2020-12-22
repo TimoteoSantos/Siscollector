@@ -1,6 +1,6 @@
 <!-- menu-->
 <nav>
-<a href="index.php">Início </a> 
+<a href="index.php"> <h3><span class="glyphicon glyphicon-home" aria-hidden="true"> </span> </h3> Início </a> 
 
 
 <ul class="nav relatorios nav-tabs">
@@ -9,7 +9,7 @@
 
     <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 
-      <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-tasks" aria-hidden="true"> </span>
       Relatórios <span class="caret"></span>
 
     </a>
