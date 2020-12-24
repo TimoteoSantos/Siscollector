@@ -40,7 +40,7 @@
                      <select name="sessao" id="" class="enviar">
                         <?php 
                            //coloca em listagem um array com apenas os campos vazios de status
-                           $listagem = mysqli_query($conexao,"SELECT * FROM sessao where quantidade > 0 ;");
+                           $listagem = mysqli_query($conexao,"SELECT * FROM sessao where quantidade > 0 and status <> 2 ;");
                            
                            while($linha = mysqli_fetch_array($listagem)) {
                            
@@ -48,6 +48,8 @@
                         <option value = "<?php echo $linha['id_sessao']; ?>" > <?php echo $linha['nome']; ?></option>
 
                           <?php   }    ?>
+                          <option value="">AVULSO</option>
+
 
                        </select>
 

@@ -2,7 +2,6 @@
 session_start();
 
 require '../../coletor/arquivos_banco/conexao.php';
-$sessao = filter_input(INPUT_POST, 'sessao');
 
 //verificar se a sessao foi ativada
 $sessao_contar = mysqli_query($conexao, "SELECT COUNT(sessao) as sessao  FROM config WHERE sessao > 0");
@@ -11,20 +10,6 @@ $sessao2 = $sessao_contar->fetch_row();
 if ($sessao2[0] > 0)
 
 {
-
-    //verificar se a sessao foi ativada
-    $quantidade1 = mysqli_query($conexao, "SELECT *  FROM sessao WHERE id_sessao = '$sessao' and quantidade > 0");
-    $quantidade = $quantidade1->fetch_row();
-
-    if ($quantidade < 1)
-    {
-
-        $_SESSION['msg'] = "<span class='alerta'><span> Sessão não foi contada :( <audio src='erro.mp3' autoplay></audio> </span>";
-        header("Location: ../login.php");
-
-    }
-    else
-    {
 
         $btnLogin = filter_input(INPUT_POST, 'btnLogin');
         if ($btnLogin)
@@ -73,7 +58,7 @@ if ($sessao2[0] > 0)
             header("Location: ../login.php");
         }
 
-    }
+    
 
 }
 else
@@ -127,6 +112,5 @@ else
     }
 
 }
-
 
 

@@ -67,17 +67,16 @@ require 'arquivos_banco/login_verificar.php';
 
     <!-- tabela -->
 
-    <table class="table table-condensed">
+    <table class="table">
 
      <!-- cabecalho da tabela-->
      <thead >
 
-      <tr class="table-primary">
+      <tr>
 
         <th scope="col">EAN</th>
         <th scope="col">QUANTIDADE</th>
         <th scope="col">DESCRIÇÃO</th>
-        <th scope="col">PREÇO</th>
         <th scope="col">FABRICANTE</th>
         
         
@@ -94,7 +93,6 @@ require 'arquivos_banco/login_verificar.php';
           <td> <?= $linha['referencia'] ?> </td> 
           <td> <?= $linha['quantidade'] ?> </td>  
           <td> <?= utf8_encode($linha['descricao']); ?> </td>
-          <td> <?= $linha['preco'] ?> </td>
           <td> <?= $linha['fabricante'] ?> </td>
 
         </tr>

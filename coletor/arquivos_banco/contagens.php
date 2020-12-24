@@ -67,15 +67,15 @@
 
 			}
 
-				$fab = mysqli_query($conexao,  "SELECT * FROM pdf");
+				$fab = mysqli_query($conexao,  "SELECT * FROM pdf WHERE fabricante is not null");
 				$fabricante_ext = $fab->fetch_row();
 
 			if ($fabricante_ext > 0) {
 			
-					$quantidade_importado_produto5 =mysqli_query($conexao,  "SELECT count(DISTINCT id), fabricante FROM coletar where quantidade > 0 AND fabricante = '$fabricante' ");
+					$quantidade_importado_produto5 =mysqli_query($conexao,  "SELECT count(DISTINCT referencia), fabricante FROM coletar where quantidade > 0 AND fabricante = '$fabricante' ");
 					$subtrair = $quantidade_importado_produto5->fetch_row();
 					
-					$quantidade_importado_produto6 = mysqli_query($conexao,  " SELECT COUNT(DISTINCT id), fabricante FROM coletor_importar where fabricante = '$fabricante' ");
+					$quantidade_importado_produto6 = mysqli_query($conexao,  " SELECT COUNT(DISTINCT referencia), fabricante FROM coletor_importar where fabricante = '$fabricante' ");
 					$aubtrair2 = $quantidade_importado_produto6->fetch_row();
 
 							if ($subtrair[0] > 0) {
@@ -90,10 +90,10 @@
 			} else {
 
 
-					$quantidade_importado_produto5 =mysqli_query($conexao,  "SELECT count(DISTINCT id) FROM coletar where quantidade > 0");
+					$quantidade_importado_produto5 =mysqli_query($conexao,  "SELECT count(DISTINCT referencia) FROM coletar where quantidade > 0");
 					$subtrair = $quantidade_importado_produto5->fetch_row();
 					
-					$quantidade_importado_produto6 = mysqli_query($conexao,  " SELECT COUNT(DISTINCT id) FROM coletor_importar ");
+					$quantidade_importado_produto6 = mysqli_query($conexao,  " SELECT COUNT(DISTINCT referencia) FROM coletor_importar ");
 					$aubtrair2 = $quantidade_importado_produto6->fetch_row();
 
 

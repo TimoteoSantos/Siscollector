@@ -23,7 +23,7 @@
          </button>
          <!-- brand-->
          <a class="navbar-brand" href="index.php"><img class="imagem" src="logo.png"> </a>
-         <a class="navbar-brand marca" href="index.php">Siscollect Mobi <span style="color:red">
+         <a class="navbar-brand marca" href="index.php">Siscollect <span style="color:red">
          <?php 
             //so vai mostrar se tiver nao cadastrado
             if ($nao[0] > 0) {
@@ -35,7 +35,7 @@
       <div id="navbar" class="navbar-collapse collapse">
          <!-- menu-->
          <ul class="nav navbar-nav">
-            <li> <a href="#"> <span class="glyphicon glyphicon-user" aria-hidden="true"> </span> Olá! <?php echo $_SESSION['usuario'];?>. </a> </li>
+            <li> <a href="#"> <span class="glyphicon glyphicon-user" aria-hidden="true"> </span> Oi <?php echo $_SESSION['usuario'];?> ;) </a> </li>
             <li><a href="listar.php"> <span class="glyphicon glyphicon-th-list" aria-hidden="true"> </span> Listar</a></li>
             <li><a href="pesquisar_index.php"> <span class="glyphicon glyphicon-search" aria-hidden="true"> </span> Pesquisar EAN</a></li>
             <li><a href="listar_nao_cadastrado.php"> <span class="glyphicon glyphicon-floppy-remove" aria-hidden="true"> </span> Não Cadastrado</a></li>
@@ -72,10 +72,12 @@
                ?>
             </a>
             </li>
-            </a>
+          
             <li><a href="#">
                <?php
                   $sessao = $_SESSION['sessao'];
+
+                   if (isset($sessao)){
                     //estoque / loja
                     $sessao_2 = mysqli_query($conexao, "SELECT * from sessao where id_sessao = '$sessao' limit 1");
                     
@@ -88,6 +90,8 @@
                   
                     
                         }//fim do estoque / loja
+
+                    }
                     ?>
                </a>
             </li>

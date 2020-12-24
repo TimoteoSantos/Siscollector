@@ -48,7 +48,7 @@
                      <input type="number" name="ref" value="<?= $_GET['codigo'] ?>" class="form-control inputUnico" id="exampleInputEmail1" placeholder="Barras" required="" autofocus="" autocomplete="off">
                      <input type="number" name="qt" class="form-control inputUnico" id="exampleInputEmail1" required="" onfocus="this.selectionStart = this.selectionEnd = this.value.length;" autofocus="true" min="1" max="7000"  >
                   </div>
-                  <input type="submit" class="btn btn-primary enviar" value="Enviar">
+                  <input type="submit" class="btn btn-info enviar" value="Enviar">
                </form>
             </div>
          </div>

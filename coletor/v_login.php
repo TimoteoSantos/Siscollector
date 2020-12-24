@@ -20,16 +20,18 @@ require 'arquivos_banco/conexao.php';
 	}
 	
 	fieldset{
-	background-image: url(bg.jpg);
+	background-image: url(bg_login1.jpg);
 	opacity: 0.8;
+	width: 26em !important;
 
 	}
 
 	.area_fieldset {
 		margin: auto;
 		border-style:none !important;
-		width: 30em !important;
-		border-radius: 4px;
+		width: 100% !important;
+		height: 40em !important;
+		border-radius: 25px;
 		box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
 		
 	}
@@ -95,12 +97,12 @@ require 'arquivos_banco/conexao.php';
 
 				<div class="form-group">
 					<label for="exampleInputEmail1"></label>
-					<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome" name="user" required="" autofocus="">
+					<input type="text" class="form-control botao_entrar" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome" name="user" required="" autofocus="">
 
 				</div>
 				<div class="form-group">
 					<label for="exampleInputPassword1"></label>
-					<input type="password"  name="senh" class="form-control" id="exampleInputPassword1" placeholder="Senha" required="">
+					<input type="password"  name="senh" class="form-control botao_entrar" id="exampleInputPassword1" placeholder="Senha" required="">
 				</div>
 
 				<input type="submit" class="btn btn-primary botao_entrar " name="botao" value="ENTRAR" >

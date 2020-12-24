@@ -51,7 +51,7 @@ unset($_SESSION['msg']);
       <form action="pesquisar_coleta.php" method="post">
         <div class="form-group">
 
-        <input type="number" name="ref" value="<?= $_GET['codigo'] ?>" class="form-control perquisar" id="exampleInputEmail1" placeholder="Barras" required="" autofocus="" autocomplete="off">
+        <input type="text" name="ref" class="form-control perquisar" id="exampleInputEmail1" placeholder="Barras" required="" autofocus="" autocomplete="off">
         </div>
 
         <button type="submit" class="btn btn-primary botao2" >Buscar </button>
