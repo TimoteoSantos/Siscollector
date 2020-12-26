@@ -33,11 +33,30 @@ if ($ref == $referencia){
 
 	header("Location: pesquisar_index.php");
 	
-	$_SESSION['msg'] = "<p style='color:#FF4500; size=22px;'> $prec | <span style='color:#800000; size=22px;'> $linha[quantidade] </span> <span style='color:black; size=22px;'>| $linha[descricao] <br> $linha[referencia] | </span> <span style='color:green; size=22px;'> $linha[fabricante] </span> </p>";
+
+	if ($linha['quantidade'] > 1){
+
+        $_SESSION['msg'] = "<p style='color:#FF4500; size=22px;'> $prec | <span style='color:#800000; size=22px;'> $linha[quantidade] </span> <span style='color:black; size=22px;'>| $linha[descricao] <br> $linha[referencia] | </span> <span style='color:green; size=22px;'> $linha[fabricante] </span> </p>";
 
 		require 'som_e_fabricante.php';
 
-	}
+
+
+	}else{
+
+
+        $_SESSION['msg'] = "<p style='color:#FF4500; size=22px;'> $prec | <span style='color:#800000; size=22px;'> $linha[quantidade] </span> <span style='color:black; size=22px;'>| $linha[descricao] <br> $linha[referencia] | </span> <span style='color:green; size=22px;'> $linha[fabricante] </span> </br> Zerado no sistema ! </p> <audio src='erro.mp3' autoplay></audio>";
+
+        require 'som_e_fabricante.php';
+
+
+
+
+
+
+    }
+}
+
 }
 
 

@@ -29,8 +29,8 @@ require 'arquivos_banco/conexao.php';
 	.area_fieldset {
 		margin: auto;
 		border-style:none !important;
-		width: 100% !important;
-		height: 40em !important;
+		width: 50% !important;
+		height: 30em !important;
 		border-radius: 25px;
 		box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
 		
