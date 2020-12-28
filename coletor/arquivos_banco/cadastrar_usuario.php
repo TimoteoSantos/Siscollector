@@ -11,6 +11,7 @@ $usuario = filter_var( $_POST['usuario'], FILTER_SANITIZE_STRING);
 $senha = filter_var(password_hash($_POST['senha'], PASSWORD_DEFAULT), FILTER_SANITIZE_STRING);
 //recebe o tipo da conta e ignora mensagem de erro se receber vazio
 $tipo = @filter_var($_POST['tipo'], FILTER_SANITIZE_STRING);
+$sexo = @filter_var($_POST['sexo'], FILTER_SANITIZE_STRING);
 
 //procura usuarios iguais ao digitado na tabela
 $listagem = mysqli_query($conexao, "SELECT usuario from usuarios where usuario = '$usuario' ;");
@@ -25,7 +26,7 @@ $user = $linha['usuario']; //recebe o usuario do banco
 if ($user != $usuario){
 
 	//inseri os valores caso nao encontre o usuario na tabela
-	$query = "INSERT INTO usuarios (usuario, senha, tipo) VALUES ('$usuario', '$senha', '$tipo');" ;
+	$query = "INSERT INTO usuarios (usuario, senha, tipo, sexo) VALUES ('$usuario', '$senha', '$tipo', '$sexo');" ;
 
 	mysqli_query($conexao, $query);
 

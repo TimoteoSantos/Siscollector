@@ -63,6 +63,27 @@ require 'arquivos_banco/login_verificar.php';
 						<input type="checkbox" name="tipo" value="adm" class="form-check-input" id="exampleCheck1">
 						<label class="form-check-label" for="exampleCheck1">Administrador</label><p>
 						</div>
+
+
+
+						<label"> sexo
+						<div class="form-check">
+
+						<input type="radio" name="sexo" value="M" class="form-check-input" id="exampleCheck1">
+						<label class="form-check-label" >Masculino</label>
+						</div>
+							<div class="form-check">
+
+						<input type="radio" name="sexo" value="F" class="form-check-input" id="exampleCheck1">
+						<label class="form-check-label">Feminino</label>
+						</div>
+					</p>
+
+				</label>
+
+
+
+
 						<button type="submit" class="btn btn-primary">Cadastrar</button>
 					</fieldset>
 				</form>

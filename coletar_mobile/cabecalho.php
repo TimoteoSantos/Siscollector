@@ -7,7 +7,9 @@
          
          header("Location: login.php");  
          }
-         
+
+          $usuario = $_SESSION['usuario'];
+
          ?>
 <link href="../coletor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Fixed navbar -->
@@ -28,14 +30,43 @@
             //so vai mostrar se tiver nao cadastrado
             if ($nao[0] > 0) {
             ?>
-         ( <?php echo  $nao[0] ?> )
+         [ <?php echo  $nao[0] ?> ]
          <?php } ?>
          </a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
          <!-- menu-->
          <ul class="nav navbar-nav">
-            <li> <a href="#"> <span class="glyphicon glyphicon-user" aria-hidden="true"> </span> Oi <?php echo $_SESSION['usuario'];?> ;) </a> </li>
+
+         	<!--avatar-->
+
+         	<?php
+
+
+//procura usuarios iguais ao digitado na tabela
+$listagem = mysqli_query($conexao, "SELECT * from usuarios where usuario = '$usuario' ;");
+//o while repete a criaçao de linhas na tabela igual a quantidade de itens.
+while($linha = mysqli_fetch_array($listagem)) {
+
+$sexo = $linha['sexo']; //recebe o usuario do banco
+
+}
+            if ($sexo == "F"){
+
+         		$caminho = "img/avatar_mulher.jpg";
+
+         	}elseif($sexo == "M") {
+
+				$caminho ="img/avatar_homem.jpg";
+
+         	}
+
+         	?>
+
+            <li class="fim"> <a href="#"><div class="ico"><img src= <?php echo $caminho;?> class="ico" width="50px" alt=""></div> <h4> Olá <?php echo $usuario;?> :)</h4> </li> </a>
+
+<!--fim do avatar-->
+
             <li><a href="listar.php"> <span class="glyphicon glyphicon-th-list" aria-hidden="true"> </span> Listar</a></li>
             <li><a href="pesquisar_index.php"> <span class="glyphicon glyphicon-search" aria-hidden="true"> </span> Pesquisar EAN</a></li>
             <li><a href="listar_nao_cadastrado.php"> <span class="glyphicon glyphicon-floppy-remove" aria-hidden="true"> </span> Não Cadastrado</a></li>
@@ -43,8 +74,30 @@
                <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"> </span>
                Sair </a>
             </li>
+             <li><a href="#">
+               <?php
+                  $sessao = $_SESSION['sessao'];
+
+                   if (isset($sessao)){
+                    //estoque / loja
+                    $sessao_2 = mysqli_query($conexao, "SELECT * from sessao where id_sessao = '$sessao' limit 1");
+                    
+                    //o while repete a criaçao de linhas na tabela igual a quantidade de itens.
+                    while($var = mysqli_fetch_array($sessao_2)) {
+                    
+                      $sessao_echo = $var['nome'];
+                  
+                     echo   "<span class='glyphicon glyphicon-random' aria-hidden='true'></span> &nbsp;" . $sessao_echo;
+                  
+                    
+                        }//fim do estoque / loja
+
+                    }
+                    ?>
+               </a>
+            </li>
     
-    <li><a href="#">
+    <li class="fim"><a href="#">
 
             <?php
                //estoque / loja
@@ -73,28 +126,7 @@
             </a>
             </li>
           
-            <li><a href="#">
-               <?php
-                  $sessao = $_SESSION['sessao'];
-
-                   if (isset($sessao)){
-                    //estoque / loja
-                    $sessao_2 = mysqli_query($conexao, "SELECT * from sessao where id_sessao = '$sessao' limit 1");
-                    
-                    //o while repete a criaçao de linhas na tabela igual a quantidade de itens.
-                    while($var = mysqli_fetch_array($sessao_2)) {
-                    
-                      $sessao_echo = $var['nome'];
-                  
-                     echo   "<span class='glyphicon glyphicon-random' aria-hidden='true'></span> &nbsp;" . $sessao_echo;
-                  
-                    
-                        }//fim do estoque / loja
-
-                    }
-                    ?>
-               </a>
-            </li>
+           
          </ul>
       </div>
       <!--/.nav-collapse -->

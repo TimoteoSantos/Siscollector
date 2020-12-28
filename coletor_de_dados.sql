@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 21-Dez-2020 às 10:45
+-- Generation Time: 28-Dez-2020 às 02:36
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 5.6.39
 
@@ -37,7 +37,14 @@ CREATE TABLE IF NOT EXISTS `auditoria` (
   `descricao` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `data` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `auditoria`
+--
+
+INSERT INTO `auditoria` (`id`, `usuario`, `descricao`, `data`) VALUES
+(1, 'admin', 'Excluiu o usuário tiago', '2020-12-28 00:55:20');
 
 -- --------------------------------------------------------
 
@@ -96,7 +103,15 @@ CREATE TABLE IF NOT EXISTS `coletor_importar` (
   `chave_sessao` int(2) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_sessao` (`chave_sessao`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `coletor_importar`
+--
+
+INSERT INTO `coletor_importar` (`referencia`, `quantidade`, `descricao`, `usuario`, `hora`, `local_estoque`, `local_loja`, `fabricante`, `id`, `chave_sessao`) VALUES
+('2012', 2, 'PRODUTO NAO CADASTRADO', 'admin', '2020-12-27 00:21:44', 0, 0, NULL, 1, NULL),
+('2012', 1, 'PRODUTO NAO CADASTRADO', 'admin', '2020-12-27 01:03:39', 0, 0, NULL, 2, 40);
 
 -- --------------------------------------------------------
 
@@ -115,7 +130,15 @@ CREATE TABLE IF NOT EXISTS `config` (
   `estoque_loja` int(2) DEFAULT '0',
   `sessao` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `config`
+--
+
+INSERT INTO `config` (`id`, `arquivo`, `conf`, `camera`, `tempo`, `diferenca`, `estoque_loja`, `sessao`) VALUES
+(1, NULL, NULL, NULL, NULL, 0, 0, 1),
+(2, NULL, 15, NULL, NULL, 0, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -165,7 +188,14 @@ CREATE TABLE IF NOT EXISTS `sessao` (
   `status` int(2) NOT NULL DEFAULT '1',
   `quantidade` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_sessao`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `sessao`
+--
+
+INSERT INTO `sessao` (`id_sessao`, `nome`, `status`, `quantidade`) VALUES
+(40, 'SHAMPOO', 1, 30);
 
 -- --------------------------------------------------------
 
@@ -179,15 +209,19 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `usuario` varchar(220) NOT NULL,
   `senha` varchar(220) NOT NULL,
   `tipo` varchar(30) NOT NULL DEFAULT 'N',
+  `sexo` varchar(2) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `usuario`, `senha`, `tipo`) VALUES
-(56, 'admin', '$2y$10$Z1Jcu.Aww7.iXbaIvRi2IubhA9MzhgB17jkVqt47R3OKLGGLqYj6S', 'adm');
+INSERT INTO `usuarios` (`id`, `usuario`, `senha`, `tipo`, `sexo`) VALUES
+(56, 'admin', '$2y$10$Z1Jcu.Aww7.iXbaIvRi2IubhA9MzhgB17jkVqt47R3OKLGGLqYj6S', 'adm', 'F'),
+(58, 'tiago', '$2y$10$PtQjad9Y7um8eNImnNgUuem8UO0VIf2EAAzslZTsB8OTIAIPq5YWy', 'adm', 'M'),
+(59, 'taiza', '$2y$10$zENZ/OEkm1jb8uW.cqhmEea7IwrCTV3VzMW2FZ8LaajNssLH8pPtO', 'adm', 'F'),
+(60, 'joelma', '$2y$10$ulzzeXR7vU/Xps/zPZ5sf.8jCKQQ027NaqPK8Tg9fb6uiDWU1RnWO', '', 'F');
 
 -- --------------------------------------------------------
 
