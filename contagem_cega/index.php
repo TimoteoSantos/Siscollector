@@ -91,6 +91,19 @@
                         $porcentagem = ($linha['quantidade_coletada'] / $quantidade) * 100;
 
                         }
+
+
+                    if(isset($porcentagem)){
+                        	
+                        	$porcentagem = $porcentagem;
+                        
+                        }else{
+
+                        	$porcentagem = 0;
+                        }
+
+
+
                         /*fim da porcentagem*/
 
                         /*status*/
