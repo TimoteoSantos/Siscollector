@@ -25,7 +25,7 @@
 
             <section class="cabecalho">
 
-               <img src="img/logo.jpg" height="60px" width="60px" alt="">
+               <!-- <img src="img/logo.jpg" height="60px" width="60px" alt=""> -->
 
                <header>
 

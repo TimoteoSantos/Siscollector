@@ -19,7 +19,7 @@
       <section class="principal" id="principal">
          <section class="corpo">
             <section class="cabecalho">
-               <img src="img/logo.jpg" height="60px" width="60px" alt="">
+               <!-- <img src="img/logo.jpg" height="60px" width="60px" alt=""> -->
                <header>
                   <?php include_once 'menu.php' ?>
                </header>

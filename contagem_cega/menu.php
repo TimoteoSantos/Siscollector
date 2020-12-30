@@ -1,6 +1,7 @@
 <!-- menu-->
 <nav>
-<a href="index.php"> <h3><span class="glyphicon glyphicon-home" aria-hidden="true"> </span> </h3> Início </a> 
+
+<a href="index.php"> <h3> <span class="glyphicon glyphicon-home" aria-hidden="true"> Up_Sessão </span> </h3>   </a> 
 
 
 <ul class="nav relatorios nav-tabs">
