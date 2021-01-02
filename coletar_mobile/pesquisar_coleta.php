@@ -34,7 +34,7 @@ if ($ref == $referencia){
 	header("Location: pesquisar_index.php");
 	
 
-	if ($linha['quantidade'] > 1){
+	if ($linha['quantidade'] > 0){
 
         $_SESSION['msg'] = "<p style='color:#FF4500; size=22px;'> $prec | <span style='color:#800000; size=22px;'> $linha[quantidade] </span> <span style='color:black; size=22px;'>| $linha[descricao] <br> $linha[referencia] | </span> <span style='color:green; size=22px;'> $linha[fabricante] </span> </p>";
 
