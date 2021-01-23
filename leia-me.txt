@@ -5,6 +5,8 @@
 		1. HORARIO
 		2. TEMPO DE EXECUÇÃO DO PHP 
 		3. MEMORIA DO PHP
+
+adsf
 30/12/2020
 
 
