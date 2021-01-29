@@ -14,13 +14,14 @@ require 'arquivos_banco/conexao.php';
 		
 	body{
 	
-	background-image: url("fundo_login.jpg")!important;
-	background-repeat: repeat-x;
+	/*background-image: url("fundo_login.jpg")!important;*/
+	/*background-repeat: repeat-x;*/
+	background-color: #363636 !important;
 	
 	}
 	
 	fieldset{
-	background-image: url(bg_login1.jpg);
+	/*background-image: url(bg_login1.jpg);*/
 	opacity: 0.8;
 	width: 26em !important;
 
@@ -32,7 +33,7 @@ require 'arquivos_banco/conexao.php';
 		width: 50% !important;
 		height: 30em !important;
 		border-radius: 25px;
-		box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+		/*box-shadow: 5px 5px 5px rgba(0,0,0,0.5);*/
 		
 	}
 
@@ -45,7 +46,7 @@ require 'arquivos_banco/conexao.php';
 
 	h1 {
 		margin-left: 20px;
-		color: #FFFFFF !important;
+		color:#ffffff !important;
 		margin-left: 20px !important;
 	}
 
