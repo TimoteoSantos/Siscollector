@@ -1,6 +1,8 @@
 body {
   min-height: 2000px;
   padding-top: 0px;
+  background-image: url(../img/degrade.jpg);
+  background-repeat: repeat-x;
 }
 nav .container, li a {
 	background-color:black !important;

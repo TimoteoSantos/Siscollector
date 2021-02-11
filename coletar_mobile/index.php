@@ -61,7 +61,7 @@
                    ?>
                <a href="http://zxing.appspot.com/scan?ret=http://<?php echo $destino ?>/coletar_mobile/index.php?codigo={CODE}">
                   <?php  } ?>
-                  <img src="camera.jpg" height="60" class="lado">
+                  <img src="img/camera.jpg" height="60" class="lado">
                   <h2><?php// echo $destino;?> </h2>
                </a>
             </span>
@@ -87,7 +87,7 @@
                <span type="hidden" onclick="start()">
                <a class="branco" href="arquivos_banco/excluir_ultimo.php?referencia=<?= $linha['referencia'] ?>&id=<?= $linha['id'] ?>&descricao=<?= $linha['descricao'] ?>&quantidade=<?= $linha['quantidade'] ?>"  onclick="return confirm('Excluir o último item?')">
                </span>
-               <img src="excluir.jpg" height="55" class="lado">
+               <img src="img/excluir.jpg" height="55" class="lado">
                </a>
                <?php }
                   $usuario = $_SESSION['usuario'];
@@ -100,7 +100,7 @@
                   
                    ?>
                <?php  if ($total_usuario > 0) { ?>
-               <a href="listar.php"> <img src="lista.png" height="55" class="lado lado_esquerdo"> </a>
+               <a href="listar.php"> <img src="img/lista.png" height="55" class="lado lado_esquerdo"> </a>
                <!-- total de coleta-->
                <h4 class="lado"><?php  echo $total_usuario[1];?></h4>
                <h3 class="lado afastar"><?php echo $total_usuario_2[1]; ?></h3>
@@ -113,7 +113,7 @@
                $usuario = $_SESSION['usuario'];
                
                    //coloca em listagem um array com apenas os campos vazios de status
-                   $listagem = mysqli_query($conexao,"SELECT max(id) as id, referencia, sum(quantidade), descricao from coletor_importar  where usuario = '$usuario' group by referencia order by id desc limit 3;");
+                   $listagem = mysqli_query($conexao,"SELECT max(id) as id, referencia, sum(quantidade), descricao from coletor_importar  where usuario = '$usuario' group by referencia order by id desc limit 2;");
                
                   while($linha = mysqli_fetch_array($listagem)) {
                

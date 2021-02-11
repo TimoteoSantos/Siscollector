@@ -24,15 +24,22 @@
          <span class="icon-bar"></span>
          </button>
          <!-- brand-->
-         <a class="navbar-brand" href="index.php"><img class="imagem" src="logo.png"> </a>
+         <a class="navbar-brand" href="index.php"><img class="imagem" src="img/logo.png"> </a>
          <a class="navbar-brand marca" href="index.php">Siscollect <span style="color:red">
+       
          <?php 
             //so vai mostrar se tiver nao cadastrado
             if ($nao[0] > 0) {
             ?>
-         [ <?php echo  $nao[0] ?> ]
+            <span class="glyphicon glyphicon glyphicon-bell" aria-hidden="true"></span>
+        
+          <small> <?php echo  $nao[0] ?> </small> 
          <?php } ?>
+
+         
          </a>
+
+
       </div>
       <div id="navbar" class="navbar-collapse collapse">
          <!-- menu-->

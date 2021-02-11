@@ -25,7 +25,7 @@
          </span>
          <div class="panel panel-default">
             <div class="panel-body">
-               <img src="logo_login.png" class="img">
+               <img src="img/logo_login.png" class="img">
                <form method="POST" action="arquivos_banco/valida.php">
                   <div class="form-group">
                      <?php 
