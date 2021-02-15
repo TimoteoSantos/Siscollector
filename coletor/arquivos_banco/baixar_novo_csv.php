@@ -15,7 +15,7 @@ if ($id[0] > 0 ) {
 
 
 	//baixa
-	$sql = "SELECT referencia, quantidade, descricao FROM coletor_exportar
+	$sql = "SELECT referencia, quantidade, descricao FROM coletor_exportar WHERE quantidade > 0
 	INTO OUTFILE '/util/teste.csv'
 	FIELDS TERMINATED BY ';'
 	ENCLOSED BY ''

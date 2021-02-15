@@ -4,7 +4,7 @@
 	require 'conexao.php';
 
 	//processados
-	$exportados = mysqli_query($conexao,  "SELECT COUNT(referencia)  FROM coletor_exportar");
+	$exportados = mysqli_query($conexao,  "SELECT COUNT(referencia)  FROM coletor_exportar WHERE quantidade > 0 ");
 	$exportados = $exportados->fetch_row();
 
 	//coletados
@@ -54,6 +54,22 @@
 			$total[0] = 0;
 
 		}
+
+
+				//quantidade total de itens
+
+		$total_process = mysqli_query($conexao,  " SELECT sum(quantidade) FROM coletor_exportar");
+		$total_processados = $total_process->fetch_row();
+
+		if (isset($total_processados[0])) {} else {
+
+			$total_processados[0] = 0;
+
+		}
+
+
+
+
 
 
 			//porcentagem decorrida

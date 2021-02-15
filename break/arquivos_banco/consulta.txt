@@ -1,3 +1,0 @@
-SELECT memoria_Vendas.[Cód Fabricante], memoria_Vendas.Quantidade_Item, memoria_Vendas.Mercadoria
-FROM memoria_Vendas
-WHERE (((memoria_Vendas.[Data da Venda])=#1/18/2019#) AND ((memoria_Vendas.LojaOrigem)="loja 03"));

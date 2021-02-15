@@ -14,7 +14,6 @@ $id2 = $conta;
 //se tiver importado
 if ($id2[0] > 0) {	
 
-
 $listagem = mysqli_query($conexao,  "SELECT COUNT(id)  FROM coletor_exportar;");
 //conta
 $contar = $listagem->fetch_row();
@@ -36,7 +35,6 @@ header("Location: ../index.php");
 		//pega os dados da consulta while
 		$ref = $linha['referencia'];
 		$qt = $linha['sum(quantidade)'];
-
 
 	$listagem = mysqli_query($conexao, "SELECT * from coletor_exportar where referencia = $ref  group by referencia;");
 
@@ -64,6 +62,8 @@ header("Location: ../index.php");
 			//redireciona
 			header("Location: ../index.php");
 
+
+
 		}
 	}
 }
@@ -76,4 +76,5 @@ header("Location: ../index.php");
 	$_SESSION['msg'] = "<div class='alert alert-danger'><span class='glyphicon glyphicon-remove remove' aria-hidden='true'></span> Não tem produto importado !</div>";
 	header("Location: ../index.php");
 		
-	}
+}
+

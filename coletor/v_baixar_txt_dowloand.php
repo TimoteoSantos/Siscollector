@@ -27,7 +27,7 @@ require 'arquivos_banco/login_verificar.php';
 
 	}
 
-	$querymai = mysqli_query($conexao, "select referencia, quantidade, descricao from coletor_exportar");
+	$querymai = mysqli_query($conexao, "select referencia, quantidade, descricao from coletor_exportar WHERE quantidade > 0");
 
 	//abre para leitura e apaga os dados armazenados anteriormente se nao colocar ele duplica
 	fopen("arquivo/Arquivo_txt.txt", "w+");
@@ -39,7 +39,7 @@ require 'arquivos_banco/login_verificar.php';
 	$log = "$data[referencia];$data[quantidade];$data[descricao]\r\n"; echo "<p>";
 	
 	//se receber o arquivo
-		if (!$savelog = fopen('arquivo/Arquivo_txt.txt', "a")) 
+		if (!$savelog = fopen('util/arquivo/Arquivo_txt.txt', "a")) 
 			{ exit; }        
 		if (!fwrite($savelog, $log))
 			{ exit; fclose($savelog); }

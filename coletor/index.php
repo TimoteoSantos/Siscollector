@@ -82,7 +82,7 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 			<!--quantidade total-->
 			<div class="panel panel-primary painel_contagem ">
 				<div class="panel-heading panel-heading_index vermelho">
-					<h3 class="panel-title"> Quantidade total de produtos </h3>
+					<h3 class="panel-title"> Quantidade total de produtos em tempo real </h3>
 				</div>
 				<div class="panel-body centro">
 					<h4><?php echo $total[0]; ?> </h4>
@@ -92,13 +92,16 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 
 			<!--painel de contagem produtos processados-->
 			<div class="panel panel-primary painel_contagem">
-				<div class="panel-heading vermelho">
+				<div class="panel-heading vermelho destac2">
 					<h3 class="panel-title"> <a href="v_listar_processados.php"> Quantidade de registros processados </a></h3>
 				</div>
 				<div class="panel-body centro">
 					<h4> <?php echo $exportados[0]; ?> </h4>
 				</div>
 			</div><!--fim do painel contagem produtos processaos-->
+
+
+
 
 			
 			<!--painel de contagem produtos importados-->
@@ -169,21 +172,30 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 				</div>
 			</div><!--fim do painel contagem produtos importados-->
 
-
-
-
-
-
-
-
 			<div class="panel panel-primary painel_contagem">
-				<div class="panel-heading panel-heading_index">
+				<div class="panel-heading panel-heading_index ">
 					<h3 class="panel-title"> <a href="v_diferenca_nao_encontrado.php">Tem na loja e não foi contada </a></h3>
 				</div>
 				<div class="panel-body centro">
 					<h4><?php echo $total_diferencas[0]; ?> </h4>
 				</div>
 			</div>
+
+
+<!--quantidade total-->
+			<div class="panel panel-primary painel_contagem ">
+				<div class="panel-heading panel-heading_index vermelho destac2">
+					<h3 class="panel-title"> Total processados (quantidade) </h3>
+				</div>
+				<div class="panel-body centro">
+					<h4><?php echo $total_processados[0]; ?> </h4>
+				</div>
+			</div><!--fim do painel contagem produtos importados-->
+
+
+
+
+
 
 
 			

@@ -75,6 +75,26 @@ require '../coletor/arquivos_banco/conexao.php';
 
      <p>   
       <div class="panel panel-primary">
+        <div class="panel-heading">Consultar no Acess</div>
+        <div class="panel-body">
+         <div class="form-group">
+
+         
+
+             <span class="glyphicon glyphicon-saved icones" aria-hidden="true"></span>
+SELECT memoria_Vendas.[Cód Fabricante], memoria_Vendas.Mercadoria, memoria_Vendas.Quantidade_Item
+FROM memoria_Vendas
+WHERE (((memoria_Vendas.[Data da Venda])=#1/18/2019#) AND ((memoria_Vendas.LojaOrigem)="loja 03"));
+
+         </div>
+
+       </div>
+     </div> <!-- fim do painel-->
+
+      <p>
+
+      	 <p>   
+      <div class="panel panel-primary">
         <div class="panel-heading">Intens importados para pesquisa</div>
         <div class="panel-body">
          <div class="form-group">
@@ -87,8 +107,6 @@ require '../coletor/arquivos_banco/conexao.php';
 
        </div>
      </div> <!-- fim do painel-->
-
-      <p>
 
         <!--painel do botao excluir -->
         <p>		
