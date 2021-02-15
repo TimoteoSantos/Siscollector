@@ -80,11 +80,31 @@ require '../coletor/arquivos_banco/conexao.php';
          <div class="form-group">
 
          
-
-             <span class="glyphicon glyphicon-saved icones" aria-hidden="true"></span>
 SELECT memoria_Vendas.[Cód Fabricante], memoria_Vendas.Mercadoria, memoria_Vendas.Quantidade_Item
 FROM memoria_Vendas
 WHERE (((memoria_Vendas.[Data da Venda])=#1/18/2019#) AND ((memoria_Vendas.LojaOrigem)="loja 03"));
+
+         </div>
+
+       </div>
+     </div> <!-- fim do painel-->
+
+
+<?php
+
+$importados = mysqli_query($conexao,  "SELECT count(id)  FROM vendas ");
+$importados = $importados->fetch_row();
+
+?>
+          <!-- inicio do painel -->
+
+     <p>   
+      <div class="panel panel-primary">
+        <div class="panel-heading">Consultar no Acess</div>
+        <div class="panel-body">
+         <div class="form-group">
+
+          <h2> <?php echo $importados[0];?>  </h2>
 
          </div>
 
@@ -95,7 +115,7 @@ WHERE (((memoria_Vendas.[Data da Venda])=#1/18/2019#) AND ((memoria_Vendas.LojaO
 
       	 <p>   
       <div class="panel panel-primary">
-        <div class="panel-heading">Intens importados para pesquisa</div>
+        <div class="panel-heading">Quantidade de itens</div>
         <div class="panel-body">
          <div class="form-group">
 
