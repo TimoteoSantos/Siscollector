@@ -5,6 +5,7 @@ session_start();
 //conexao com banco
 require '../../coletor/arquivos_banco/conexao.php';
 
+
 $listagem = mysqli_query($conexao,  "SELECT COUNT(id)  FROM vendas;");
 //conta
 $conta = $listagem->fetch_row();
@@ -25,23 +26,12 @@ if ($id[0] < 1 ) {
 $_SESSION['msg'] = "<div class='alert alert-danger'> <span class='glyphicon glyphicon-remove remove' aria-hidden='true'></span> Você ainda não processou!</div>";
 header("Location: ../index.php");
 
-}else {
+}else {	
 
 
 
 
-	$listage = mysqli_query($conexao, "SELECT id, data_hora from coletor_importar where id = 1 limit 1;");
-
-	//o while repete a criaçao de linhas na tabela igual a quantidade de itens.
-	while($linha = mysqli_fetch_array($listage)) {
-
-		//pega os dados da consulta while
-		$hora_inicio = $linha['data_hora'];
-
-	}
-
-
-	$listage = mysqli_query($conexao, "SELECT referencia, sum(quantidade) from vendas where quantidade > 0 group by referencia;");
+	$listage = mysqli_query($conexao, "SELECT referencia, sum(quantidade), data_hora from vendas where quantidade > 0 group by referencia;");
 
 	//o while repete a criaçao de linhas na tabela igual a quantidade de itens.
 	while($linha = mysqli_fetch_array($listage)) {
@@ -63,21 +53,25 @@ header("Location: ../index.php");
         
 
         $quantidade = $qtd - $qt;
+
+
 		
-		if ($ref == $referencia) and ($hora_coleta > $hora_inicio){
+
+
+		if ($ref == $referencia and $hora_coleta > $hora_inicio){
+
+
 
 						
 			$result_usuario = "UPDATE coletor_exportar SET quantidade = '$quantidade' WHERE referencia = '$referencia';";
 			$resultado_usuario = mysqli_query($conexao, $result_usuario);
 
-								
+									echo "string";
 			//apos gravar envia a mensagen
 			$_SESSION['msg'] = "<div class='alert alert-success'><span class='glyphicon glyphicon-ok icones' aria-hidden='true'></span> Gerado com sucesso!</div>";
 			
 			//redireciona
 			header("Location: ../index.php");
-
-
 
 		}
 	}
@@ -93,3 +87,18 @@ header("Location: ../index.php");
 		
 }
 
+/*
+
+    $listage1 = mysqli_query($conexao, "SELECT id, hora FROM coletor_importar WHERE id = 1;");
+
+	//o while repete a criaçao de linhas na tabela igual a quantidade de itens.
+	while($linha = mysqli_fetch_array($listage1)) {
+
+		//pega os dados da consulta while
+		$hora_inicio = $linha['hora'];
+	
+	}
+
+
+
+*/
