@@ -216,6 +216,7 @@ h4 > a {
 .menu ul ul {
 	position: absolute;
 	visibility: hidden;
+	text-align: center !important;
 }
 
 .menu ul li:hover ul {
