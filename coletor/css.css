@@ -91,6 +91,11 @@ form button a{
 	*/
   }
 
+  .progress {
+
+  	color: black !important;
+  }
+
 .centro {
 	padding: 2px;
 	text-align: center;

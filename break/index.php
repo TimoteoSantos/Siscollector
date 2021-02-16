@@ -80,9 +80,10 @@ require '../coletor/arquivos_banco/conexao.php';
          <div class="form-group">
 
          
-SELECT memoria_Vendas.[Cód Fabricante], memoria_Vendas.Mercadoria, memoria_Vendas.Quantidade_Item
+SELECT memoria_Vendas.[Cód Fabricante], memoria_Vendas.Mercadoria, memoria_Vendas.Quantidade_Item, memoria_Vendas.Horas
 FROM memoria_Vendas
-WHERE (((memoria_Vendas.[Data da Venda])=#1/18/2019#) AND ((memoria_Vendas.LojaOrigem)="loja 03"));
+WHERE (((memoria_Vendas.[Data da Venda])=#2/16/2021#) AND ((memoria_Vendas.LojaOrigem)="loja 03"));
+
 
          </div>
 

@@ -27,6 +27,20 @@ header("Location: ../index.php");
 
 }else {
 
+
+
+
+	$listage = mysqli_query($conexao, "SELECT id, data_hora from coletor_importar where id = 1 limit 1;");
+
+	//o while repete a criaçao de linhas na tabela igual a quantidade de itens.
+	while($linha = mysqli_fetch_array($listage)) {
+
+		//pega os dados da consulta while
+		$hora_inicio = $linha['data_hora'];
+
+	}
+
+
 	$listage = mysqli_query($conexao, "SELECT referencia, sum(quantidade) from vendas where quantidade > 0 group by referencia;");
 
 	//o while repete a criaçao de linhas na tabela igual a quantidade de itens.
@@ -35,6 +49,7 @@ header("Location: ../index.php");
 		//pega os dados da consulta while
 		$ref = $linha['referencia'];
 		$qt = $linha['sum(quantidade)'];
+		$hora_coleta = $linha['data_hora'];
 
 	$listagem = mysqli_query($conexao, "SELECT * from coletor_exportar where referencia = $ref  group by referencia;");
 
@@ -49,7 +64,7 @@ header("Location: ../index.php");
 
         $quantidade = $qtd - $qt;
 		
-		if ($ref == $referencia){
+		if ($ref == $referencia) and ($hora_coleta > $hora_inicio){
 
 						
 			$result_usuario = "UPDATE coletor_exportar SET quantidade = '$quantidade' WHERE referencia = '$referencia';";

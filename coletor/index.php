@@ -29,7 +29,7 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 <body>
 
 	<!-- gif de atualização -->
-	<?php include 'load.php' ?>
+	<?php //include 'load.php' ?>
 
 	
 	<!-- sessao principal -->

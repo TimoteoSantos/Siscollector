@@ -58,7 +58,7 @@ require '../coletor/arquivos_banco/conexao.php';
     <?php 
 
 	//coloca em listagem um array com apenas os campos vazios de status
-    $listagem = mysqli_query($conexao,  "SELECT referencia, sum(quantidade) as quantidade, descricao FROM vendas where quantidade > 0 group by referencia order by descricao");
+    $listagem = mysqli_query($conexao,  "SELECT referencia, sum(quantidade) as quantidade, descricao, data_hora FROM vendas where quantidade > 0 group by referencia order by data_hora");
 
     ?>
 
@@ -72,6 +72,7 @@ require '../coletor/arquivos_banco/conexao.php';
         <th scope="col">EAN</th>
         <th scope="col">Descrição</th>
         <th scope="col">quantidade</th>
+        <th scope="col">Data Hora</th>
         
       </tr>
     </thead>
@@ -89,6 +90,7 @@ require '../coletor/arquivos_banco/conexao.php';
         <!-- função para exibir caracteres especiais-->
         <td> <?= utf8_encode($linha['descricao']); ?> </td> 
         <td> <?= $linha['quantidade'] ?> </td>
+          <td> <?= $linha['data_hora'] ?> </td>
       </tr>
 
     <?php } ?>

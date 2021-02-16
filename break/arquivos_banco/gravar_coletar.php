@@ -22,9 +22,10 @@ require '../../coletor/arquivos_banco/conexao.php';
 		$referencia = ($dados[0]);
 		$descricao = ($dados[1]);
 		$quantidade = ($dados[2]);
+		$data_hora = ($dados[3]);
 		
 	//inseri os dados das variaveis acima no banco
-	$result_usuario = "INSERT INTO vendas (referencia,descricao, quantidade) VALUES ('$referencia', '$descricao', '$quantidade')";
+	$result_usuario = "INSERT INTO vendas (referencia,descricao, quantidade, data_hora) VALUES ('$referencia', '$descricao', '$quantidade' ,'$data_hora')";
 	$result_usuario = mysqli_query($conexao, $result_usuario);
 
 //envia a mensagem de sucesso para a index
