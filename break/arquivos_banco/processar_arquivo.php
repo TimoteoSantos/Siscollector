@@ -4,7 +4,7 @@
 session_start();
 //conexao com banco
 require '../../coletor/arquivos_banco/conexao.php';
-
+//require 'pegar_inicio.php';
 
 $listagem = mysqli_query($conexao,  "SELECT COUNT(id)  FROM vendas;");
 //conta
@@ -29,8 +29,6 @@ header("Location: ../index.php");
 }else {	
 
 
-
-
 	$listage = mysqli_query($conexao, "SELECT referencia, sum(quantidade), data_hora from vendas where quantidade > 0 group by referencia;");
 
 	//o while repete a criaçao de linhas na tabela igual a quantidade de itens.
@@ -39,7 +37,7 @@ header("Location: ../index.php");
 		//pega os dados da consulta while
 		$ref = $linha['referencia'];
 		$qt = $linha['sum(quantidade)'];
-		$hora_coleta = $linha['data_hora'];
+		$hora_venda = $linha['data_hora'];
 
 	$listagem = mysqli_query($conexao, "SELECT * from coletor_exportar where referencia = $ref  group by referencia;");
 
@@ -54,24 +52,37 @@ header("Location: ../index.php");
 
         $quantidade = $qtd - $qt;
 
-
-		
-
-
-		if ($ref == $referencia and $hora_coleta > $hora_inicio){
+        //se foi vendido vai ter a referencia igual a da venda
+		if ($ref == $referencia)/* and $hora_venda > $hora_inicio)*/{
 
 
+		//buscar a hora que foi coletado
+		$listage1 = mysqli_query($conexao, "SELECT id, hora FROM coletor_importar WHERE id = 1;");
 
-						
+		//o while repete a criaçao de linhas na tabela igual a quantidade de itens.
+		while($linha = mysqli_fetch_array($listage1)) {
+
+		//pega a hora da coleta
+		$hora_inicio = $linha['hora'];
+	
+	
+		//se a venda foi depois que coletou
+		if ($hora_venda > $hora_inicio){
+
+			//se foi atualiza para a nova quantidade	
 			$result_usuario = "UPDATE coletor_exportar SET quantidade = '$quantidade' WHERE referencia = '$referencia';";
 			$resultado_usuario = mysqli_query($conexao, $result_usuario);
 
-									echo "string";
+			
 			//apos gravar envia a mensagen
 			$_SESSION['msg'] = "<div class='alert alert-success'><span class='glyphicon glyphicon-ok icones' aria-hidden='true'></span> Gerado com sucesso!</div>";
 			
 			//redireciona
 			header("Location: ../index.php");
+
+				}
+
+			}
 
 		}
 	}
@@ -83,22 +94,5 @@ header("Location: ../index.php");
 }else {
 	//enviando para a sessao a mensagem
 	$_SESSION['msg'] = "<div class='alert alert-danger'><span class='glyphicon glyphicon-remove remove' aria-hidden='true'></span> Não tem produto importado !</div>";
-	header("Location: ../index.php");
-		
+	header("Location: ../index.php");		
 }
-
-/*
-
-    $listage1 = mysqli_query($conexao, "SELECT id, hora FROM coletor_importar WHERE id = 1;");
-
-	//o while repete a criaçao de linhas na tabela igual a quantidade de itens.
-	while($linha = mysqli_fetch_array($listage1)) {
-
-		//pega os dados da consulta while
-		$hora_inicio = $linha['hora'];
-	
-	}
-
-
-
-*/

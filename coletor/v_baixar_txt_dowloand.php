@@ -39,7 +39,7 @@ require 'arquivos_banco/login_verificar.php';
 	$log = "$data[referencia];$data[quantidade];$data[descricao]\r\n"; echo "<p>";
 	
 	//se receber o arquivo
-		if (!$savelog = fopen('util/arquivo/Arquivo_txt.txt', "a")) 
+		if (!$savelog = fopen('arquivo/Arquivo_txt.txt', "a")) 
 			{ exit; }        
 		if (!fwrite($savelog, $log))
 			{ exit; fclose($savelog); }
