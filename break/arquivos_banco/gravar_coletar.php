@@ -22,14 +22,26 @@ require '../../coletor/arquivos_banco/conexao.php';
 		$referencia = ($dados[0]);
 		$descricao = ($dados[1]);
 		$quantidade = ($dados[2]);
-		$data_hora = ($dados[3]);
-		
+		$data_hora_arquivo = ($dados[3]);
+
+		//$data_hora = $data_hora0;
+
+		//echo $data_hora;
+		//echo "<P>";
+
+		$data = "$data_hora_arquivo";
+
+		//troca a posicao da data e hora
+  		$data1 = DateTime::createFromFormat("d/m/y H:i", $data);
+  
+  		$data_hora = $data1->format("y/m/d H:i");
+
+  	
 	//inseri os dados das variaveis acima no banco
 	$result_usuario = "INSERT INTO vendas (referencia,descricao, quantidade, data_hora) VALUES ('$referencia', '$descricao', '$quantidade' ,'$data_hora')";
 	$result_usuario = mysqli_query($conexao, $result_usuario);
 
 //envia a mensagem de sucesso para a index
-
 $_SESSION['msg'] = '<div class="alert alert-success role="alert" >Gravados com sucesso</div>';
 //direciona para a index
 header("Location: ../index.php");

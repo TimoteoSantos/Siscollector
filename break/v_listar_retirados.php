@@ -11,7 +11,7 @@ require '../coletor/arquivos_banco/conexao.php';
 
   <?php
 
-  $listagem = mysqli_query($conexao,  "SELECT COUNT(id)  FROM vendas");
+  $listagem = mysqli_query($conexao,  "SELECT COUNT(id)  FROM vendas WHERE retirar IS NOT NULL");
   //conta
   $contar = $listagem->fetch_row();
   //recebe o valor
@@ -58,7 +58,7 @@ require '../coletor/arquivos_banco/conexao.php';
     <?php 
 
 	//coloca em listagem um array com apenas os campos vazios de status
-    $listagem = mysqli_query($conexao,  "SELECT referencia,  quantidade, descricao, data_hora FROM vendas where quantidade > 0 order by descricao");
+    $listagem = mysqli_query($conexao,  "SELECT * FROM vendas WHERE retirar > 0");
 
     ?>
 
