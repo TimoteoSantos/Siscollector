@@ -41,9 +41,7 @@ require '../coletor/arquivos_banco/conexao.php';
 
 
     <?php require 'arquivos_banco/mensagens.php'; //mensagens de aviso
-
 ?>
-
     <!--painel -->
     <p>   
       <div class="panel panel-primary">
@@ -76,7 +74,7 @@ require '../coletor/arquivos_banco/conexao.php';
 
 
 <?php
-$importados = mysqli_query($conexao, "SELECT count(id)  FROM vendas ");
+$importados = mysqli_query($conexao, "SELECT sum(Quantidade)  FROM vendas ");
 $importados = $importados->fetch_row();
 
 ?>
@@ -125,7 +123,7 @@ $importados = $importados->fetch_row();
          
 SELECT memoria_Vendas.[Cód Fabricante], memoria_Vendas.Mercadoria, memoria_Vendas.Quantidade_Item, memoria_Vendas.Horas
 FROM memoria_Vendas
-WHERE (((memoria_Vendas.[Data da Venda])=#2/16/2021#) AND ((memoria_Vendas.LojaOrigem)="loja 03"));
+WHERE (((memoria_Vendas.[Data da Venda])=#2/24/2021#) AND ((memoria_Vendas.LojaOrigem)="loja 03") AND ((memoria_Vendas.Cancelado)=0));
 
 
          </div>
