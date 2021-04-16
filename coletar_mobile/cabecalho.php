@@ -47,6 +47,8 @@
 
          	<!--avatar-->
 
+
+<div id="mostrar">
          	<?php
 
 
@@ -70,20 +72,23 @@ $sexo = $linha['sexo']; //recebe o usuario do banco
 
          	?>
 
-            <li class="fim"> <a href="#"><div class="ico"><img src= <?php echo $caminho;?> class="ico" width="50px" alt=""></div> <h4> Olá <?php echo $usuario;?> :)</h4> </li> </a>
+</div>
+
+            <li class="fim" id="mostrar"> <a href="#"><div class="ico"><img id="mostrar" src= <?php echo $caminho;?> class="ico" width="50px" alt=""></div> <h4> Olá <?php echo $usuario;?> :)</h4> </li> </a>
 
 <!--fim do avatar-->
 
             <li><a href="listar.php"> <span class="glyphicon glyphicon-th-list" aria-hidden="true"> </span> Listar</a></li>
-            <li><a href="pesquisar_index.php"> <span class="glyphicon glyphicon-search" aria-hidden="true"> </span> Pesquisar EAN</a></li>
+            <li id="mostrar"><a href="pesquisar_index.php"> <span class="glyphicon glyphicon-search" aria-hidden="true"> </span> Pesquisar EAN</a></li>
             <li><a href="listar_nao_cadastrado.php"> <span class="glyphicon glyphicon-floppy-remove" aria-hidden="true"> </span> Não Cadastrado</a></li>
             <li><a class="link" href="arquivos_banco/sair.php" onclick="return confirm('Sair?')">
                <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"> </span>
                Sair </a>
             </li>
-             <li><a href="#">
+             <li id="mostrar"><a href="#">
                <?php
-                  $sessao = $_SESSION['sessao'];
+               
+                  @$sessao = $_SESSION['sessao'];
 
                    if (isset($sessao)){
                     //estoque / loja
@@ -104,7 +109,7 @@ $sexo = $linha['sexo']; //recebe o usuario do banco
                </a>
             </li>
     
-    <li class="fim"><a href="#">
+    <li class="fim" id="mostrar"><a href="#">
 
             <?php
                //estoque / loja

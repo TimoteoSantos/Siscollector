@@ -85,7 +85,7 @@ require 'arquivos_banco/conexao.php';
 		<!-- form de usuarios-->
 		<?php require 'arquivos_banco/mensagens.php'; ?> 
 
-	<section class="form">
+	<section class="form2">
 
 		<form action="arquivos_banco/valida.php" method="post">
 

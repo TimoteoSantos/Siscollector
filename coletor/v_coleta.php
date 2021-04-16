@@ -87,6 +87,23 @@ require 'arquivos_banco/login_verificar.php';
       </div> <!-- fim do painel nao cadastrado-->
 
 
+       <!-- inicio painel apagar coletas do usuario -->
+     <p>   
+      <div class="panel  panel-danger panel-lang ">
+        <div class="panel-heading">FAbricantes coletados</div>
+        <div class="panel-body">
+          <div class="form-group">
+            <!--link para baixar arquivo como .csv--> 
+            <a href="v_listar_fabricantes_coletados.php">
+
+              <span class="glyphicon glyphicon-floppy-remove icones" aria-hidden="true"></span>
+            Lista de fabricante</a>
+          </div>
+        </div>
+      </div> <!-- fim do painel nao cadastrado-->
+
+
+
     </section><!-- dim da sessao corpo-->
   </section><!-- fim da sessao principal-->
 

@@ -13,13 +13,11 @@ $usuario = $_SESSION['usuario'];
 		<li> <a href="index.php" id="a"> <img src="logo.png" height="22px" alt=""> SisCollector	</a></li>
 		
 	
-		<li><a href="#">Processamento</a>
+		<li><a href="#">Configuração</a>
 
 			<ul>
 				
-				<li><a href="v_importar_arquivo.php">Importar Arquivo</a></li>
-				<li><a href="v_processar.php">Processar</a></li>
-				<li><a href="v_baixar.php">Exportar Arquivo</a></li>
+
 				<li><a href="v_configuracao.php">Configuração</a></li>
 				<li><a href="../contagem_cega/" target="blank" id="red">UP Sessão</a></li>
 				<li><a href="../break/" target="blank" id="red"> Break Vendas</a></li>
@@ -28,12 +26,29 @@ $usuario = $_SESSION['usuario'];
 			</ul>
 		</li>
 
+
+
+		<li> <a href="#"> Processamento </a>
+			
+			<ul>
+				
+			
+				<li><a href="v_processar.php">Processar Coleta</a></li>
+				<li><a href="v_baixar.php">Exportar Arquivos</a></li>
+
+
+			</ul>
+		</li>
+
+
+
 		<li><a href="#">Coletas </a>
 
 			<ul>				
-				<li><a href="v_importar_arquivo_erp.php">Importar Arquivo</a></li>
-				<li><a href="v_coleta.php">Gerenciar</a></li>
-				<li><a href="../coletar_mobile/index.php" target="blank">Coletar dados</a></li>
+				<li><a href="v_importar_arquivo_erp.php">Importar Arquivo ERP Mercadorias</a></li>
+					<li><a href="v_importar_arquivo.php">Importar Arquivo Coletor Externo</a></li>
+				<li><a href="v_coleta.php">Gerenciar Coleta</a></li>
+				<li><a href="../coletar_mobile/index.php" target="blank">Coletar dados Integrado</a></li>
 				
 			</ul>
 

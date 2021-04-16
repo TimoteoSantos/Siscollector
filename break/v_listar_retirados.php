@@ -2,7 +2,7 @@
 session_start();
 //conexao com banco
 require '../coletor/arquivos_banco/conexao.php';
-//require 'arquivos_banco/login_verificar.php';
+
 ?>
 
 <!DOCTYPE html>

@@ -12,7 +12,8 @@ $contagem = $conta;
 if ($contagem[0] != 1) {
 	
 //recebe o destino
-$empresa = filter_var( $_POST['empresa'], FILTER_SANITIZE_STRING);
+//$empresa = filter_var( $_POST['empresa'], FILTER_SANITIZE_STRING);
+    $empresa = 'empresa';
 $fornecedor = filter_var( $_POST['fornecedor'], FILTER_SANITIZE_STRING);
 $fabricante = filter_var( $_POST['fabricante'], FILTER_SANITIZE_STRING);
 $grupo = filter_var( $_POST['grupo'], FILTER_SANITIZE_STRING);

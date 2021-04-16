@@ -208,6 +208,13 @@ body {
 }
 
 
+#mostrar {display:none !important;}
+
+form {
+
+	margin-top: 5em !important;
+	margin-left: 15em !important;
+}
 
 
 .panel  {
@@ -215,8 +222,8 @@ border-radius: 8px !important;
 }
 
 .panel {
-	margin: 3%;
-	width: 40em !important;
+	margin: 0%;
+	width: 70em !important;
 	border-radius: 0%;
 }
 

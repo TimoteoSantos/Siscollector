@@ -2,8 +2,46 @@
 session_start();
 //conexao com banco
 require '../coletor/arquivos_banco/conexao.php';
+//require '../coletor/arquivos_banco/login_verificar.php';
 //inicia a sessao
 //require 'arquivos_banco/valida.php';
+
+
+
+// pega o usuario logado
+$usuario = $_SESSION['usuario'];
+
+//buscaa esse usuario no banco
+$listagem = mysqli_query($conexao,"SELECT * from usuarios  where usuario = '$usuario' ;");
+
+while($linha = mysqli_fetch_array($listagem))
+
+	{
+		//$usuarios = $linha['usuario'];
+		$tipo = $linha ['tipo'];//pega o tipo da conta do usuario
+			
+		//se o usuario nao e um administrador
+		if ($tipo <> 'adm')
+
+		{	//direciona para coletar
+			header("Location: ../coletar_mobile/index.php");
+			
+		}
+		
+	}
+
+//verificar se esta logado
+if(!empty($_SESSION['id'])){
+
+//senao estiver		
+}else{
+
+	//$_SESSION['msg'] = "Área restrita";
+	header("Location: ../coletor/v_login.php");	
+}
+
+
+
 
 ?>
 
@@ -140,7 +178,7 @@ WHERE (((memoria_Vendas.[Data da Venda])=#2/24/2021#) AND ((memoria_Vendas.LojaO
 
 
 <?php
-$total_venda = mysqli_query($conexao, "SELECT total_venda  FROM config WHERE total_venda > 0");
+$total_venda = mysqli_query($conexao, "SELECT SUM(retirar) FROM vendas WHERE retirar IS NOT NULL");
 $total_venda = $total_venda->fetch_row();
 
 if (isset($total_venda)){

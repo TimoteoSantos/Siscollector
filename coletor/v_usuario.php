@@ -117,6 +117,7 @@ require 'arquivos_banco/login_verificar.php';
 						<tr class="table-primary">
 
 							<th scope="col">Nome</th>
+							<th scope="col">Sexo</th>
 							<th scope="col">Tipo da conta</th>
 							<th scope="col">Excluir</th>
 							<th scope="col">Auterar senha</th>
@@ -134,6 +135,7 @@ require 'arquivos_banco/login_verificar.php';
 
 							<tr>
 								<td> <?= $linha['usuario'] ?> </td>
+								<td> <?= $linha['sexo'] ?> </td>
 								<td> <?= $linha['tipo'] ?> </td>  
 								
 								<td>

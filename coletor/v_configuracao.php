@@ -27,7 +27,7 @@
             <!-- fim da header -->
             <?php require 'arquivos_banco/mensagens.php';//mensagens de aviso ?>
             <!-- configurar pasta de backup-->
-            <section class="form">
+            <section class="form"  class="panel">
                <form method="post" action="arquivos_banco/cadastrar_destino.php">
                   <fieldset class="area_fieldset">
                      <h3>
@@ -60,13 +60,13 @@
                      
                      	?>
                   <button type="button" class="btn btn-danger" ><a href="arquivos_banco/excluir_destino.php">Trocar</a></button>
-                  <p>
+                  
                      <?php echo "<h4> Pasta de destino: $escrever_destino </h4>"; ?>
-                  </p>
+                  
                   <?php	} }	?>
                </form>
             </section>
-            <p>
+            
                <!--cadastrar endereço da camera -->						
             <section class="form">
                <form method="post" action="arquivos_banco/cadastrar_camera.php">
@@ -131,13 +131,14 @@
                            	?>
                         <h5> Configurar informações da coleta </h5>
                         <label for="exampleInputEmail1">Dados</label>
-                        <p>
+                        <p><!--
                            <select class="form-control" name="empresa" autofocus="">
                               <option value="M. A. DA SILVA COSMETICOS - ME"> Matriz </option>
                               <option value ="MERCIA A. DA SILVA COSMETICOS - ME"> Loja 02 </option>
                               <option value="SIDNEI DA SILVA MARQUES COSMETICOS - ME"> Loja 03 </option>
                               <option value="M. A. DA SILVA COSMETICOS - ME FILIAL"> Loja 04 </option>
                            </select>
+                           -->
                         <p>
                            <input type="text" class="form-control" id="exampleInputEmail1" name="fornecedor" aria-describedby="emailHelp" placeholder="Fornecedor">
                         <p>
@@ -160,7 +161,7 @@
                      	?>
                   <button type="button" class="btn btn-danger" ><a href="arquivos_banco/excluir_pdf.php">Trocar</a></button>
                   <p>
-                     <?php echo "<h4> Dados:<br> Empresa: $empresa  <br> Fornecedor: $fornecedor  <br>Fabricante:  $fabricante  <br>Grupo:  $grupo  </h4>"; ?>
+                     <?php echo "<h4> Dados:<br> <!--Empresa: /*$empresa*/ -->  <br> Fornecedor: $fornecedor  <br>Fabricante:  $fabricante  <br>Grupo:  $grupo  </h4>"; ?>
                   </p>
                   <?php
                      }

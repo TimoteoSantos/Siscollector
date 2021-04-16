@@ -1,5 +1,8 @@
 <!-- menu-->
 <nav>
+    <?php
+    require '../coletor/arquivos_banco/login_verificar.php';
+    ?>
 
 <a href="index.php"> <h3> <span class="glyphicon glyphicon-home" aria-hidden="true"> Up_Sessão </span> </h3>   </a> 
 

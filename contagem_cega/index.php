@@ -1,6 +1,7 @@
 <?php
    session_start();
    require "../coletor/arquivos_banco/conexao.php";
+   require '../coletor/arquivos_banco/login_verificar.php';
      
     //verificar se a sessao foi ativada
     $sessao_contar = mysqli_query($conexao, "SELECT COUNT(sessao) as sessao  FROM config WHERE sessao > 0");
@@ -8,14 +9,10 @@
     //se a sessao foi ativada
     if ($sessao[0] < 1)
     {
-
-   //envia mensagem
-   $_SESSION['msg'] = "<div class='alert alert-danger'>Sessão não foi ativada verificar em configuração</div>";
    //redireciona
-   header("Location: ../coletor/v_configuracao.php");
+   header("Location: v_aviso.php");
 
     }
-
    ?>
 <!DOCTYPE html>
 <html>

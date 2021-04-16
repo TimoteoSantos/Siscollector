@@ -156,7 +156,17 @@ fieldset > h3 {
 .form  {
 	margin-left: 15px !important;
 	margin-right: 10px !important;
+	width: 50% !important;
+	
 }
+
+.form2  {
+	margin-left: 15px !important;
+	margin-right: 10px !important;
+
+}
+
+
 
 
 /*menu tirar o sublinhado*/
@@ -277,13 +287,6 @@ label[for="bt_menu"]{
 
 	background-color: #FF8C00 !important;
 }
-
-
-
-
-
-
-
 
 .cor_porcentagem {
 	color: red;

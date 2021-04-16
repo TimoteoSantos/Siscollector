@@ -147,8 +147,9 @@ require 'arquivos_banco/conexao.php';
 												<p>
 												<span class="glyphicon glyphicon-indent-left icones" aria-hidden="true"></span>
 												<a href="v_diferenca_nao_encontrado.php">Existia na loja mas não foi coletado</a>
-												<!--<span class="glyphicon glyphicon-indent-left icones" aria-hidden="true"></span>
-												<a href="v_diferenca_fabricante_grupo.php">Visualizar diferenca de fabricante e grupo</a> -->
+												<p>
+												<span class="glyphicon glyphicon-indent-left icones" aria-hidden="true"></span>
+												<a href="v_diferenca_fabricante_grupo.php">Visualizar diferenca de fabricante e grupo</a>
 
 											</div>
 										</div>
