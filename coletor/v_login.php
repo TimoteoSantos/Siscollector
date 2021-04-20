@@ -40,7 +40,8 @@ require 'arquivos_banco/conexao.php';
 	.botao_entrar {
 			width: 26em !important;
 			height: 3em;
-
+			background-color: black !important;
+			border-style: none;
 
 	}
 
