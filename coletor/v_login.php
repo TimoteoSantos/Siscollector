@@ -16,7 +16,7 @@ require 'arquivos_banco/conexao.php';
 	
 	/*background-image: url("fundo_login.jpg")!important;*/
 	/*background-repeat: repeat-x;*/
-	background-color: #363636 !important;
+	background-color:  !important;
 	
 	}
 	
@@ -30,25 +30,26 @@ require 'arquivos_banco/conexao.php';
 	.area_fieldset {
 		margin: auto;
 		border-style:none !important;
-		width: 50% !important;
+		width: 30% !important;
 		height: 30em !important;
 		border-radius: 25px;
 		/*box-shadow: 5px 5px 5px rgba(0,0,0,0.5);*/
-		
+		background-color:#F8F8FF;
 	}
 
 	.botao_entrar {
 			width: 26em !important;
 			height: 3em;
-			background-color: black !important;
+			background-color:  !important;
 			border-style: none;
 
 	}
 
 	h1 {
 		margin-left: 20px;
-		color:#ffffff !important;
+		color: !important;
 		margin-left: 20px !important;
+
 	}
 
 	small {
