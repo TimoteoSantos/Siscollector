@@ -37,7 +37,7 @@
                         
                         ?>
                      <!-- selecionar sessao -->
-                     <select name="sessao" id="" class="enviar">
+                     <select name="sessao" id="" class="enviar_login">
                         <?php 
                            //coloca em listagem um array com apenas os campos vazios de status
                            $listagem = mysqli_query($conexao,"SELECT * FROM sessao where quantidade > 0 and status <> 2 ;");

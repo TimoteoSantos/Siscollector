@@ -53,6 +53,22 @@ form input {
 	border-style: none;
 }
 
+
+
+
+.enviar_login {
+
+	width: 100%;
+	height: 3em;
+	margin-bottom: 2em;
+	color: black;
+	border-style: dashed;
+	border-radius: 8px;
+}
+
+
+
+
 .navbar-brand img {
 	margin-top: 0%;
 }
