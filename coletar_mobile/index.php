@@ -71,7 +71,7 @@
                    ?>
                <a href="http://zxing.appspot.com/scan?ret=http://<?php echo $destino ?>/coletar_mobile/index.php?codigo={CODE}">
                   <?php  } ?>
-                  <img src="img/camera.jpg" height="60" class="lado">
+                  <img src="img/camera.png" height="40" class="lado">
                   <h2><?php// echo $destino;?> </h2>
                </a>
             </span>
@@ -97,7 +97,7 @@
                <span type="hidden" onclick="start()">
                <a class="branco" href="arquivos_banco/excluir_ultimo.php?referencia=<?= $linha['referencia'] ?>&id=<?= $linha['id'] ?>&descricao=<?= $linha['descricao'] ?>&quantidade=<?= $linha['quantidade'] ?>"  onclick="return confirm('Excluir o último item?')">
                </span>
-               <img src="img/excluir.jpg" height="55" class="lado">
+               <img src="img/excluir.png" height="40" class="lado">
                </a>
                <?php }
                   $usuario = $_SESSION['usuario'];
@@ -110,7 +110,7 @@
                   
                    ?>
                <?php  if ($total_usuario > 0) { ?>
-               <a href="listar.php"> <img src="img/lista.png" height="55" class="lado lado_esquerdo"> </a>
+               <a href="listar.php"> <img src="img/lista.png" height="40" class="lado lado_esquerdo"> </a>
                <!-- total de coleta-->
                <h4 class="lado"><?php  echo $total_usuario[1];?></h4>
                <h3 class="lado afastar"><?php echo $total_usuario_2[1]; ?></h3>
