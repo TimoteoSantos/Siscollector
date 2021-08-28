@@ -1,7 +1,8 @@
 <?php
    session_start();
-   require "../coletor/arquivos_banco/conexao.php";
+   require '../coletor/arquivos_banco/conexao.php';
    require '../coletor/arquivos_banco/login_verificar.php';
+   include '../coletor/arquivos_banco/atualizar_automaticamente.php';
      
     //verificar se a sessao foi ativada
     $sessao_contar = mysqli_query($conexao, "SELECT COUNT(sessao) as sessao  FROM config WHERE sessao > 0");

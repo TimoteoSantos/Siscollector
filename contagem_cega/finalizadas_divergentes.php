@@ -1,6 +1,7 @@
 <?php
    session_start();
    require "../coletor/arquivos_banco/conexao.php";
+   include '../coletor/arquivos_banco/atualizar_automaticamente.php';
      
    ?>
 <!DOCTYPE html>
