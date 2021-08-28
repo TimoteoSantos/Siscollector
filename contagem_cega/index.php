@@ -67,6 +67,7 @@
                      <td>Divergência</td>
                      <td>STATUS</td>
                      <td>Excluir</td>
+                     <td> Zerar Coleta</td>
                      <td>Editar</td>
                      <td>Finalizar</td>
                      <td>%</td>
@@ -137,11 +138,17 @@
                      <td> <?php echo $Divergência  ; ?></td>
                      <td><?php echo $status_echo; ?></td>
                      <td><a  class="btn btn-danger" href="php/Excluir_sessao.php?sessao=<?= $linha['id_sessao'] ?>" role="button"  onclick="return confirm('Excluir ?')" >Excluir</a></td>
+
+                     <td><a  class="btn btn-danger" href="php/zerar_coleta.php?sessao=<?= $linha['id_sessao'] ?>" role="button"  onclick="return confirm('Excluir ?')" >Zerar coleta</a></td>
+
+
+
+
                      <td><a  class="btn btn-info" href="editar.php?sessao=<?= $linha['id_sessao'] ?>" role="button"> Editar</a></td>
                      <?php if ($linha['status'] <> 2) { ?>
-                     <td><a  class="btn btn-info" href="php/finalizar.php?sessao=<?= $linha['id_sessao'] ?>" role="button" onclick="return confirm('Finalizar ?')" >Finalizar</a></td>
+                     <td><a  class="btn btn-info" href="php/finalizar.php?sessao=<?= $linha['id_sessao'] ?>" role="button" onclick="return confirm('Finalizar ?')" >Bloquear</a></td>
                      <?php }else{ ?>
-                     <td><a  class="btn btn-danger" href="php/finalizar_desfazer.php?sessao=<?= $linha['id_sessao'] ?>" role="button"  onclick="return confirm('Desfazer ?')" >Desfazer</a></td>
+                     <td><a  class="btn btn-danger" href="php/finalizar_desfazer.php?sessao=<?= $linha['id_sessao'] ?>" role="button"  onclick="return confirm('Desfazer ?')" >Desbloquear</a></td>
                      <?php } ?>
                      <td><?php echo $porcentagem; ?>%</td>
                   </tr>
