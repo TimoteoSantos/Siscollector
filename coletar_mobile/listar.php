@@ -1,6 +1,7 @@
   <?php
   session_start();
   require '../coletor/arquivos_banco/conexao.php';
+
   ?>
 
   <!DOCTYPE html>
@@ -37,11 +38,19 @@
     
     <?php 
 
-$usuario = $_SESSION['usuario'];
+    //se nao escolheu uma sessao
+    $usuario = $_SESSION['usuario'];
+    if ($sessao == 0){
 
     //coloca em listagem um array com apenas os campos vazios de status
     $listagem = mysqli_query($conexao,"SELECT max(id) as id, referencia, sum(quantidade), descricao from coletor_importar  where usuario = '$usuario' group by referencia order by id desc limit 200;");
 
+    //se escolheu uma sessao
+    }else{
+
+   //coloca em listagem um array com apenas os campos vazios de status
+    $listagem = mysqli_query($conexao,"SELECT max(id) as id, referencia, sum(quantidade), descricao from coletor_importar  where usuario = '$usuario' and chave_sessao = $sessao group by referencia order by id desc limit 200;");
+    }
 
     ?>
 

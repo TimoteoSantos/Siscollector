@@ -79,8 +79,11 @@ $sexo = $linha['sexo']; //recebe o usuario do banco
 <!--fim do avatar-->
 
             <li><a href="listar.php"> <span class="glyphicon glyphicon-th-list" aria-hidden="true"> </span> Listar</a></li>
+            
             <li id="mostrar"><a href="pesquisar_index.php"> <span class="glyphicon glyphicon-search" aria-hidden="true"> </span> Pesquisar EAN</a></li>
+
             <li><a href="listar_nao_cadastrado.php"> <span class="glyphicon glyphicon-floppy-remove" aria-hidden="true"> </span> Não Cadastrado</a></li>
+
             <li><a class="link" href="arquivos_banco/sair.php" onclick="return confirm('Sair?')">
                <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"> </span>
                Sair </a>
@@ -137,7 +140,8 @@ $sexo = $linha['sexo']; //recebe o usuario do banco
                ?>
             </a>
             </li>
-          
+
+             
            
          </ul>
       </div>

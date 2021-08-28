@@ -48,13 +48,21 @@
                         <option value = "<?php echo $linha['id_sessao']; ?>" > <?php echo $linha['nome']; ?></option>
 
                           <?php   }    ?>
-                          <option value="">AVULSO</option>
+                          <option value="0">AVULSO</option>
 
 
                        </select>
 
+                     <!-- se nao esta configurado para logar com sessao-->
+                     <?php   }else{ ?>
 
-                     <?php   }    ?>
+                     <input type="hidden" name="sessao" value="0">
+
+
+                   <?php  } ?>
+
+
+                        
                      <input type="text" name="usuario" class="form-control" id="exampleInputEmail1" placeholder="Usuário" required="" autofocus="" autocomplete="off">
                      <input type="password" name="senha" class="form-control" id="exampleInputEmail1" placeholder="Senha" required=""  autocomplete="off">
                   </div>

@@ -22,6 +22,7 @@
     <li><a href="contadas.php">Contadas</a></li>
     <li><a href="em_andamento.php">Em andamento</a></li> 
     <li><a href="finalizadas.php">Finalizadas</a></li>
+    <li><a href="finalizadas_divergentes.php">Finalizadas com divergência</a></li>
     <li><a href="divergentes.php">Divergênte</a></li>
     <li><a href="pessoas_envolvidas.php">Envolvidos em andamento</a></li>
     </ul>

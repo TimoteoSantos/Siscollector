@@ -41,11 +41,22 @@
     <?php 
 
     $usuario = $_SESSION['usuario'];
+
+     if ($sessao == 0){
+
     //coloca em listagem um array com apenas os campos vazios de status
     $listagem = mysqli_query($conexao,"SELECT id, referencia,quantidade, descricao, usuario, hora, local_estoque, local_loja from coletor_importar   where referencia = '$referencia' and usuario = '$usuario' order by id desc;");
+}else{
+
+    //coloca em listagem um array com apenas os campos vazios de status
+    $listagem = mysqli_query($conexao,"SELECT id, referencia,quantidade, descricao, usuario, hora, local_estoque, local_loja from coletor_importar   where referencia = '$referencia' and usuario = '$usuario' and chave_sessao = $sessao order by id desc;");
+
+}
+
 
     
         ?>
+}
 
     <div class="container" id="topo">
 
@@ -68,8 +79,6 @@
     }
 
 
-
-
           ?>
           <!-- primeiro produto -->
           <tr>
@@ -80,7 +89,6 @@
           <tr>
 
             <td class="descricao" colspan="2"><?= utf8_encode($linha['descricao']); ?> <br /> <?= $linha['hora'] ?> <?php echo" | " .$imprimir_valor; ?></td>
-
             
 
        </tr>
@@ -92,8 +100,6 @@
      ?>
 
    </table>
-
-
 
 
 <?php 
