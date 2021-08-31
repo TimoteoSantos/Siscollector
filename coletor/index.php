@@ -35,10 +35,6 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 	<!-- sessao principal -->
 	<section id="principal ">
 
-
-
-
-		
 		<?php require 'v_cabecalho.php'; ?>
 
 		<section class="corpo ">
@@ -55,7 +51,6 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 			<section class="corpo_just">
 
 				<?php
-
 
                      if(isset($_SESSION['msg'])){
                      echo $_SESSION['msg'];
@@ -89,7 +84,6 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 				</div>
 			</div><!--fim do painel contagem produtos importados-->
 
-
 			<!--painel de contagem produtos processados-->
 			<div class="panel panel-primary painel_contagem">
 				<div class="panel-heading vermelho destac2">
@@ -100,24 +94,18 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 				</div>
 			</div><!--fim do painel contagem produtos processaos-->
 
-
-
-
-			
-			<!--painel de contagem produtos importados-->
+                <!--painel de contagem produtos importados-->
 			<div class="panel panel-primary painel_contagem">
 				<div class="panel-heading panel-heading_index">
 					<h3 class="panel-title"> Quantidade de registros Importados</h3>
 				</div>
 				<div class="panel-body centro">
 
-
 					<h4><?php echo $importados[0]; ?> </h4>
 				</div>
 			</div><!--fim do painel contagem produtos importados-->
 			
 
-						
 			<!--painel de contagem produtos importados-->
 			<div class="panel panel-primary painel_contagem">
 				<div class="panel-heading panel-heading_index">
@@ -127,9 +115,6 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 					<h4><?php echo $coletar[0]; ?> </h4>
 				</div>
 			</div><!--fim do painel contagem produtos importados-->
-
-
-
 
 			<!--painel de contagem produtos importados
 			<div class="panel panel-primary painel_contagem">
@@ -141,7 +126,6 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 				</div>
 			</div> fim do painel contagem produtos importados-->
 
-			
 			
 			<!--painel de contagem produtos nao cadastrados-->
 			<div class="panel panel-primary painel_contagem ">
@@ -192,23 +176,13 @@ include 'arquivos_banco/atualizar_automaticamente.php'
 				</div>
 			</div><!--fim do painel contagem produtos importados-->
 
-
-
-
-
-
-
-			
 			</section>
 
 		</section>
 
 	</section>
-
 	<!--rodape com os arquivos do bootstrap -- >
 		
 	<?php  include 'rodape.php' ?>
-	
-	
 </body>
 </html>
