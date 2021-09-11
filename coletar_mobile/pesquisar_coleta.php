@@ -7,13 +7,6 @@ require  '../coletor/arquivos_banco/conexao.php';
 	$ref = $_POST['ref'];
 
 
-
-	if ($ref / 1)
-
-	{
-
-
-
 		$listagem = mysqli_query($conexao, "SELECT * from coletar where referencia = $ref  group by referencia; ");
 
 		while($linha = mysqli_fetch_array($listagem)) {
@@ -49,11 +42,6 @@ if ($ref == $referencia){
 
         require 'som_e_fabricante.php';
 
-
-
-
-
-
     }
 }
 
@@ -67,36 +55,6 @@ if ($ref != isset($referencia)){
 
 }
 
-}else{
 
-
-		$listagem = mysqli_query($conexao, "SELECT * from coletar where descricao like '%$ref%'  group by referencia; ");
-
-		while($linha = mysqli_fetch_array($listagem)) {
-				
-	
-	?>
-
-	<table class="table table-condensed">
-
-     <?php
-      while($linha = mysqli_fetch_array($listagem)){
-      ?>
-        <tr>
-
-          <td> <a href=""><?= utf8_encode($linha['descricao']); ?> </a> </td>
-          
-
-        </tr>
-      <?php } ?>
-  
-  </table>
-
-	
-<?php
-
-}
-
-}
 
 ?>

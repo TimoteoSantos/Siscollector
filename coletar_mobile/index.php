@@ -31,8 +31,7 @@
                   <?php include 'mensagens.php'; ?>
                   <p>
                </div>
-            
-            
+                        
          <?php // include 'mostrar_primeiro.php' 
           
             //codigo recebido pelo app barcode
@@ -44,7 +43,7 @@
                   
                }
                
-            ?>           
+            ?>       
 
                <form action="arquivos_banco/gravar.php" method="post">
                   <div class="form-group">
@@ -101,9 +100,7 @@
                <img src="img/excluir.png" height="40" class="lado">
                </a>
 
-
                <?php }}else{ //se escolheu sessao so pode excluir da sessao que entrou
-
 
                   //coloca em listagem um array com apenas os campos vazios de status
                   $listage = mysqli_query($conexao,"SELECT max(id) as id from coletor_importar  where usuario = '$usuario' limit 1;");
@@ -155,8 +152,7 @@
 
                }
 
-
-                   ?>
+               ?>
                <?php  if ($total_usuario > 0) { // mostrar resultado ?>
                <a href="listar.php"> <img src="img/lista.png" height="40" class="lado lado_esquerdo"> </a>
                <!-- total de coleta-->

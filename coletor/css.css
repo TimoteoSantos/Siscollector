@@ -11,6 +11,11 @@ h3[Usuários cadastrados], hr {
 	margin-left: 40px;
 }
 
+.largura{
+
+	width: 450px;
+}
+
 /*estilização do bootstrap*/
 .jumbotron {
 	padding-top: 70px;

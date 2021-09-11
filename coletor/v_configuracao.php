@@ -67,6 +67,8 @@
                </form>
             </section>
             
+            <p> </p>
+
                <!--cadastrar endereço da camera -->						
             <section class="form">
                <form method="post" action="arquivos_banco/cadastrar_camera.php">
@@ -110,6 +112,9 @@
                </form>
                <p>
             </section>
+
+            <p> </p>
+
             <!--cadastrar endereço da camera PDF -->						
             <section class="form">
                <form method="post" action="arquivos_banco/cadastrar_pdf.php">

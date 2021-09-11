@@ -24,8 +24,8 @@
          <span class="icon-bar"></span>
          </button>
          <!-- brand-->
-         <a class="navbar-brand" href="index.php"><img class="imagem" src="img/logo.png"> </a>
-         <a class="navbar-brand marca" href="index.php">Siscollect <span style="color:red">
+         <!--<a class="navbar-brand" href="index.php"><img class="imagem" src="img/logo.png"> </a>-->
+         <a class="navbar-brand marca" href="index.php">Siscollector <span style="color:red">
        
          <?php 
             //so vai mostrar se tiver nao cadastrado
