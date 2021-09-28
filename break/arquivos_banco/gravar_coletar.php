@@ -32,12 +32,11 @@ require '../../coletor/arquivos_banco/conexao.php';
 		$data = "$data_hora_arquivo";
 
 		//troca a posicao da data e hora
-  		$data1 = DateTime::createFromFormat("d/m/y H:i", $data);
+  		$data1 = DateTime::createFromFormat("d/m/Y H:i:s", $data);
   
-  		$data_hora = $data1->format("y/m/d H:i");
+  		$data_hora = $data1->format("Y/m/d H:i:s");
 
-  	
-	//inseri os dados das variaveis acima no banco
+  		//inseri os dados das variaveis acima no banco
 	$result_usuario = "INSERT INTO vendas (referencia,descricao, quantidade, data_hora) VALUES ('$referencia', '$descricao', '$quantidade' ,'$data_hora')";
 	$result_usuario = mysqli_query($conexao, $result_usuario);
 
