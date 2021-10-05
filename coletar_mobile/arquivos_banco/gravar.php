@@ -50,7 +50,7 @@ else
         $qt = filter_var($_POST['qt'], FILTER_SANITIZE_STRING);
         $hora = date('Y-m-d H:i:s');
 
-        $listagem = mysqli_query($conexao, "SELECT referencia, descricao, fabricante from coletar where referencia = $ref  group by referencia; ");
+        $listagem = mysqli_query($conexao, "SELECT referencia, descricao, fabricante from coletar where referencia = $ref  group by referencia limit 1; ");
 
         while ($linha = mysqli_fetch_array($listagem))
         {
