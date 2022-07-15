@@ -22,19 +22,23 @@ require '../../coletor/arquivos_banco/conexao.php';
 		$referencia = ($dados[0]);
 		$descricao = ($dados[1]);
 		$quantidade = ($dados[2]);
-		$data_hora_arquivo = ($dados[3]);
+		$data0 = ($dados[3]);
+		$hora = ($dados[4]);
 
 		//$data_hora = $data_hora0;
 
 		//echo $data_hora;
 		//echo "<P>";
 
-		$data = "$data_hora_arquivo";
+		$data = "$data0 $hora";
+	
 
 		//troca a posicao da data e hora
   		$data1 = DateTime::createFromFormat("d/m/Y H:i:s", $data);
+
   
   		$data_hora = $data1->format("Y/m/d H:i:s");
+  		//echo $data_hora;
 
   		//inseri os dados das variaveis acima no banco
 	$result_usuario = "INSERT INTO vendas (referencia,descricao, quantidade, data_hora) VALUES ('$referencia', '$descricao', '$quantidade' ,'$data_hora')";
