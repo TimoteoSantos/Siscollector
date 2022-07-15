@@ -32,6 +32,7 @@ require '../../coletor/arquivos_banco/conexao.php';
 
 		$data = "$data0 $hora";
 	
+
 		//troca a posicao da data e hora
   		$data1 = DateTime::createFromFormat("d/m/Y H:i:s", $data);
 
