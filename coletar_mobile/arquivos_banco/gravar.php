@@ -4,7 +4,7 @@ session_start();
 
 //conexao com banco
 require '../../coletor/arquivos_banco/conexao.php';
-
+require 'falarQuantidade.php';
 require_once 'verificar_estoque_loja.php';
 
 //se a sessao foi finalizada
@@ -20,7 +20,6 @@ if (isset($sessao3))
     require 'sair.php';
 
     //se nao foi desativada
-    
 }
 else
 {
@@ -38,7 +37,9 @@ else
         $_SESSION['msg'] = "<span> DESCULPA! COLETA ENCERRADA :( <span>";
 
     }
+
     else
+    
     {
         //verificar se a sessao foi ativada
         $sessao_contar = mysqli_query($conexao, "SELECT COUNT(sessao) as sessao  FROM config WHERE sessao > 0");
@@ -53,6 +54,7 @@ else
         $listagem = mysqli_query($conexao, "SELECT referencia, descricao, fabricante from coletar where referencia = $ref  group by referencia limit 1; ");
 
         while ($linha = mysqli_fetch_array($listagem))
+
         {
 
             $referencia = $linha['referencia'];
@@ -75,10 +77,12 @@ else
 
                 }
 
+    
                 if ($conexao->query($query) === true)
+               
                 {
-
-                    $_SESSION['msg'] = "<span class='alerta'><span><audio src='gravou.mp3' autoplay></audio> </span>";
+                  
+                echo falarQuantidade($qt);
 
                 }
                 else
@@ -122,6 +126,7 @@ else
 
                 $_SESSION['msg'] = "<span class='alerta'>NÃO CADASTRADO </span> <span> <audio src='erro.mp3' autoplay></audio> </span>";
 
+
             }
             else
             {
@@ -129,7 +134,6 @@ else
                 $_SESSION['msg'] = "<span class='alerta'><span> Algo deu errado!<audio src='erro.mp3' autoplay></audio> </span>";
 
             }
-
             header("Location: ../index.php");
 
         }
@@ -137,4 +141,3 @@ else
     }
 
 }
-

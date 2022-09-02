@@ -5,9 +5,12 @@
 			              echo $_SESSION['msg'];
 			              unset($_SESSION['msg']);
 			              }
+			              if(isset($_SESSION['msg2'])){
+			              echo $_SESSION['msg2'];
+			              unset($_SESSION['msg2']);
+			              }
 
 						  $usuario = $_SESSION['usuario'];
-
 						  	
 
 						    $l = mysqli_query($conexao,"SELECT id, quantidade FROM coletor_importar where usuario = '$usuario' ORDER BY id DESC LIMIT 1 ;");
