@@ -79,6 +79,7 @@ $sexo = $linha['sexo']; //recebe o usuario do banco
 <!--fim do avatar-->
 
             <li><a href="listar.php"> <span class="glyphicon glyphicon-th-list" aria-hidden="true"> </span> Listar</a></li>
+            <li><a href="listar_sequencia.php"> <span class="glyphicon glyphicon-th-list" aria-hidden="true"> </span> Listar Sequência</a></li>
             
             <li id="mostrar"><a href="pesquisar_index.php"> <span class="glyphicon glyphicon-search" aria-hidden="true"> </span> Pesquisar EAN</a></li>
 

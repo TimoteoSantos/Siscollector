@@ -21,6 +21,8 @@ $usuario = $_SESSION['usuario'];
 				<li><a href="v_configuracao.php">Configuração</a></li>
 				<li><a href="../contagem_cega/" target="blank" id="red">UP Sessão</a></li>
 				<li><a href="../break/" target="blank" id="red"> Break Vendas</a></li>
+				<li><a href="v_grafico.php" target="blank"> Dastboard</a></li>
+				
 
 				
 			</ul>

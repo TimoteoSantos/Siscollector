@@ -68,12 +68,12 @@ else
                 if ($sessao[0] > 0)
                 {
 
-                    $query = "INSERT INTO coletor_importar (referencia, quantidade, descricao, usuario, hora, local_estoque,fabricante, local_loja, chave_sessao) VALUES ('$ref', '$qt', '$descricao', '$usuario', '$hora', '$gravar_estoque','$fabricante', '$gravar_loja', '$sessao')";
+                    $query = "INSERT INTO coletor_importar (referencia, quantidade, descricao, usuario, hora, local_estoque,fabricante, local_loja, chave_sessao) VALUES ('$referencia', '$qt', '$descricao', '$usuario', '$hora', '$gravar_estoque','$fabricante', '$gravar_loja', '$sessao')";
                 }
                 else
                 {
 
-                    $query = "INSERT INTO coletor_importar (referencia, quantidade, descricao, usuario, hora, local_estoque,fabricante, local_loja) VALUES ('$ref', '$qt', '$descricao', '$usuario', '$hora', '$gravar_estoque','$fabricante', '$gravar_loja')";
+                    $query = "INSERT INTO coletor_importar (referencia, quantidade, descricao, usuario, hora, local_estoque,fabricante, local_loja) VALUES ('$referencia', '$qt', '$descricao', '$usuario', '$hora', '$gravar_estoque','$fabricante', '$gravar_loja')";
 
                 }
 

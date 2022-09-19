@@ -12,8 +12,8 @@
 			              unset($_SESSION['msg']);
 			              }
 
-						    if ($alerta > 50){
+						    //if ($alerta > 50){
 
-						    echo "<p class='alerta'> OBSERVE A QUANTIDADE ! = '$alerta'<audio src='erro.mp3' autoplay></audio> </p>";
-					  }
+						    //echo "<p class='alerta'> OBSERVE A QUANTIDADE ! = '$alerta'<audio src='erro.mp3' autoplay></audio> </p>";
+					  //}
 				   }

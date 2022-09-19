@@ -82,7 +82,7 @@ require 'arquivos_banco/login_verificar.php';
 
 			<?php 
 
-			$listagem = mysqli_query($conexao,  "SELECT * FROM coletar where coleta = 0 and referencia > 0 and quantidade > 0");
+			$listagem = mysqli_query($conexao,  "SELECT * FROM coletar where coleta = 0 and referencia > 0 and quantidade > 0 AND quantidade > 0 ORDER BY fabricante");
 
 			?>
 
@@ -122,10 +122,9 @@ require 'arquivos_banco/login_verificar.php';
 
 					<!-- tabela divergencia dos coletados-->
 
-
 					<?php 
 
-					$listagem = mysqli_query($conexao, "SELECT * FROM diferenca");
+					$listagem = mysqli_query($conexao, "SELECT * FROM diferenca WHERE quantidade_sistema > 0 ORDER BY fabricante");
 
 					?>
 
