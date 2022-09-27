@@ -1,0 +1,126 @@
+﻿
+.principal {
+
+
+	width: 90%;
+	height: 100%;
+	background-color: #FFFFFF !important;
+	margin: auto;
+	padding-bottom: 55px;
+
+}
+
+.cabecalho {
+
+	text-align: center;
+	margin-top: 50px;
+
+}
+img	{
+	margin: 15px;
+}
+
+.formulario {
+
+width: 850px;
+text-align: center !important;
+margin:auto;
+margin-top: 45px;
+}
+
+input {
+
+	width:750px;
+	height: 40px;
+	display: inline;
+
+}
+input type['submit']{
+
+	width: 200px !important;
+}
+fieldset {
+	margin-top: 25px;
+	/*border: dashed;
+	border-color: green;*/
+
+
+
+}
+
+nav > a {
+	font-size: 20px !important;
+	text-decoration: none !important;
+}
+
+a:hover {
+
+	background-color: yellow;
+	display: inline;
+}
+
+h3  {
+
+margin-top: 70px;
+
+}
+
+
+.tabela {
+	text-align: center;
+}
+
+
+.left {
+
+	float: left;
+	margin: 5px;
+
+}
+
+.clear{
+clear: both;
+
+}
+
+.panel-footer {
+	text-align: center;
+
+}
+
+.dropdown {
+	font-size: 22px;
+}
+
+.dropdown-menu{
+
+font-size: 16px;
+
+}
+
+.grafico {
+
+	
+	height: 40px !important;
+}
+
+.barra {
+
+	font-size: 25px !important;
+	padding: 8px !important;
+}
+
+li	{
+
+	margin: 0px;
+}
+
+th	{
+
+	text-transform: uppercase !important;
+}
+
+a > h3 {
+
+	margin: 0;
+}

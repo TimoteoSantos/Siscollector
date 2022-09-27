@@ -1,0 +1,3 @@
+[21-Sep-2022 13:07:04 UTC] PHP Notice:  Undefined index: dbname in /home/tichronoscom/coletor.tichronos.com.br/coletor/arquivos_para_instalacao/instalar_coletor/processa.php on line 10
+[21-Sep-2022 13:07:04 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/tichronoscom/coletor.tichronos.com.br/coletor/arquivos_para_instalacao/instalar_coletor/processa.php on line 13
+[21-Sep-2022 13:07:04 UTC] PHP Warning:  mysqli_multi_query() expects parameter 1 to be mysqli, bool given in /home/tichronoscom/coletor.tichronos.com.br/coletor/arquivos_para_instalacao/instalar_coletor/processa.php on line 20

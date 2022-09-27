@@ -1,0 +1,4 @@
+esse arquivo tira balanço as vendas independente da hora e data da coleta
+
+1. deve importar as vendas no banco
+2. processar a coleta

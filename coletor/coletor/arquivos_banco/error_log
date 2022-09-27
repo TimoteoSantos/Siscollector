@@ -1,0 +1,14 @@
+[20-Sep-2022 09:57:40 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/tichronoscom/coletor.tichronos.com.br/coletor/coletor/arquivos_banco/valida.php on line 19
+[20-Sep-2022 09:57:49 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/tichronoscom/coletor.tichronos.com.br/coletor/coletor/arquivos_banco/valida.php on line 19
+[20-Sep-2022 09:59:05 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/tichronoscom/coletor.tichronos.com.br/coletor/coletor/arquivos_banco/valida.php on line 19
+[20-Sep-2022 12:11:07 UTC] PHP Parse error:  syntax error, unexpected 'apos' (T_STRING) in /home/tichronoscom/coletor.tichronos.com.br/coletor/coletor/arquivos_banco/excluir_processamento.php on line 37
+[21-Sep-2022 13:15:11 UTC] PHP Notice:  Undefined variable: id in /home/tichronoscom/coletor.tichronos.com.br/coletor/coletor/arquivos_banco/excluir_coleta_usuario.php on line 14
+[21-Sep-2022 13:15:11 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/tichronoscom/coletor.tichronos.com.br/coletor/coletor/arquivos_banco/excluir_coleta_usuario.php on line 14
+[21-Sep-2022 13:35:05 UTC] PHP Notice:  Undefined variable: id in /home/tichronoscom/coletor.tichronos.com.br/coletor/coletor/arquivos_banco/excluir_coleta_usuario.php on line 14
+[21-Sep-2022 13:35:05 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/tichronoscom/coletor.tichronos.com.br/coletor/coletor/arquivos_banco/excluir_coleta_usuario.php on line 14
+[21-Sep-2022 17:40:26 UTC] PHP Notice:  Undefined variable: id in /home/tichronoscom/coletor.tichronos.com.br/coletor/coletor/arquivos_banco/excluir_coleta_usuario.php on line 14
+[21-Sep-2022 17:40:26 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/tichronoscom/coletor.tichronos.com.br/coletor/coletor/arquivos_banco/excluir_coleta_usuario.php on line 14
+[22-Sep-2022 12:39:40 UTC] PHP Notice:  Undefined variable: id in /home/tichronoscom/coletor.tichronos.com.br/coletor/coletor/arquivos_banco/excluir_coleta_usuario.php on line 14
+[22-Sep-2022 12:39:40 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/tichronoscom/coletor.tichronos.com.br/coletor/coletor/arquivos_banco/excluir_coleta_usuario.php on line 14
+[23-Sep-2022 20:32:12 UTC] PHP Notice:  Undefined variable: id in /home/tichronoscom/coletor.tichronos.com.br/coletor/coletor/arquivos_banco/excluir_coleta_usuario.php on line 14
+[23-Sep-2022 20:32:12 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/tichronoscom/coletor.tichronos.com.br/coletor/coletor/arquivos_banco/excluir_coleta_usuario.php on line 14

@@ -1,1 +1,0 @@
-se nao funcionar use copie o mysqldump pra essa pasta e descomente a segunda forma

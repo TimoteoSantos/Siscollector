@@ -1,0 +1,4 @@
+mysqli.allow_local_infile = On 
+
+
+deve ser descomentada

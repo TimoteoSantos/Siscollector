@@ -1,4 +1,0 @@
-primeiro procurar por: date.timezone= ... depois adicionar a linha abaixo na frente de igual.
-
-****************************
-america/recife
