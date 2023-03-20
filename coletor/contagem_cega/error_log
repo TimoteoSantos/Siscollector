@@ -1,5 +1,0 @@
-[20-Sep-2022 12:04:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home/tichronoscom/coletor.tichronos.com.br/coletor/coletor/arquivos_banco/conexao.php:4
-Stack trace:
-#0 /home/tichronoscom/coletor.tichronos.com.br/coletor/contagem_cega/index.php(3): require()
-#1 {main}
-  thrown in /home/tichronoscom/coletor.tichronos.com.br/coletor/coletor/arquivos_banco/conexao.php on line 4
