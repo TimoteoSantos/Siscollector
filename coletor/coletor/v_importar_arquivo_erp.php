@@ -68,6 +68,41 @@ require 'arquivos_banco/login_verificar.php';
         </div>
       </div> <!-- fim do painel-->
 
+
+
+<!--
+ 
+    <p>   
+      <div class="panel panel-primary panel-lang-2">
+        <div class="panel-heading">Importacao rapida</div>
+        <div class="panel-body">
+         <div class="form-group">
+
+           <form action="arquivos_banco/importar_novo_up.php" method="post" enctype="multipart/form-data">
+
+            <label for="exampleTextarea">
+              <span class="glyphicon glyphicon-level-up icones" aria-hidden="true"></span>
+
+            Buscar arquivo de pesquisa</label>
+
+
+            <input type="file" value="Escolher arquivo" name="file" required=""> <p>
+
+
+              <br>
+
+              <input type="submit" value="Enviar" class="btn btn-info">
+
+            </form>
+
+          </div>
+
+        </div>
+      </div> 
+
+
+-->
+
     <!--importar pela pasta -->
     <p>   
       <div class="panel panel-primary panel-lang-2">
