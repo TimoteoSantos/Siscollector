@@ -1,6 +1,11 @@
 <?php
    session_start();
-   require '../coletor/arquivos_banco/conexao.php'; ?>
+   require '../coletor/arquivos_banco/conexao.php';
+   require_once 'arquivos_banco/VerificarDiferenca.php';
+   require 'arquivos_banco/falarQuantidade.php';
+
+                  $usuario = $_SESSION['usuario'];
+   ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,6 +26,7 @@
       <link href="./index_files/css.css" rel="stylesheet">
    </head>
    <body>
+
       <?php //menu
          require 'cabecalho.php';
          ?>
@@ -28,6 +34,35 @@
          <div class="panel panel-default">
             <div class="panel-body">
                <div class="alert" role="alert">
+
+<?php
+   
+    //se esta coletando na loja
+    $listagem = mysqli_query($conexao, "SELECT id from config where estoque_loja = 2 limit 1");
+    $contar = $listagem->fetch_row();
+    $idconfig = $contar;
+
+    //se processou
+    if ($idconfig > 0)
+    {
+   
+   //verificar diferenca
+   $resultado =  VerificarDiferenca($conexao,$usuario);
+
+
+   $diferenca = $resultado[0];
+   $quantidade_coletada2 = $resultado[1];
+
+   if ($diferenca) {
+   
+      $_SESSION['m'] = "<span class='alerta'><span> No ultimo produto você coletou [ $quantidade_coletada2 ] esta certo ? <audio src='erro.mp3' autoplay></audio> </span>";
+      
+
+      }
+   }
+
+?>
+
                   <?php include 'mensagens.php'; ?>
                   <p>
                </div>
@@ -43,7 +78,12 @@
                   
                }
                
-            ?>       
+
+ ?>
+
+
+
+
 
                <form action="arquivos_banco/gravar.php" method="post">
                   <div class="form-group">
@@ -77,7 +117,7 @@
             <!-- excluir ultimo -->
             <span class="camera">
                <?php 
-                  $usuario = $_SESSION['usuario'];
+
 
                   if ($sessao == 0){// se entrou avulso ou nao esta com sessao configurada pode exluir tudo
                   
@@ -182,16 +222,16 @@
                   while($linha = mysqli_fetch_array($listagem)) { //mostrar resultado das mercadorias coletadas
                
                ?>
-            <div  class="clear " >
+            <div  class="clear minusculo " >
                <a style='color:black; !important;' href="listar_detalhe.php?referencia=<?= $linha['referencia'] ?>">
-                  D:<?php echo  utf8_encode($linha['descricao']) ; ?> 
-                  <span style='color:red !important';>
-                  | QT:<?php echo $linha['sum(quantidade)']; ?></span> 
+                  <?php echo  utf8_encode($linha['descricao']) ; ?> 
+                  | QT:<?php echo $linha['sum(quantidade)']; ?>
                   | REF: <span style='color:#008080 !important';>
                   <?php echo $linha['referencia'] ?></span>
                   <p></p>
                </a>
             </div>
+
             <?php } ?>
       </div>
       </span>

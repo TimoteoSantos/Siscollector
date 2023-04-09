@@ -4,6 +4,7 @@ body {
   background-image: url(../img/degrade.jpg);
   background-repeat: repeat-x;
 }
+
 nav .container, li a {
 	background-color:black !important;
 }
@@ -211,6 +212,16 @@ h4 {
 padding-top: 0px !important;
 
  }
+
+ .minusculo {
+
+  text-transform: capitalize;
+  background-color: #F0F8FF !important;
+  padding-top: 0.5px;
+ 	border-radius: 8px;
+ }
+
+
 
 /*tela grande--------------------------------------------------*/
 @media (min-width: 600px) 

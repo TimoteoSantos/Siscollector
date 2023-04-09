@@ -7,8 +7,9 @@ require '../../coletor/arquivos_banco/conexao.php';
 require 'falarQuantidade.php';
 require_once 'verificar_estoque_loja.php';
 
+
 //se a sessao foi finalizada
-$sessao1 = filter_var($_SESSION['sessao'], FILTER_SANITIZE_STRING);
+@$sessao1 = filter_var($_SESSION['sessao'], FILTER_SANITIZE_STRING);
 
 $desativada = mysqli_query($conexao, "SELECT *  FROM sessao WHERE status = 2 and id_sessao = '$sessao1'");
 $sessao3 = $desativada->fetch_row();
@@ -46,7 +47,7 @@ else
         $sessao = $sessao_contar->fetch_row();
 
         $usuario = filter_var($_SESSION['usuario'], FILTER_SANITIZE_STRING);
-        $sessao = filter_var($_SESSION['sessao'], FILTER_SANITIZE_STRING);
+        @$sessao = filter_var($_SESSION['sessao'], FILTER_SANITIZE_STRING);
         $ref = filter_var($_POST['ref'], FILTER_SANITIZE_STRING);
         $qt = filter_var($_POST['qt'], FILTER_SANITIZE_STRING);
         $hora = date('Y-m-d H:i:s');
@@ -91,7 +92,7 @@ else
                     $_SESSION['msg'] = "<span class='alerta'><span>Algo deu errado!<audio src='erro.mp3' autoplay></audio> </span>";
                 }
 
-                header("Location: ../index.php");
+               header("Location: ../index.php");
 
                 //fabricante verificar se o fabricante é o configurado
                 require_once 'verificar_fabricante.php';
@@ -134,7 +135,8 @@ else
                 $_SESSION['msg'] = "<span class='alerta'><span> Algo deu errado!<audio src='erro.mp3' autoplay></audio> </span>";
 
             }
-            header("Location: ../index.php");
+
+           header("Location: ../index.php");
 
         }
 
