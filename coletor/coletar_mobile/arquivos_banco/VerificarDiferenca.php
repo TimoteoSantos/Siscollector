@@ -5,6 +5,10 @@ function VerificarDiferenca($conexao,$usuario){
 
 
 	$diferenca = false;
+	$quantidade_coletada2 = 0;
+	$referecia_coletada2 = 0;
+
+
 
 
 
@@ -16,7 +20,6 @@ function VerificarDiferenca($conexao,$usuario){
 
 
         {
-
 
 
 
@@ -35,6 +38,7 @@ function VerificarDiferenca($conexao,$usuario){
       	$listagem = mysqli_query($conexao, "SELECT id, referencia, quantidade from coletor_importar where id = '$id'; ");
 
         while ($linha = mysqli_fetch_array($listagem)){
+
 
         	$referecia_coletada2 = $linha['referencia'];
         	$quantidade_coletada2 = $linha['quantidade']; 
@@ -67,12 +71,14 @@ function VerificarDiferenca($conexao,$usuario){
         {
 
             $quantidade_coletar = $linha['quantidade'];
+
 		}
 
 
 		//se tem quantidade no sistema
-		if($quantidade_coletar){
+		if($quantidade_coletar > -1){
 
+	
 		//se é tem diferenca
 		if ($quantidade_coletar <> $quantidade_coletada){
 			$diferenca = true;
@@ -80,7 +86,9 @@ function VerificarDiferenca($conexao,$usuario){
 
 		}}
 
-
+		if($quantidade_coletada2 == 0){
+			$diferenca = false;
+		}
 
 	//retorna diferenca
  return array($diferenca, $quantidade_coletada2);

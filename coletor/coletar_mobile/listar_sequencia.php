@@ -80,7 +80,10 @@
                    
           
              <td><button class="btn btn-warning" type="submit" onclick="start()">
-              <a class="branco" href="arquivos_banco/excluir_produto.php?referencia=<?= $linha['referencia'] ?>&descricao=<?= $linha['descricao'] ?>&quantidade=<?= $linha['quantidade'] ?>"  onclick="return confirm('Excluir?')">
+
+              <a class="branco" href="arquivos_banco/excluir_produto_sequencia.php?id=<?= $linha['id']?>"  onclick="return confirm('Excluir?')">
+            
+
              Excluir</button>
          </td>
 

@@ -125,7 +125,8 @@ else
             if ($conexao->query($query) === true)
             {
 
-                $_SESSION['msg'] = "<span class='alerta'>NÃO CADASTRADO </span> <span> <audio src='erro.mp3' autoplay></audio> </span>";
+                $_SESSION['m'] = "<span class='alerta'>NÃO CADASTRADO </span> <span> <audio src='erro.mp3' autoplay></audio> </span>";
+                echo falarQuantidade($qt);
 
 
             }
