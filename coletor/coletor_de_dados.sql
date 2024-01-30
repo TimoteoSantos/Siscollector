@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Jan-2024 às 14:52
+-- Generation Time: 30-Jan-2024 às 17:43
 -- Versão do servidor: 10.1.13-MariaDB
 -- PHP Version: 5.5.37
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `auditoria` (
   `descricao` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `data` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `coletor_exportar` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `hora` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2470 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5252 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `config` (
   `vendas_sim` int(2) DEFAULT '0',
   `total_venda` int(6) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=171 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=172 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -150,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `diferenca` (
   `status` varchar(20) DEFAULT NULL,
   `grupo` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=783 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `pdf` (
   `fabricante` varchar(255) DEFAULT 'sem fabricante',
   `grupo` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
