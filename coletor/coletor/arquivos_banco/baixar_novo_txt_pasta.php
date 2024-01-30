@@ -20,7 +20,7 @@ require "conexao.php";
 		$sql = "SELECT referencia, SUM(quantidade) AS quantidade, descricao INTO OUTFILE '$destino'
 		FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY ''
 		LINES TERMINATED BY '\r\n'
-		FROM coletor_importar GROUP BY referencia ORDER BY referencia";
+		FROM coletor_importar GROUP BY referencia ORDER BY referencia_ordem";
 	
 			$result = mysqli_query($conexao, $sql);
 			

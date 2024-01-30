@@ -12,7 +12,7 @@ require 'arquivos_banco/login_verificar.php';
 	<?php
 
 
-	$querymai = mysqli_query($conexao, "SELECT referencia, SUM(quantidade) AS quantidade, descricao FROM coletor_importar GROUP BY referencia ORDER BY referencia");
+	$querymai = mysqli_query($conexao, "SELECT referencia, SUM(quantidade) AS quantidade, descricao FROM coletor_importar GROUP BY referencia ORDER BY referencia_ordem");
 
 	//abre para leitura e apaga os dados armazenados anteriormente se nao colocar ele duplica
 	fopen("arquivo/Arquivo_txt.txt", "w+");
@@ -68,7 +68,7 @@ require 'arquivos_banco/login_verificar.php';
 							<span class="glyphicon glyphicon-floppy-save icones" aria-hidden="true"></span>
 							
 							<!--link para baixar arquivo como txt--> 
-							<a href="arquivo/Arquivo_txt.txt" download="arquivo/Arquivo_processado_txt"> Baixar </a>
+							<a href="arquivo/Arquivo_txt.txt" download="arquivo/Arquivo_direto_sem_processar_txt.txt"> Baixar </a>
 						</div>
 					</div>
 				</div> <!-- fim do painel baixar como txt-->
@@ -78,3 +78,5 @@ require 'arquivos_banco/login_verificar.php';
 
 	</body>
 	</html>
+	
+	

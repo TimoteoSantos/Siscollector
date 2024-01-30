@@ -143,6 +143,19 @@ require 'arquivos_banco/login_verificar.php';
 
              <span class="glyphicon glyphicon-saved icones" aria-hidden="true"></span>
            Listar itens importados</a>
+
+
+           <p></p>
+
+
+            <a href="v_listar_importados_duplicados.php">
+
+             <span class="glyphicon glyphicon-saved icones" aria-hidden="true"></span>
+           Listar itens importados duplicados</a>
+
+
+
+
          </div>
 
        </div>
