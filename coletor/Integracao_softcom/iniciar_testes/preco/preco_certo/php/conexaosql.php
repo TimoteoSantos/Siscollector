@@ -26,6 +26,6 @@ class Conexao
 
 define('DB_HOST'        , "177.72.2.30,5433");
 define('DB_USER'        , "sa");
-define('DB_PASSWORD'    , "Sfc@14828");
-define('DB_NAME'        , "BaseCasadoCabelereiroConsulta");
+define('DB_PASSWORD'    , "Senha");
+define('DB_NAME'        , "Base");
 define('DB_DRIVER'      , "sqlsrv");
